@@ -311,17 +311,36 @@ class EncyclopediaViewController: UIViewController  {
 
 //MARK: Extension
 extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
+    
     // MARK: UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }
     
     // MARK: Table view data source
+    func countValidate(_ count: Int) throws {
+        if count < 0 {
+            throw SizeExpectedErrors.negativeSize
+        }
+        else if count > sectionsList.count {
+            throw SizeExpectedErrors.oversize
+        }
+        else if count != sectionsList.count {
+            throw SizeExpectedErrors.differentSize
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         var count = 1
         
         if !isFiltering() {
             count = sectionsList.count
+        }
+        
+        do {
+           try countValidate(count)
+        } catch {
+            count = 1
         }
         
         return count
@@ -338,6 +357,12 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
             }
         } else {
             count = speciesList[section].count
+        }
+        
+        do {
+           try countValidate(count)
+        } catch {
+            count = 0
         }
         
         return count
@@ -402,3 +427,8 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
     }
 }
 
+enum SizeExpectedErrors: Error {
+    case negativeSize
+    case oversize
+    case differentSize
+}

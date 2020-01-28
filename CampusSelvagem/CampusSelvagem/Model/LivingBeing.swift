@@ -9,9 +9,27 @@
 import Foundation
 import UIKit
 
-class LivingBeing {
+class LivingBeing: NSObject, NSCoding {
+    func encode(with coder: NSCoder) {
+        
+    }
     
-    enum LivingBeingClass {
+    required init?(coder: NSCoder) {
+        name = ""
+        scientificName = ""
+        beingClass = .anfibio
+        locationOnCampus  = ""
+        coordinate = (0.0, 0.0)
+        areaRadius = 0.0
+        habitatOrBiome  = ""
+        curiosity = ""
+        photos = []
+        super.init()
+    }
+    
+    
+    
+    public enum LivingBeingClass {
         case anfibio
         case ave
         case mamifero
@@ -34,7 +52,16 @@ class LivingBeing {
     var curiosity: String
     var photos: [UIImage?] = [] //trocar por url futuramente e modificar encapsulamento
     
-    init(name: String, scientificName: String, beingClass: LivingBeingClass, locationOnCampus: String, coordinate: (latitude: Double, longitude: Double), areaRadius: CGFloat, habitatOrBiome: String, curiosity: String, photos: [UIImage?]) {
+    init(name: String = "",
+         scientificName: String = "",
+         beingClass: LivingBeingClass,
+         locationOnCampus: String  = "",
+         coordinate: (latitude: Double, longitude: Double) = (0.0, 0.0),
+         areaRadius: CGFloat = 0.0,
+         habitatOrBiome: String  = "",
+         curiosity: String  = "",
+         photos: [UIImage?] = []) {
+        
         self.name = name
         self.scientificName = scientificName
         self.beingClass = beingClass

@@ -142,7 +142,10 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         super.viewDidLoad()
 
         clearAllButton.layer.cornerRadius = 15
+        clearAllButton.titleLabel?.adjustsFontForContentSizeCategory = true
+        
         submitButton.layer.cornerRadius = 15
+        submitButton.titleLabel?.adjustsFontForContentSizeCategory = true
         
         KeyboardAvoiding.avoidingView = self.constrainTextBox
         

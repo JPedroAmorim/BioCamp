@@ -46,27 +46,27 @@ class Plant: LivingBeing {
     }
     
     //MARK: NSCoding Protocol
-    func encode(with aCoder: NSCoder) {
+    override func encode(with aCoder: NSCoder) {
         aCoder.encode(super.name, forKey: PropertyKeyPlant.name)
         aCoder.encode(super.scientificName, forKey: PropertyKeyPlant.scientificName)
         aCoder.encode(super.locationOnCampus, forKey: PropertyKeyPlant.locationOnCampus)
         aCoder.encode(super.curiosity, forKey: PropertyKeyPlant.curiosity)
         aCoder.encode(super.photos, forKey: PropertyKeyPlant.photos)
-        aCoder.encode(type, forKey: PropertyKeyPlant.type)
+        aCoder.encode(type.rawValue, forKey: PropertyKeyPlant.type)
         aCoder.encode(biome, forKey: PropertyKeyPlant.biome)
     }
     
-//    required convenience init?(coder aDecoder: NSCoder) {
-//        guard let name = aDecoder.decodeObject(forKey: PropertyKeyPlant.name) as? String else { return nil}
-//        guard let scientificName = aDecoder.decodeObject(forKey: PropertyKeyPlant.scientificName) as? String else { return nil}
-//        guard let locationOnCampus = aDecoder.decodeObject(forKey: PropertyKeyPlant.locationOnCampus) as? String else { return nil}
-//        guard let curiosity = aDecoder.decodeObject(forKey: PropertyKeyPlant.curiosity) as? String else { return nil}
-//        guard let photos = aDecoder.decodeObject(forKey: PropertyKeyPlant.photos) as? [UIImage] else { return nil }
-//        guard let type = aDecoder.decodeObject(forKey: PropertyKeyPlant.type) as? PlantType else { return nil}
-//        guard let biome = aDecoder.decodeObject(forKey: PropertyKeyPlant.biome) as? String else { return nil}
-//
-//        self.init(name, scientificName, locationOnCampus, curiosity, photos, type, biome)
-//    }
+    required convenience init?(coder aDecoder: NSCoder) {
+        guard let name = aDecoder.decodeObject(forKey: PropertyKeyPlant.name) as? String else { return nil}
+        guard let scientificName = aDecoder.decodeObject(forKey: PropertyKeyPlant.scientificName) as? String else { return nil}
+        guard let locationOnCampus = aDecoder.decodeObject(forKey: PropertyKeyPlant.locationOnCampus) as? String else { return nil}
+        guard let curiosity = aDecoder.decodeObject(forKey: PropertyKeyPlant.curiosity) as? String else { return nil}
+        guard let photos = aDecoder.decodeObject(forKey: PropertyKeyPlant.photos) as? [UIImage] else { return nil }
+        guard let type = PlantType(rawValue: aDecoder.decodeObject(forKey: PropertyKeyPlant.type) as! String) else { return nil}
+        guard let biome = aDecoder.decodeObject(forKey: PropertyKeyPlant.biome) as? String else { return nil}
+
+        self.init(name, scientificName, locationOnCampus, (0.0, 0.0), areaRadius: 0.0, curiosity, photos, type, biome)
+    }
     
     //MARK: Archiving Paths
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!

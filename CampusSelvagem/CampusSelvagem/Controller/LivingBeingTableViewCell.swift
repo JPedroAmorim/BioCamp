@@ -17,6 +17,8 @@ class LivingBeingTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         photoImageView.layer.cornerRadius = photoImageView.bounds.width/2
+        nameLabel.adjustsFontForContentSizeCategory = true
+        scientificNameLabel.adjustsFontForContentSizeCategory = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
