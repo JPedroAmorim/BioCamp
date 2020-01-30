@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xgg-vH-pjd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xgg-vH-pjd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,27 +23,27 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vo-ic-n6S">
-                                <rect key="frame" x="28" y="44" width="40" height="40"/>
+                                <rect key="frame" x="28" y="44" width="44" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="2sd-o7-QCY"/>
+                                    <constraint firstAttribute="width" constant="44" id="2sd-o7-QCY"/>
                                     <constraint firstAttribute="width" secondItem="5Vo-ic-n6S" secondAttribute="height" multiplier="1:1" id="Mbz-1t-lPW"/>
                                 </constraints>
                                 <color key="tintColor" red="0.14117647059999999" green="0.54117647059999996" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button" image="filter"/>
+                                <state key="normal" image="filter"/>
                                 <connections>
                                     <action selector="filterPressed:" destination="Xgg-vH-pjd" eventType="touchUpInside" id="Kxm-ff-SLk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ca7-fF-Zyc">
-                                <rect key="frame" x="374" y="773" width="30" height="30"/>
+                                <rect key="frame" x="360" y="759" width="44" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="7SQ-co-ZGK"/>
+                                    <constraint firstAttribute="width" constant="44" id="7SQ-co-ZGK"/>
                                     <constraint firstAttribute="width" secondItem="ca7-fF-Zyc" secondAttribute="height" multiplier="1:1" id="qpp-HR-zJQ"/>
                                 </constraints>
                                 <color key="tintColor" red="0.14117647059999999" green="0.54117647059999996" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Button" image="centerOff"/>
+                                <state key="normal" image="centerOff"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

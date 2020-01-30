@@ -57,7 +57,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="1jc-x6-a7Y"/>
                                 </constraints>
-                                <state key="normal" title="Enviar" image="AceptBut">
+                                <state key="normal" image="AceptBut">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -66,7 +66,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vB-af-TD2">
                                 <rect key="frame" x="20" y="733" width="177" height="60"/>
-                                <state key="normal" title="Apagar Tudo" image="CancelBut">
+                                <state key="normal" image="CancelBut">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
