@@ -320,3 +320,20 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         self.present(alertController, animated: true, completion: nil)
     }
 }
+
+extension RegisterViewController {
+  func applyAccessibility(_ recipe: RegisterViewController) {
+    self.imageAddButtons[0].imageView!.accessibilityTraits = UIAccessibilityTraits.image
+    self.imageAddButtons[1].imageView!.accessibilityTraits = UIAccessibilityTraits.image
+    self.imageAddButtons[2].imageView!.accessibilityTraits = UIAccessibilityTraits.image
+    self.imageAddButtons[3].imageView!.accessibilityTraits = UIAccessibilityTraits.image
+    
+    self.imageDelButtons[0].imageView!.accessibilityTraits = UIAccessibilityTraits.image
+    self.imageDelButtons[1].imageView!.accessibilityTraits = UIAccessibilityTraits.image
+    self.imageDelButtons[2].imageView!.accessibilityTraits = UIAccessibilityTraits.image
+    self.imageDelButtons[3].imageView!.accessibilityTraits = UIAccessibilityTraits.image
+  }
+}
+
+
+
