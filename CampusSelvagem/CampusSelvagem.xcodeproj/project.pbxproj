@@ -20,6 +20,7 @@
 		2F0F599F230AEB23005C0F7F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F599E230AEB23005C0F7F /* SettingsViewController.swift */; };
 		2F0F59A1230AEB40005C0F7F /* EncyclopediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F59A0230AEB40005C0F7F /* EncyclopediaViewController.swift */; };
 		2F0F59A3230AEB5A005C0F7F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F59A2230AEB5A005C0F7F /* RegisterViewController.swift */; };
+		2F486E8623E309C80073F8E0 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F486E8523E309C80073F8E0 /* Details.storyboard */; };
 		2FB4C8B8230D8DD70085BAD0 /* LivingBeingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4C8B7230D8DD70085BAD0 /* LivingBeingTableViewCell.swift */; };
 		2FB4C8BA230DA52D0085BAD0 /* LivingBeingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */; };
 		2FE648F2230C1BFE000ED0D4 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE648F1230C1BFE000ED0D4 /* Animal.swift */; };
@@ -76,6 +77,7 @@
 		2F0F599E230AEB23005C0F7F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2F0F59A0230AEB40005C0F7F /* EncyclopediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyclopediaViewController.swift; sourceTree = "<group>"; };
 		2F0F59A2230AEB5A005C0F7F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2F486E8523E309C80073F8E0 /* Details.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		2FB4C8B7230D8DD70085BAD0 /* LivingBeingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingBeingTableViewCell.swift; sourceTree = "<group>"; };
 		2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingBeingViewController.swift; sourceTree = "<group>"; };
 		2FE648F1230C1BFE000ED0D4 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				2F0F5997230AE587005C0F7F /* Settings.storyboard */,
 				2F0F5964230ADC9F005C0F7F /* Main.storyboard */,
 				2F0F5995230AE530005C0F7F /* Encyclopedia.storyboard */,
+				2F486E8523E309C80073F8E0 /* Details.storyboard */,
 				D5D88C4C2316D8A10086085F /* Map.storyboard */,
 				2F0F5993230AE486005C0F7F /* Register.storyboard */,
 				2F0F596C230ADCA0005C0F7F /* LaunchScreen.storyboard */,
@@ -361,6 +364,7 @@
 				2F0F596B230ADCA0005C0F7F /* Assets.xcassets in Resources */,
 				2F0F5966230ADC9F005C0F7F /* Main.storyboard in Resources */,
 				2F0F5994230AE486005C0F7F /* Register.storyboard in Resources */,
+				2F486E8623E309C80073F8E0 /* Details.storyboard in Resources */,
 				2F0F5998230AE587005C0F7F /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
