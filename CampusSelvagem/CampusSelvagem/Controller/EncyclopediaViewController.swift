@@ -395,6 +395,8 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         cell.photoImageView.image = livingBeing.photos[0]
         cell.scientificNameLabel.text = livingBeing.scientificName
         
+        cell.configureCellVoiceOver(livingBeing)
+        
         return cell
     }
     
