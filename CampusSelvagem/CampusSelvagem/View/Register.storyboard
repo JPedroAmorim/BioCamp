@@ -114,7 +114,6 @@
                                     </button>
                                     <button opaque="NO" alpha="0.40000000000000002" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-b3-Xoc">
                                         <rect key="frame" x="38.5" y="332" width="125" height="124.5"/>
-                                        <color key="backgroundColor" red="0.74536901710000003" green="0.1998014152" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AQZ-b3-Xoc" secondAttribute="height" multiplier="1:1" id="kwF-5u-ccv"/>
                                         </constraints>

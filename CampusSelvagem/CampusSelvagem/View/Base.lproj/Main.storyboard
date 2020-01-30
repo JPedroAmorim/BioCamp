@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ucZ-7i-DKi">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ucZ-7i-DKi">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,7 +32,6 @@
                         <segue destination="9m1-oq-Df0" kind="relationship" relationship="viewControllers" id="cd2-PZ-dJf"/>
                         <segue destination="xCz-ST-BNZ" kind="relationship" relationship="viewControllers" id="gcr-cd-52a"/>
                         <segue destination="Xyc-5Z-1JO" kind="relationship" relationship="viewControllers" id="IWI-lz-aOr"/>
-                        <segue destination="ksq-yt-sZg" kind="relationship" relationship="viewControllers" id="xhx-XG-Lse"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXx-6R-sav" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,168 +68,5 @@
             </objects>
             <point key="canvasLocation" x="-386" y="-623"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="pCt-oZ-P1f">
-            <objects>
-                <viewController id="7pc-Ip-GOT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t9j-ca-H6h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créditos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JiQ-si-1pn">
-                                <rect key="frame" x="167" y="64" width="80.5" height="26.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Plus&quot; made by Minh Hoang from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tb5-kg-hBV">
-                                <rect key="frame" x="10" y="110.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Cancel&quot; made by Freepik from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvj-90-m8n">
-                                <rect key="frame" x="10" y="138.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Toucan&quot; made by Freepik from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZB-e3-fND">
-                                <rect key="frame" x="10" y="194.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Owl&quot; made by Freepik from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p92-La-vx4">
-                                <rect key="frame" x="10" y="166.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Lizard&quot; made by Twitter from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mq1-Bx-N1V">
-                                <rect key="frame" x="10" y="250.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Squirrel&quot; made by Freepik from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hu7-Uq-IWW">
-                                <rect key="frame" x="10" y="306.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Filter&quot; made by Kiranshastry from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ls9-Nx-GWx">
-                                <rect key="frame" x="10" y="334.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Bee&quot; made by Freepik from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-ca-4gi">
-                                <rect key="frame" x="10" y="222.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Flower&quot; made by Freepik from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TcP-sD-Dnj">
-                                <rect key="frame" x="10" y="278.5" width="394" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Camera&quot; made by Dave Gandy from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USp-n8-KMo">
-                                <rect key="frame" x="10" y="362.5" width="394" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Enciclopedia&quot; made by Freepik from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfK-4B-lLS">
-                                <rect key="frame" x="10" y="408.5" width="394" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Information&quot; made by Chris Veigt from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oh-8S-jhb">
-                                <rect key="frame" x="10" y="500.5" width="394" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Map pin&quot; made by Bogdan Rosu from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3O-2K-qDA">
-                                <rect key="frame" x="10" y="454.5" width="394" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="icon &quot;Settings&quot; made by Bogdan Rosu from www.flaticon.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM1-8K-N7R">
-                                <rect key="frame" x="10" y="546.5" width="394" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.30216586589813232" green="0.59046167135238647" blue="0.33721500635147095" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <constraints>
-                            <constraint firstItem="cM1-8K-N7R" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="5hc-Lf-UpP"/>
-                            <constraint firstItem="Mq1-Bx-N1V" firstAttribute="top" secondItem="ZhJ-ca-4gi" secondAttribute="bottom" constant="10" id="6JE-Ub-FGn"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="p92-La-vx4" secondAttribute="trailing" constant="10" id="7wA-8I-FsG"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="tb5-kg-hBV" secondAttribute="trailing" constant="10" id="8qB-we-OaS"/>
-                            <constraint firstItem="TcP-sD-Dnj" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="8ua-Z9-gMn"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="TcP-sD-Dnj" secondAttribute="trailing" constant="10" id="8yK-40-8Ts"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="5oh-8S-jhb" secondAttribute="trailing" constant="10" id="9L5-UH-RKx"/>
-                            <constraint firstItem="uZB-e3-fND" firstAttribute="top" secondItem="p92-La-vx4" secondAttribute="bottom" constant="10" id="9Z4-rv-tYq"/>
-                            <constraint firstItem="uZB-e3-fND" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="9zk-hW-fhr"/>
-                            <constraint firstItem="cM1-8K-N7R" firstAttribute="top" secondItem="5oh-8S-jhb" secondAttribute="bottom" constant="10" id="CYe-Zk-7ou"/>
-                            <constraint firstItem="TcP-sD-Dnj" firstAttribute="centerX" secondItem="t9j-ca-H6h" secondAttribute="centerX" id="CnD-FE-MBn"/>
-                            <constraint firstItem="V3O-2K-qDA" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="Cv2-9y-cAe"/>
-                            <constraint firstItem="ZhJ-ca-4gi" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="DoD-qL-Tyt"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="gfK-4B-lLS" secondAttribute="trailing" constant="10" id="GnJ-VJ-nL3"/>
-                            <constraint firstItem="Lvj-90-m8n" firstAttribute="top" secondItem="tb5-kg-hBV" secondAttribute="bottom" constant="10" id="IpC-cV-wJH"/>
-                            <constraint firstItem="gfK-4B-lLS" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="LZy-1Q-dHf"/>
-                            <constraint firstItem="tb5-kg-hBV" firstAttribute="centerX" secondItem="t9j-ca-H6h" secondAttribute="centerX" id="Nar-Y3-eBG"/>
-                            <constraint firstItem="V3O-2K-qDA" firstAttribute="top" secondItem="gfK-4B-lLS" secondAttribute="bottom" constant="10" id="OMn-kd-Oi2"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="Hu7-Uq-IWW" secondAttribute="trailing" constant="10" id="Ofw-Mh-Kpi"/>
-                            <constraint firstItem="5oh-8S-jhb" firstAttribute="top" secondItem="V3O-2K-qDA" secondAttribute="bottom" constant="10" id="Ou9-pk-jWI"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="Lvj-90-m8n" secondAttribute="trailing" constant="10" id="PHs-pC-8wT"/>
-                            <constraint firstItem="Hu7-Uq-IWW" firstAttribute="centerX" secondItem="t9j-ca-H6h" secondAttribute="centerX" id="PaH-fa-Xes"/>
-                            <constraint firstItem="Hu7-Uq-IWW" firstAttribute="top" secondItem="TcP-sD-Dnj" secondAttribute="bottom" constant="10" id="PbX-9R-Yxb"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="V3O-2K-qDA" secondAttribute="trailing" constant="10" id="PyH-eS-pc6"/>
-                            <constraint firstItem="Hu7-Uq-IWW" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="Qbn-d9-QVj"/>
-                            <constraint firstItem="USp-n8-KMo" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="UA1-i9-iix"/>
-                            <constraint firstItem="gfK-4B-lLS" firstAttribute="top" secondItem="USp-n8-KMo" secondAttribute="bottom" constant="10" id="Uae-gr-ra4"/>
-                            <constraint firstItem="ZhJ-ca-4gi" firstAttribute="centerX" secondItem="t9j-ca-H6h" secondAttribute="centerX" id="UoI-MY-H8J"/>
-                            <constraint firstItem="TcP-sD-Dnj" firstAttribute="top" secondItem="Mq1-Bx-N1V" secondAttribute="bottom" constant="10" id="X0f-jC-Yjg"/>
-                            <constraint firstItem="USp-n8-KMo" firstAttribute="top" secondItem="ls9-Nx-GWx" secondAttribute="bottom" constant="10" id="X9N-70-DNE"/>
-                            <constraint firstItem="tb5-kg-hBV" firstAttribute="top" secondItem="JiQ-si-1pn" secondAttribute="bottom" constant="20" id="aK0-d7-rPe"/>
-                            <constraint firstItem="ZhJ-ca-4gi" firstAttribute="top" secondItem="uZB-e3-fND" secondAttribute="bottom" constant="10" id="bA6-bb-sCm"/>
-                            <constraint firstItem="JiQ-si-1pn" firstAttribute="top" secondItem="o5f-Kn-khD" secondAttribute="top" constant="20" id="bLM-2g-Dqn"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="cM1-8K-N7R" secondAttribute="trailing" constant="10" id="dU4-Xa-o7x"/>
-                            <constraint firstItem="Lvj-90-m8n" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="ebx-oN-T1T"/>
-                            <constraint firstItem="JiQ-si-1pn" firstAttribute="centerX" secondItem="t9j-ca-H6h" secondAttribute="centerX" id="f0e-ul-7Lo"/>
-                            <constraint firstItem="Mq1-Bx-N1V" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="f9s-B6-4QA"/>
-                            <constraint firstItem="tb5-kg-hBV" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="gFE-MX-zGf"/>
-                            <constraint firstItem="Lvj-90-m8n" firstAttribute="centerX" secondItem="t9j-ca-H6h" secondAttribute="centerX" id="i8O-m1-9bD"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="ls9-Nx-GWx" secondAttribute="trailing" constant="10" id="iQh-Ka-CHa"/>
-                            <constraint firstItem="Mq1-Bx-N1V" firstAttribute="centerX" secondItem="t9j-ca-H6h" secondAttribute="centerX" id="iUb-5o-aYT"/>
-                            <constraint firstItem="5oh-8S-jhb" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="l7d-8B-1QR"/>
-                            <constraint firstItem="p92-La-vx4" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="nhA-Vu-Mwh"/>
-                            <constraint firstItem="p92-La-vx4" firstAttribute="top" secondItem="Lvj-90-m8n" secondAttribute="bottom" constant="10" id="qrJ-1b-ILa"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="uZB-e3-fND" secondAttribute="trailing" constant="10" id="t2y-Ze-cTN"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="USp-n8-KMo" secondAttribute="trailing" constant="10" id="tFN-Oi-ieB"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="Mq1-Bx-N1V" secondAttribute="trailing" constant="10" id="tRb-zS-HqF"/>
-                            <constraint firstItem="ls9-Nx-GWx" firstAttribute="top" secondItem="Hu7-Uq-IWW" secondAttribute="bottom" constant="10" id="urR-23-XUP"/>
-                            <constraint firstItem="ls9-Nx-GWx" firstAttribute="leading" secondItem="o5f-Kn-khD" secondAttribute="leading" constant="10" id="vWK-m1-eRT"/>
-                            <constraint firstItem="o5f-Kn-khD" firstAttribute="trailing" secondItem="ZhJ-ca-4gi" secondAttribute="trailing" constant="10" id="yGC-wr-sqV"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="o5f-Kn-khD"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" image="information" selectedImage="information" id="F40-pa-2wk"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bKc-pv-6Fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="465" y="-504"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="information" width="32" height="32"/>
-    </resources>
 </document>
