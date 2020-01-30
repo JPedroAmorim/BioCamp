@@ -51,7 +51,7 @@ class LivingBeingViewController: UIViewController {
         
         // End of the setup
         
-        textView.allowsEditingTextAttributes = false
+        // --- textView.allowsEditingTextAttributes = false
         
         if let animal = self.livingBeing as? Animal {
             showAnimalDetails(animal.name,
@@ -87,7 +87,7 @@ class LivingBeingViewController: UIViewController {
                     "<font face = \"sans-serif\" size=\"6\"> <b>Curiosidade</b> </font> <br>" +
                     "<font face = \"sans-serif\" size=\"5\"> \(curiosity) </font>"
         
-        textView.attributedText = text.htmlToAttributedString
+        // textView.attributedText = text.htmlToAttributedString
     }
     
     public func showPlantDetails(_ name: String, _ scientificName: String, _ locationOnCampus: String, _ curiosity: String, _ type: PlantType, _ biome: String){
@@ -102,7 +102,7 @@ class LivingBeingViewController: UIViewController {
                     "<font face = \"sans-serif\" size=\"6\"> <b>Curiosidade</b> </font> <br>" +
                     "<font face = \"sans-serif\" size=\"5\"> \(curiosity) </font>"
         
-        textView.attributedText = text.htmlToAttributedString
+        // textView.attributedText = text.htmlToAttributedString
     }
 }
 
