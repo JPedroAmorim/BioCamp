@@ -340,7 +340,7 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         do {
            try countValidate(count)
         } catch {
-            count = 1
+            print("Error in func numberOfSections(in tableView: UITableView)")
         }
         
         return count
@@ -362,7 +362,7 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         do {
            try countValidate(count)
         } catch {
-            count = 0
+            print("Error in func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)")
         }
         
         return count
@@ -394,6 +394,8 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         cell.nameLabel.text = livingBeing.name
         cell.photoImageView.image = livingBeing.photos[0]
         cell.scientificNameLabel.text = livingBeing.scientificName
+        
+        cell.configureCellVoiceOver(livingBeing)
         
         return cell
     }
