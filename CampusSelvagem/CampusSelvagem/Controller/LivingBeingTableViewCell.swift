@@ -27,4 +27,20 @@ class LivingBeingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func configureCellVoiceOver(_ livingBeing: LivingBeing){
+        // 1. Make Voice over ignore the UITextView
+        self.nameLabel.isAccessibilityElement = false
+        self.scientificNameLabel.isAccessibilityElement = false
+
+        // 2. Make Voice Over highlight this UITableViewCell as an element
+        isAccessibilityElement = true
+
+        // 3. Improve the read back by customizing the label. This should sound much nicer.
+        if let animal = livingBeing as? Animal {
+            accessibilityLabel = "Nome do animal: \(animal.name). Nome científico: \(animal.scientificName)."
+        } else if let plant = livingBeing as? Plant {
+            accessibilityLabel = "Nome da planta: \(plant.name). Nome científico: \(plant.scientificName)."
+        }
+        accessibilityHint = "Duplo toque para mais informações"
+    }
 }
