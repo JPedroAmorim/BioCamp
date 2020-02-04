@@ -92,6 +92,9 @@ class EncyclopediaViewController: UIViewController  {
         searchController.searchBar.placeholder = "Procure o Nome do Animal"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
     }
 
     //MARK: Private Methods
@@ -426,6 +429,10 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         }
         
         self.performSegue(withIdentifier: "showDetailSegue", sender: livingBeing)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        tableView.reloadData()
     }
 }
 
