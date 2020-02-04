@@ -30,7 +30,7 @@
                                     <constraint firstAttribute="width" secondItem="5Vo-ic-n6S" secondAttribute="height" multiplier="1:1" id="Mbz-1t-lPW"/>
                                 </constraints>
                                 <color key="tintColor" red="0.14117647059999999" green="0.54117647059999996" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="filter"/>
+                                <state key="normal" title="Filtar animais" image="filter"/>
                                 <connections>
                                     <action selector="filterPressed:" destination="Xgg-vH-pjd" eventType="touchUpInside" id="Kxm-ff-SLk"/>
                                 </connections>
@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="width" secondItem="ca7-fF-Zyc" secondAttribute="height" multiplier="1:1" id="qpp-HR-zJQ"/>
                                 </constraints>
                                 <color key="tintColor" red="0.14117647059999999" green="0.54117647059999996" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="centerOff"/>
+                                <state key="normal" title="Centralizar mapa" image="centerOff"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
