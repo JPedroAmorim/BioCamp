@@ -271,7 +271,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VWJ-U8-hF4"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Registrar" image="itemCamera" id="AfZ-uK-qVh"/>
+                    <tabBarItem key="tabBarItem" title="Registrar" image="itemCamera" selectedImage="itemCameraSelected" id="AfZ-uK-qVh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="clearAllButton" destination="5vB-af-TD2" id="zB6-vj-wIR"/>
@@ -304,5 +304,6 @@
         <image name="addPhoto" width="512" height="512"/>
         <image name="deletePhoto" width="512" height="512"/>
         <image name="itemCamera" width="32" height="32"/>
+        <image name="itemCameraSelected" width="32" height="32"/>
     </resources>
 </document>

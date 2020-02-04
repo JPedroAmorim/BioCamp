@@ -61,7 +61,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rxC-HM-Gnt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" image="itemMap" id="0XX-XX-PZ8"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="itemMap" selectedImage="itemMapSelected" id="0XX-XX-PZ8"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="centerBtn" destination="ca7-fF-Zyc" id="Zmg-P1-PWL"/>
@@ -214,5 +214,6 @@
         <image name="centerOff" width="512" height="512"/>
         <image name="filter" width="512" height="512"/>
         <image name="itemMap" width="32" height="32"/>
+        <image name="itemMapSelected" width="32" height="32"/>
     </resources>
 </document>

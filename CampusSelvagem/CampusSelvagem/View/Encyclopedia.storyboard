@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tUr-sT-cBJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tUr-sT-cBJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -12,7 +12,7 @@
         <scene sceneID="2WN-3a-voz">
             <objects>
                 <navigationController id="tUr-sT-cBJ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Enciclopedia" image="itemEncyclopedia" id="BkL-bb-X29"/>
+                    <tabBarItem key="tabBarItem" title="Enciclopedia" image="itemEncyclopedia" selectedImage="itemEncyclopediaSelected" id="BkL-bb-X29"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vfw-Hp-pSF">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -144,5 +144,6 @@
     </scenes>
     <resources>
         <image name="itemEncyclopedia" width="32" height="32"/>
+        <image name="itemEncyclopediaSelected" width="512" height="512"/>
     </resources>
 </document>
