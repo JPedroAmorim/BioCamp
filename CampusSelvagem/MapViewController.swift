@@ -154,7 +154,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func filterPressed(_ sender: Any) {
-        self.view.addBlurEffect()
+        self.mapView.addBlurEffect()
         self.view.addSubview(popOverFilter)
         self.popOverFilter.center = self.view.center
         self.mapView.isUserInteractionEnabled = false
@@ -163,7 +163,7 @@ class MapViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         self.filterTableView.reloadData()
-        self.view.removeBlurEffect()
+        self.mapView.removeBlurEffect()
         self.popOverFilter.removeFromSuperview()
         self.mapView.isUserInteractionEnabled = true
         self.shouldDisplayRadiusAnimation = true
@@ -176,8 +176,8 @@ class MapViewController: UIViewController {
     
     @IBAction func backPressed(_ sender: Any) {
         
-        self.view.removeBlurEffect()
-self.informationDetailView.removeFromSuperview()
+        self.mapView.removeBlurEffect()
+        self.informationDetailView.removeFromSuperview()
         self.mapView.isUserInteractionEnabled = true
     }
     
@@ -254,13 +254,13 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         
         if didPressCenterBtn && mapIsCenteredInUser {
             didPressCenterBtn = false
-            c = 1
         }
         else {
             if didPressCenterBtn == false {
@@ -268,7 +268,6 @@ extension MapViewController: MKMapViewDelegate {
                 centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
             }
         }
-        
     }
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
         if let location = locationManager.location?.coordinate {
@@ -283,7 +282,6 @@ extension MapViewController: MKMapViewDelegate {
                 centerBtnIsCentered = false
                 centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
         }
-        c = 0
     }
     
     // Pin related methods
@@ -315,9 +313,10 @@ extension MapViewController: MKMapViewDelegate {
             createPulse(annotationView: annotationView!, radius: annotation.areaRadius)
         }
         
+       
         return annotationView
     }
-    
+
     func addAnnotations() {
         mapView.removeAnnotations(mapView.annotations)
         annotationViews.removeAll()
@@ -379,7 +378,8 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: LivingBeingDelegate {
     func tapOn(species: String) {
         
-        self.view.addBlurEffect()
+        self.mapView.addBlurEffect()
+        self.mapView.isUserInteractionEnabled = false
         self.view.addSubview(informationDetailView)
         self.informationDetailView.center = self.view.center
         self.informationDetailView.layer.cornerRadius = 20
@@ -396,9 +396,7 @@ extension MapViewController: LivingBeingDelegate {
                     "<font face = \"sans-serif\" size=\"5\"> \(data.locationOnCampus) </font> <br><br>"
             informationTextView.attributedText = text.htmlToAttributedString
             informationTextView.isEditable = false
-            
         }
-        
     }
     
     func findLivingBeing(_ scientificName: String) -> LivingBeing?{
@@ -454,16 +452,19 @@ extension MapViewController: UITableViewDataSource {
 extension UIView {
     
     func addBlurEffect(){
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
-        
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.backgroundColor = .clear
+        self.isUserInteractionEnabled = false
         self.addSubview(blurEffectView)
+        print("oie")
     }
     
     /// Remove UIBlurEffect from UIView
     func removeBlurEffect() {
+        self.isUserInteractionEnabled = true
         let blurredEffectViews = self.subviews.filter{$0 is UIVisualEffectView}
         blurredEffectViews.forEach{ blurView in
             blurView.removeFromSuperview()
@@ -547,21 +548,16 @@ protocol LivingBeingDelegate: class {
 class LivingBeingView: MKAnnotationView {
     private var imageView: UIImageView!
     var species: String = ""
+    private var being: LivingBeingAnnotation
     weak var delegate: LivingBeingDelegate?
     
     override var annotation: MKAnnotation? {
         willSet {
             guard let being = newValue as? LivingBeingAnnotation else {return}
             
-//            let btn = UIButton(frame: CGRect(origin: CGPoint.zero,
-//                                                    size: CGSize(width: 30, height: 30)))
-//            btn.setBackgroundImage(UIImage(named: "menu"), for: UIControl.State())
-//            rightCalloutAccessoryView = btn
-            
-            
             self.species = being.scientificName
             
-           let btn = UIButton(type: .detailDisclosure)
+            let btn = UIButton(type: .detailDisclosure)
             btn.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
             rightCalloutAccessoryView = btn
             
@@ -581,14 +577,20 @@ class LivingBeingView: MKAnnotationView {
     
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+        self.being = annotation as! LivingBeingAnnotation
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        
+
         self.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         self.imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
         self.addSubview(self.imageView)
-        
+
         //self.imageView.layer.cornerRadius = 5.0
         self.imageView.layer.masksToBounds = true
+        let detailLabel = self.detailCalloutAccessoryView as! UILabel
+        if let str1 = self.annotation?.title , let str2 = detailLabel.text, let str3 = str1 {
+            self.accessibilityLabel = "\(self.being.beingClass.rawValue) , \(str3), \(str2)"
+            print("\(self.being.beingClass.rawValue) , \(str3), \(str2)")
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -596,6 +598,11 @@ class LivingBeingView: MKAnnotationView {
     }
     
     @objc func didTapButton(_ sender: UIButton) {
-        delegate?.tapOn(species: species)
+        self.delegate?.tapOn(species: self.species)
+    }
+    
+    override func accessibilityActivate() -> Bool {
+        self.delegate?.tapOn(species: self.species)
+        return true
     }
 }
