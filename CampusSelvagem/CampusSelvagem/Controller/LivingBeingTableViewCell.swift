@@ -20,8 +20,7 @@ class LivingBeingTableViewCell: UITableViewCell {
         nameLabel.adjustsFontForContentSizeCategory = true
         scientificNameLabel.adjustsFontForContentSizeCategory = true
         layoutIfNeeded()
-        nameLabel.font = UIFont.boldSystemFont(withTextStyle: UIFont.TextStyle.body)
-        scientificNameLabel.font = UIFont.italicSystemFont(withTextStyle: UIFont.TextStyle.body)
+//        scientificNameLabel.font = UIFont.italicSystemFont(withTextStyle: UIFont.TextStyle.subheadline)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
