@@ -154,7 +154,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func filterPressed(_ sender: Any) {
-        self.view.addBlurEffect()
+        self.mapView.addBlurEffect()
         self.view.addSubview(popOverFilter)
         self.popOverFilter.center = self.view.center
         self.mapView.isUserInteractionEnabled = false
@@ -163,7 +163,7 @@ class MapViewController: UIViewController {
     
     @IBAction func donePressed(_ sender: Any) {
         self.filterTableView.reloadData()
-        self.view.removeBlurEffect()
+        self.mapView.removeBlurEffect()
         self.popOverFilter.removeFromSuperview()
         self.mapView.isUserInteractionEnabled = true
         self.shouldDisplayRadiusAnimation = true
@@ -176,8 +176,8 @@ class MapViewController: UIViewController {
     
     @IBAction func backPressed(_ sender: Any) {
         
-        self.view.removeBlurEffect()
-self.informationDetailView.removeFromSuperview()
+        self.mapView.removeBlurEffect()
+        self.informationDetailView.removeFromSuperview()
         self.mapView.isUserInteractionEnabled = true
     }
     
@@ -254,13 +254,13 @@ extension MapViewController: CLLocationManagerDelegate {
     }
 }
 
+// MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
         
         if didPressCenterBtn && mapIsCenteredInUser {
             didPressCenterBtn = false
-            c = 1
         }
         else {
             if didPressCenterBtn == false {
@@ -268,7 +268,6 @@ extension MapViewController: MKMapViewDelegate {
                 centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
             }
         }
-        
     }
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
         if let location = locationManager.location?.coordinate {
@@ -283,7 +282,6 @@ extension MapViewController: MKMapViewDelegate {
                 centerBtnIsCentered = false
                 centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
         }
-        c = 0
     }
     
     // Pin related methods
@@ -318,7 +316,6 @@ extension MapViewController: MKMapViewDelegate {
        
         return annotationView
     }
-    
 
     func addAnnotations() {
         mapView.removeAnnotations(mapView.annotations)
@@ -381,7 +378,8 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: LivingBeingDelegate {
     func tapOn(species: String) {
         
-        self.view.addBlurEffect()
+        self.mapView.addBlurEffect()
+        self.mapView.isUserInteractionEnabled = false
         self.view.addSubview(informationDetailView)
         self.informationDetailView.center = self.view.center
         self.informationDetailView.layer.cornerRadius = 20
@@ -398,9 +396,7 @@ extension MapViewController: LivingBeingDelegate {
                     "<font face = \"sans-serif\" size=\"5\"> \(data.locationOnCampus) </font> <br><br>"
             informationTextView.attributedText = text.htmlToAttributedString
             informationTextView.isEditable = false
-            
         }
-        
     }
     
     func findLivingBeing(_ scientificName: String) -> LivingBeing?{
@@ -456,16 +452,19 @@ extension MapViewController: UITableViewDataSource {
 extension UIView {
     
     func addBlurEffect(){
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
-        
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.backgroundColor = .clear
+        self.isUserInteractionEnabled = false
         self.addSubview(blurEffectView)
+        print("oie")
     }
     
     /// Remove UIBlurEffect from UIView
     func removeBlurEffect() {
+        self.isUserInteractionEnabled = true
         let blurredEffectViews = self.subviews.filter{$0 is UIVisualEffectView}
         blurredEffectViews.forEach{ blurView in
             blurView.removeFromSuperview()
