@@ -47,6 +47,16 @@ class LivingBeingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Applying bold and italic fonts
+        lblName.font = UIFont.boldSystemFont(withTextStyle: UIFont.TextStyle.body)
+        lblScientificName.font = UIFont.boldSystemFont(withTextStyle: UIFont.TextStyle.body)
+        lblType.font = UIFont.boldSystemFont(withTextStyle: UIFont.TextStyle.body)
+        lblHabitatBiome.font = UIFont.boldSystemFont(withTextStyle: UIFont.TextStyle.body)
+        lblLocation.font = UIFont.boldSystemFont(withTextStyle: UIFont.TextStyle.body)
+        lblCuriosity.font = UIFont.boldSystemFont(withTextStyle: UIFont.TextStyle.body)
+        
+        lblScientificNameContent.font = UIFont.italicSystemFont(withTextStyle: UIFont.TextStyle.body)
+        
         // Centered Collection View pod Setup
         centeredCollectionViewFlowLayout = (centeredCollectionView.collectionViewLayout as! CenteredCollectionViewFlowLayout)
         centeredCollectionView.decelerationRate = UIScrollView.DecelerationRate.fast
