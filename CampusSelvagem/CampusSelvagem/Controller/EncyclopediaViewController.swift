@@ -95,6 +95,9 @@ class EncyclopediaViewController: UIViewController  {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
+        
+        self.tableView.sectionHeaderHeight =  UITableView.automaticDimension
+        self.tableView.estimatedSectionHeaderHeight = 25;
     }
 
     //MARK: Private Methods
