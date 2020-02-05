@@ -92,6 +92,12 @@ class EncyclopediaViewController: UIViewController  {
         searchController.searchBar.placeholder = "Procure o Nome do Animal"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
+        
+        self.tableView.sectionHeaderHeight =  UITableView.automaticDimension
+        self.tableView.estimatedSectionHeaderHeight = 25;
     }
 
     //MARK: Private Methods
@@ -340,7 +346,7 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         do {
            try countValidate(count)
         } catch {
-            count = 1
+            print("Error func numberOfSections(in tableView: UITableView)")
         }
         
         return count
@@ -362,7 +368,7 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         do {
            try countValidate(count)
         } catch {
-            count = 0
+            print("Error func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)")
         }
         
         return count
@@ -426,6 +432,10 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         }
         
         self.performSegue(withIdentifier: "showDetailSegue", sender: livingBeing)
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        tableView.reloadData()
     }
 }
 

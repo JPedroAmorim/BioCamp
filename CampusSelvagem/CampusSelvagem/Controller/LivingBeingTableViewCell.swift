@@ -19,6 +19,8 @@ class LivingBeingTableViewCell: UITableViewCell {
         photoImageView.layer.cornerRadius = photoImageView.bounds.width/2
         nameLabel.adjustsFontForContentSizeCategory = true
         scientificNameLabel.adjustsFontForContentSizeCategory = true
+        layoutIfNeeded()
+//        scientificNameLabel.font = UIFont.italicSystemFont(withTextStyle: UIFont.TextStyle.subheadline)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

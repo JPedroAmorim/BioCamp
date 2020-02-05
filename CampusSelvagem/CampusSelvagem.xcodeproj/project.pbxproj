@@ -20,6 +20,7 @@
 		2F0F599F230AEB23005C0F7F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F599E230AEB23005C0F7F /* SettingsViewController.swift */; };
 		2F0F59A1230AEB40005C0F7F /* EncyclopediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F59A0230AEB40005C0F7F /* EncyclopediaViewController.swift */; };
 		2F0F59A3230AEB5A005C0F7F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F59A2230AEB5A005C0F7F /* RegisterViewController.swift */; };
+		2F35156923EAF0F400AD0F2B /* UIFontDynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35156823EAF0F400AD0F2B /* UIFontDynamicFont.swift */; };
 		2F486E8623E309C80073F8E0 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F486E8523E309C80073F8E0 /* Details.storyboard */; };
 		2FB4C8B8230D8DD70085BAD0 /* LivingBeingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4C8B7230D8DD70085BAD0 /* LivingBeingTableViewCell.swift */; };
 		2FB4C8BA230DA52D0085BAD0 /* LivingBeingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */; };
@@ -77,6 +78,7 @@
 		2F0F599E230AEB23005C0F7F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2F0F59A0230AEB40005C0F7F /* EncyclopediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyclopediaViewController.swift; sourceTree = "<group>"; };
 		2F0F59A2230AEB5A005C0F7F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		2F35156823EAF0F400AD0F2B /* UIFontDynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontDynamicFont.swift; sourceTree = "<group>"; };
 		2F486E8523E309C80073F8E0 /* Details.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		2FB4C8B7230D8DD70085BAD0 /* LivingBeingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingBeingTableViewCell.swift; sourceTree = "<group>"; };
 		2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingBeingViewController.swift; sourceTree = "<group>"; };
@@ -159,8 +161,9 @@
 				2F0F5999230AE9F0005C0F7F /* Model */,
 				2F0F599A230AEA07005C0F7F /* View */,
 				2F0F599B230AEA28005C0F7F /* Controller */,
-				2F0F5960230ADC9F005C0F7F /* AppDelegate.swift */,
+				2F35156723EAF08400AD0F2B /* Extension */,
 				2F0F596A230ADCA0005C0F7F /* Assets.xcassets */,
+				2F0F5960230ADC9F005C0F7F /* AppDelegate.swift */,
 				D543E593231832A100A6159B /* GoogleService-Info.plist */,
 				2F0F596F230ADCA0005C0F7F /* Info.plist */,
 				2F0F5967230ADC9F005C0F7F /* CampusSelvagem.xcdatamodeld */,
@@ -224,6 +227,14 @@
 				2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2F35156723EAF08400AD0F2B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2F35156823EAF0F400AD0F2B /* UIFontDynamicFont.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		8B5E4269B7FEFA2573A01DAC /* Frameworks */ = {
@@ -477,6 +488,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FB4C8B8230D8DD70085BAD0 /* LivingBeingTableViewCell.swift in Sources */,
+				2F35156923EAF0F400AD0F2B /* UIFontDynamicFont.swift in Sources */,
 				2FB4C8BA230DA52D0085BAD0 /* LivingBeingViewController.swift in Sources */,
 				2FE648F6230C26E1000ED0D4 /* LivingBeing.swift in Sources */,
 				2F0F59A1230AEB40005C0F7F /* EncyclopediaViewController.swift in Sources */,
@@ -668,7 +680,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q3G824S699;
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
 				INFOPLIST_FILE = CampusSelvagem/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -688,7 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q3G824S699;
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
 				INFOPLIST_FILE = CampusSelvagem/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tUr-sT-cBJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tUr-sT-cBJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -38,46 +38,48 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="114" id="rHa-js-rFn" customClass="LivingBeingTableViewCell" customModule="CampusSelvagem" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="114"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TableViewCell" id="rHa-js-rFn" customClass="LivingBeingTableViewCell" customModule="CampusSelvagem" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="148.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rHa-js-rFn" id="Vqm-NN-MwJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="114"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="148.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEA-Fh-SUK" userLabel="Photo Image View">
-                                                    <rect key="frame" x="8" y="8" width="98" height="98"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="4V1-G5-3uM"/>
-                                                        <constraint firstAttribute="width" secondItem="cEA-Fh-SUK" secondAttribute="height" multiplier="1:1" id="hBQ-e4-eHh"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cD-76-dZH" userLabel="Description Label">
-                                                    <rect key="frame" x="121" y="55" width="262" height="36"/>
-                                                    <string key="text">Label
-</string>
-                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLM-0P-8YL" userLabel="Name Label">
-                                                    <rect key="frame" x="121" y="32" width="262" height="22"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="81C-hY-HfU">
+                                                    <rect key="frame" x="8" y="24" width="367" height="100.5"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cEA-Fh-SUK" userLabel="Photo Image View">
+                                                            <rect key="frame" x="0.0" y="0.5" width="100" height="100"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="100" id="4V1-G5-3uM"/>
+                                                                <constraint firstAttribute="width" secondItem="cEA-Fh-SUK" secondAttribute="height" multiplier="1:1" id="hBQ-e4-eHh"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="btA-dQ-Six">
+                                                            <rect key="frame" x="116" y="19" width="251" height="63"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yLM-0P-8YL" userLabel="Name Label">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="251" height="41"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Nome Científico" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cD-76-dZH" userLabel="Description Label">
+                                                                    <rect key="frame" x="0.0" y="45" width="251" height="18"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="6cD-76-dZH" secondAttribute="bottom" constant="23" id="1gG-s2-aoo"/>
-                                                <constraint firstAttribute="trailing" secondItem="6cD-76-dZH" secondAttribute="trailing" id="Di6-UN-TFI"/>
-                                                <constraint firstItem="yLM-0P-8YL" firstAttribute="top" secondItem="Vqm-NN-MwJ" secondAttribute="top" constant="32" id="F83-YR-sLi"/>
-                                                <constraint firstItem="6cD-76-dZH" firstAttribute="leading" secondItem="cEA-Fh-SUK" secondAttribute="trailing" constant="15" id="K7t-Fl-Sm1"/>
-                                                <constraint firstAttribute="trailing" secondItem="yLM-0P-8YL" secondAttribute="trailing" id="OQQ-6k-mqV"/>
-                                                <constraint firstAttribute="bottom" secondItem="cEA-Fh-SUK" secondAttribute="bottom" constant="8" id="Pkt-0L-Ub7"/>
-                                                <constraint firstItem="yLM-0P-8YL" firstAttribute="leading" secondItem="cEA-Fh-SUK" secondAttribute="trailing" constant="15" id="TC0-JT-GAC"/>
-                                                <constraint firstItem="cEA-Fh-SUK" firstAttribute="leading" secondItem="Vqm-NN-MwJ" secondAttribute="leading" constant="8" id="U34-qv-q0w"/>
-                                                <constraint firstItem="cEA-Fh-SUK" firstAttribute="top" secondItem="Vqm-NN-MwJ" secondAttribute="top" constant="8" id="dE4-SW-zgY"/>
-                                                <constraint firstItem="6cD-76-dZH" firstAttribute="top" secondItem="yLM-0P-8YL" secondAttribute="bottom" constant="1" id="jp8-qr-mP3"/>
+                                                <constraint firstAttribute="bottom" secondItem="81C-hY-HfU" secondAttribute="bottom" constant="24" id="FfC-ld-b5x"/>
+                                                <constraint firstItem="81C-hY-HfU" firstAttribute="leading" secondItem="Vqm-NN-MwJ" secondAttribute="leading" constant="8" id="PoU-g6-B9h"/>
+                                                <constraint firstAttribute="trailing" secondItem="81C-hY-HfU" secondAttribute="trailing" constant="8" id="bxX-BM-Fnz"/>
+                                                <constraint firstItem="81C-hY-HfU" firstAttribute="top" secondItem="Vqm-NN-MwJ" secondAttribute="top" constant="24" id="s3l-84-Zqe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -144,6 +146,6 @@
     </scenes>
     <resources>
         <image name="itemEncyclopedia" width="32" height="32"/>
-        <image name="itemEncyclopediaSelected" width="512" height="512"/>
+        <image name="itemEncyclopediaSelected" width="32" height="32"/>
     </resources>
 </document>
