@@ -29,17 +29,17 @@ class LivingBeing: NSObject, NSCoding {
     
     
     
-    public enum LivingBeingClass {
-        case anfibio
-        case ave
-        case mamifero
-        case reptil
-        case peixe
-        case inseto
-        case briofita
-        case pteridofitas
-        case angiospermas
-        case gimnospermas
+    public enum LivingBeingClass: String {
+        case anfibio = "Anfibio"
+        case ave = "Ave"
+        case mamifero = "Mmaifero"
+        case reptil = "Reptil"
+        case peixe = "Peixe"
+        case inseto = "Inseto"
+        case briofita = "Briofta"
+        case pteridofitas = "Pteridofitas"
+        case angiospermas = "Angiospermas"
+        case gimnospermas = "Gimnospermas"
     }
 
     var name: String

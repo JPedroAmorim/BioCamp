@@ -315,9 +315,11 @@ extension MapViewController: MKMapViewDelegate {
             createPulse(annotationView: annotationView!, radius: annotation.areaRadius)
         }
         
+       
         return annotationView
     }
     
+
     func addAnnotations() {
         mapView.removeAnnotations(mapView.annotations)
         annotationViews.removeAll()
@@ -547,21 +549,16 @@ protocol LivingBeingDelegate: class {
 class LivingBeingView: MKAnnotationView {
     private var imageView: UIImageView!
     var species: String = ""
+    private var being: LivingBeingAnnotation
     weak var delegate: LivingBeingDelegate?
     
     override var annotation: MKAnnotation? {
         willSet {
             guard let being = newValue as? LivingBeingAnnotation else {return}
             
-//            let btn = UIButton(frame: CGRect(origin: CGPoint.zero,
-//                                                    size: CGSize(width: 30, height: 30)))
-//            btn.setBackgroundImage(UIImage(named: "menu"), for: UIControl.State())
-//            rightCalloutAccessoryView = btn
-            
-            
             self.species = being.scientificName
             
-           let btn = UIButton(type: .detailDisclosure)
+            let btn = UIButton(type: .detailDisclosure)
             btn.addTarget(self, action: #selector(didTapButton(_:)), for: .touchUpInside)
             rightCalloutAccessoryView = btn
             
@@ -581,14 +578,20 @@ class LivingBeingView: MKAnnotationView {
     
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
+        self.being = annotation as! LivingBeingAnnotation
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
-        
+
         self.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         self.imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
         self.addSubview(self.imageView)
-        
+
         //self.imageView.layer.cornerRadius = 5.0
         self.imageView.layer.masksToBounds = true
+        let detailLabel = self.detailCalloutAccessoryView as! UILabel
+        if let str1 = self.annotation?.title , let str2 = detailLabel.text, let str3 = str1 {
+            self.accessibilityLabel = "\(self.being.beingClass.rawValue) , \(str3), \(str2)"
+            print("\(self.being.beingClass.rawValue) , \(str3), \(str2)")
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -596,6 +599,11 @@ class LivingBeingView: MKAnnotationView {
     }
     
     @objc func didTapButton(_ sender: UIButton) {
-        delegate?.tapOn(species: species)
+        self.delegate?.tapOn(species: self.species)
+    }
+    
+    override func accessibilityActivate() -> Bool {
+        self.delegate?.tapOn(species: self.species)
+        return true
     }
 }
