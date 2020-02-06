@@ -256,9 +256,7 @@ extension MapViewController: CLLocationManagerDelegate {
 
 // MARK: - MKMapViewDelegate
 extension MapViewController: MKMapViewDelegate {
-    
     func mapView(_ mapView: MKMapView, regionWillChangeAnimated animated: Bool) {
-        
         if didPressCenterBtn && mapIsCenteredInUser {
             didPressCenterBtn = false
         }
@@ -381,7 +379,38 @@ extension MapViewController: LivingBeingDelegate {
         self.mapView.addBlurEffect()
         self.mapView.isUserInteractionEnabled = false
         self.view.addSubview(informationDetailView)
-        self.informationDetailView.center = self.view.center
+        let centerXConstrain = NSLayoutConstraint(item: informationDetailView as Any,
+                                                  attribute: .centerX,
+                                                  relatedBy: .equal,
+                                                  toItem: view.safeAreaLayoutGuide,
+                                                  attribute: .centerX,
+                                                  multiplier: 1.0,
+                                                  constant: 0)
+        let centerYConstrain = NSLayoutConstraint(item: informationDetailView as Any,
+                                                  attribute: .centerY,
+                                                  relatedBy: .equal,
+                                                  toItem: view.safeAreaLayoutGuide,
+                                                  attribute: .centerY,
+                                                  multiplier: 1.0,
+                                                  constant: 0)
+        let widthConstrain = NSLayoutConstraint(item: informationDetailView as Any,
+                                                attribute: .width,
+                                                relatedBy: .equal,
+                                                toItem: view.safeAreaLayoutGuide,
+                                                attribute: .width,
+                                                multiplier: 0.8,
+                                                constant: 0)
+        let heightConstrain = NSLayoutConstraint(item: informationDetailView as Any,
+                                                 attribute: .height,
+                                                 relatedBy: .equal,
+                                                 toItem: view.safeAreaLayoutGuide,
+                                                 attribute: .height,
+                                                 multiplier: 0.8,
+                                                 constant: 0)
+        self.view.translatesAutoresizingMaskIntoConstraints = false
+        self.informationDetailView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addConstraints([centerXConstrain, centerYConstrain])
+        //self.informationDetailView.addConstraints([heightConstrain, widthConstrain])
         self.informationDetailView.layer.cornerRadius = 20
         self.mapView.isUserInteractionEnabled = false
         
