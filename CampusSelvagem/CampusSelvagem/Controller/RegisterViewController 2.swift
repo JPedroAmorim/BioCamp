@@ -160,9 +160,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         locationTextBox.text = ""
     }
     
-    
-    
-//    Galery and camera functions
     func openCamera() {
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
