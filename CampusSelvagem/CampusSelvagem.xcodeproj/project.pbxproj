@@ -21,6 +21,8 @@
 		2F0F59A1230AEB40005C0F7F /* EncyclopediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F59A0230AEB40005C0F7F /* EncyclopediaViewController.swift */; };
 		2F0F59A3230AEB5A005C0F7F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F59A2230AEB5A005C0F7F /* RegisterViewController.swift */; };
 		2F35156923EAF0F400AD0F2B /* UIFontDynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35156823EAF0F400AD0F2B /* UIFontDynamicFont.swift */; };
+		2F35156B23EB2AF400AD0F2B /* UILabelDynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35156A23EB2AF400AD0F2B /* UILabelDynamicFont.swift */; };
+		2F35156E23EB367100AD0F2B /* UIButtonDynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35156D23EB367100AD0F2B /* UIButtonDynamicFont.swift */; };
 		2F486E8623E309C80073F8E0 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F486E8523E309C80073F8E0 /* Details.storyboard */; };
 		2FB4C8B8230D8DD70085BAD0 /* LivingBeingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4C8B7230D8DD70085BAD0 /* LivingBeingTableViewCell.swift */; };
 		2FB4C8BA230DA52D0085BAD0 /* LivingBeingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */; };
@@ -79,6 +81,8 @@
 		2F0F59A0230AEB40005C0F7F /* EncyclopediaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncyclopediaViewController.swift; sourceTree = "<group>"; };
 		2F0F59A2230AEB5A005C0F7F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		2F35156823EAF0F400AD0F2B /* UIFontDynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontDynamicFont.swift; sourceTree = "<group>"; };
+		2F35156A23EB2AF400AD0F2B /* UILabelDynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDynamicFont.swift; sourceTree = "<group>"; };
+		2F35156D23EB367100AD0F2B /* UIButtonDynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonDynamicFont.swift; sourceTree = "<group>"; };
 		2F486E8523E309C80073F8E0 /* Details.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		2FB4C8B7230D8DD70085BAD0 /* LivingBeingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingBeingTableViewCell.swift; sourceTree = "<group>"; };
 		2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingBeingViewController.swift; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 			isa = PBXGroup;
 			children = (
 				2F35156823EAF0F400AD0F2B /* UIFontDynamicFont.swift */,
+				2F35156A23EB2AF400AD0F2B /* UILabelDynamicFont.swift */,
+				2F35156D23EB367100AD0F2B /* UIButtonDynamicFont.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -491,11 +497,13 @@
 				2F35156923EAF0F400AD0F2B /* UIFontDynamicFont.swift in Sources */,
 				2FB4C8BA230DA52D0085BAD0 /* LivingBeingViewController.swift in Sources */,
 				2FE648F6230C26E1000ED0D4 /* LivingBeing.swift in Sources */,
+				2F35156E23EB367100AD0F2B /* UIButtonDynamicFont.swift in Sources */,
 				2F0F59A1230AEB40005C0F7F /* EncyclopediaViewController.swift in Sources */,
 				D552992A23142DDE00BC456E /* CenteredCollectionViewCell.swift in Sources */,
 				4FE95D922316F4D400EF80CB /* MVPData.swift in Sources */,
 				2F0F5969230ADC9F005C0F7F /* CampusSelvagem.xcdatamodeld in Sources */,
 				2F0F59A3230AEB5A005C0F7F /* RegisterViewController.swift in Sources */,
+				2F35156B23EB2AF400AD0F2B /* UILabelDynamicFont.swift in Sources */,
 				D52B21122316D4E200D24A27 /* FilterTableViewCell.swift in Sources */,
 				2FE648F2230C1BFE000ED0D4 /* Animal.swift in Sources */,
 				D52B21162316D50500D24A27 /* KeyboardAvoiding.swift in Sources */,
