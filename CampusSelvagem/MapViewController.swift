@@ -23,10 +23,14 @@ class MapViewController: UIViewController {
     // PopOver View Outlets
     @IBOutlet weak var filterTableView: UITableView!
     @IBOutlet var popOverFilter: UIView!
+    @IBOutlet var disableAnimationsView: UIView!
     @IBOutlet weak var popOverSegmentedControl: UISegmentedControl!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var exitInfo: UIButton!
-    
+    @IBOutlet weak var isAnimationEnabledSwitch: UISwitch!
+    @IBOutlet weak var animationSwitch: UISwitch!
+    @IBOutlet weak var animationEnabledButton: UIButton!
+
     // Variables and constants
     var centerBtnIsCentered: Bool = false
     var didPressCenterBtn = false
@@ -123,14 +127,9 @@ class MapViewController: UIViewController {
         self.filterBtn.layer.cornerRadius = 0.5 * filterBtn.bounds.size.width
         self.centerBtn.layer.cornerRadius = 0.5 * centerBtn.bounds.size.width
         
-        //mapView.register(LivingBeingView.self,
-                         //forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         checkLocationServices()
         addAnnotations()
         centerBtn.addTarget(self, action: #selector(centerBtnAction), for: .touchUpInside)
-        
-        print("####")
-        //print(MVP)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -152,21 +151,48 @@ class MapViewController: UIViewController {
             
         }
     }
+    @IBAction func animationSetupPressed(_ sender: UIButton) {
+        guard sender.tag == 1 else { return }
+        self.view.addBlurEffect()
+        self.view.addSubview(disableAnimationsView)
+        self.disableAnimationsView.center  = self.view.center
+        self.mapView.isUserInteractionEnabled  = false
+    }
     
-    @IBAction func filterPressed(_ sender: Any) {
-        self.mapView.addBlurEffect()
+    @IBAction func animationEnabledPressed(_ sender: UIButton) {
+        guard sender.tag == 2 else { return }
+        self.view.removeBlurEffect()
+        self.disableAnimationsView.removeFromSuperview()
+        self.mapView.isUserInteractionEnabled = true
+        if !self.animationSwitch.isOn {
+                   self.shouldDisplayRadiusAnimation = false
+                   addAnnotations()
+               } else {
+                   self.shouldDisplayRadiusAnimation = true
+               }
+    }
+    
+    
+    @IBAction func filterPressed(_ sender: UIButton) {
+        guard sender.tag == 0 else { return }
+        self.view.addBlurEffect()
         self.view.addSubview(popOverFilter)
         self.popOverFilter.center = self.view.center
         self.mapView.isUserInteractionEnabled = false
     }
     
     
-    @IBAction func donePressed(_ sender: Any) {
+    @IBAction func donePressed(_ sender: UIButton) {
+        guard sender.tag == 3 else { return }
         self.filterTableView.reloadData()
         self.mapView.removeBlurEffect()
         self.popOverFilter.removeFromSuperview()
         self.mapView.isUserInteractionEnabled = true
-        self.shouldDisplayRadiusAnimation = true
+        if !self.animationSwitch.isOn {
+            self.shouldDisplayRadiusAnimation = false
+        } else {
+            self.shouldDisplayRadiusAnimation = true
+        }
         addAnnotations()
     }
     
@@ -292,9 +318,7 @@ extension MapViewController: MKMapViewDelegate {
         let identifier = "Annotation"
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
-        for sublayer in annotationView?.layer.sublayers  ?? [] where sublayer is CAShapeLayer {
-            sublayer.removeFromSuperlayer()
-        }
+        self.removePulse(annotationView ?? UIView())
         
         if annotationView == nil {
             annotationView = LivingBeingView(annotation: annotation, reuseIdentifier: identifier)
@@ -324,6 +348,12 @@ extension MapViewController: MKMapViewDelegate {
             if livingBeingClassData[being.beingClass]?.isOn ?? false {
                 mapView.addAnnotation(being)
             }
+        }
+    }
+    
+    func removePulse(_ view: UIView) {
+        for sublayer in view.layer.sublayers  ?? [] where sublayer is CAShapeLayer {
+            sublayer.removeFromSuperlayer()
         }
     }
     
@@ -462,7 +492,7 @@ extension UIView {
         print("oie")
     }
     
-    /// Remove UIBlurEffect from UIView
+    // Remove UIBlurEffect from UIView
     func removeBlurEffect() {
         self.isUserInteractionEnabled = true
         let blurredEffectViews = self.subviews.filter{$0 is UIVisualEffectView}
