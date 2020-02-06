@@ -42,6 +42,7 @@ class LivingBeingViewController: UIViewController {
     @IBOutlet weak var curiosityView: UIView!
     @IBOutlet weak var lblCuriosity: UILabel!
     @IBOutlet weak var lblCuriosityContent: UILabel!
+    @IBOutlet weak var stackView: UIStackView!
     
     // MARK: - LifeCycle Methods
     override func viewDidLoad() {
@@ -80,6 +81,13 @@ class LivingBeingViewController: UIViewController {
         self.lblLocationContent.text = self.livingBeing?.locationOnCampus
         self.lblCuriosityContent.text = self.livingBeing?.curiosity
         
+        if UIApplication.shared.statusBarOrientation.isLandscape {
+            self.stackView.axis = .horizontal
+        } else {
+            self.stackView.axis = .vertical
+            
+        }
+        
         setupAccessibility()
     }
     
@@ -104,6 +112,18 @@ class LivingBeingViewController: UIViewController {
         
         curiosityView.isAccessibilityElement = true
         curiosityView.accessibilityLabel = "\(lblCuriosity.text!), \(lblCuriosityContent.text!)"
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        print("pse")
+        coordinator.animate(alongsideTransition: { context in
+            if UIApplication.shared.statusBarOrientation.isLandscape {
+                self.stackView.axis = .horizontal
+            } else {
+                self.stackView.axis = .vertical
+                
+            }
+        })
     }
 }
 
