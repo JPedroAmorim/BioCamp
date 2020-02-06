@@ -12,42 +12,29 @@ import Foundation
 import Firebase
 import Photos
 import FirebaseAuth
-//import FIRStorage
 
 class RegisterViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate {
-
+    
+    // MARK: - Variables
     var imagePicker: UIImagePickerController!
     var imageViewInUse = 0
     var timerAdv: Timer! = nil
+    var elements = [UIAccessibilityElement]()
+    
+    // MARK: - IBOutlets
+    @IBOutlet weak var areaView: UIView!
+    @IBOutlet var mainView: KeyboardDismissingView!
     @IBOutlet var imagesGalery: [UIImageView]!
     @IBOutlet var imageAddButtons: [UIButton]!
     @IBOutlet var imageDelButtons: [UIButton]!
     @IBOutlet weak var clearAllButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
-    
     @IBOutlet weak var constrainTextBox: UIView!
     @IBOutlet weak var nameTextBox: UITextField!
     @IBOutlet weak var locationTextBox: UITextField!
+    
+    // MARK: - IBActions
     @IBAction func confirmButton(_ sender: Any) {
-        
-//        uopdate to dataBase, final project update the dates together pictures
-//        let messagesDB = Database.database().reference().child("Messages")
-//
-//        let messageDictionary : NSDictionary = ["Name" : "\(String(describing: nameTextBox.text!))",
-//                                                "Location" : "\(String(describing: locationTextBox.text!))",
-//                                                "Image" : "testandooo"]
-//        messagesDB.childByAutoId().setValue(messageDictionary) {
-//            (error, ref) in
-//            if error != nil {
-//                print(error!)
-//            }
-//            else {
-//                print("Message saved successfully!")
-//            }
-//        }
-//        else {
-//            advertence()
-//        }
         if(imageViewInUse < 1) {
             if(timerAdv != nil) {
                 timerAdv.invalidate()
@@ -82,11 +69,14 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             imageViewInUse -= 1
             imageAddButtons[imageViewInUse].alpha = 0.4
             imageDelButtons[imageViewInUse].alpha = 0
+            
+            for button in imageDelButtons {
+                button.isAccessibilityElement = false
+            }
         }
     }
     
     @IBAction func TakePhoto(_ sender: Any) {
-
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
         let deleteAction = UIAlertAction(title: "Abrir Câmera", style: .default, handler: { (action) -> Void in
@@ -105,8 +95,53 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         self.present(optionMenu, animated: true, completion: nil)
     }
     
-     func clearAll() {
+    @IBAction func clearInformations(_ sender: Any) {
+           let refreshAlert = UIAlertController(title: "Deseja apagar tudo?", message: "Todos os dados serão perdidos", preferredStyle: UIAlertController.Style.alert)
+           
+           refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+               self.clearAll()
+           }))
+           
+           refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+               print("Cancel Logic pressed")
+           }))
+           
+           present(refreshAlert, animated: true, completion: nil)
+       }
+       
+    // MARK: - Lifecycle methods
+       override func viewDidLoad() {
+           super.viewDidLoad()
+
+           clearAllButton.layer.cornerRadius = 15
+           clearAllButton.titleLabel?.adjustsFontForContentSizeCategory = true
+           
+           submitButton.layer.cornerRadius = 15
+           submitButton.titleLabel?.adjustsFontForContentSizeCategory = true
+           
+           KeyboardAvoiding.avoidingView = self.constrainTextBox
+           
+           for n in 0...3 {
+               imagesGalery[n].image = nil
+           }
+           
+           for n in 0...3 {
+               imageDelButtons[n].alpha = 0
+               imageDelButtons[n].isAccessibilityElement = true
+           }
         
+           
+          
+       }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+         acessibilitySetup()
+    }
+    
+    // MARK: - Helper methods
+     func clearAll() {
         for n in 0...3 {
             imagesGalery[n].image = nil
         }
@@ -117,6 +152,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         for n in 0...3 {
             imageDelButtons[n].alpha = 0
+            imageDelButtons[n].isAccessibilityElement = false
         }
         imageViewInUse = 0
         
@@ -124,43 +160,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         locationTextBox.text = ""
     }
     
-    @IBAction func clearInformations(_ sender: Any) {
-        let refreshAlert = UIAlertController(title: "Deseja apagar tudo?", message: "Todos os dados serão perdidos", preferredStyle: UIAlertController.Style.alert)
-        
-        refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
-            self.clearAll()
-        }))
-        
-        refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
-            print("Cancel Logic pressed")
-        }))
-        
-        present(refreshAlert, animated: true, completion: nil)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        clearAllButton.layer.cornerRadius = 15
-        clearAllButton.titleLabel?.adjustsFontForContentSizeCategory = true
-        
-        submitButton.layer.cornerRadius = 15
-        submitButton.titleLabel?.adjustsFontForContentSizeCategory = true
-        
-        KeyboardAvoiding.avoidingView = self.constrainTextBox
-        
-        for n in 0...3 {
-            imagesGalery[n].image = nil
-        }
-        
-        for n in 0...3 {
-            imageDelButtons[n].alpha = 0
-        }
-    }
-    
-//    Galery and camera functions
     func openCamera() {
-        
         imagePicker =  UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
@@ -192,12 +192,13 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         imageAddButtons[imageViewInUse].alpha = 0
         imageDelButtons[imageViewInUse].alpha = 0.4
+        imageDelButtons[imageViewInUse].isAccessibilityElement = true
+        imageDelButtons[imageViewInUse].accessibilityLabel = "Deletar imagem"
         imageViewInUse += 1
         imagePicker.dismiss(animated: true, completion: nil)
     }
     
     func cropToBounds(image: UIImage, portraitOrientation: Bool) -> UIImage {
-        
         let cgimage = image.cgImage!
         let contextImage: UIImage = UIImage(cgImage: cgimage)
         let contextSize: CGSize = contextImage.size
@@ -306,6 +307,13 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             contTimer += 1
             
             if(contTimer == 4) {
+                let refreshAlert = UIAlertController(title: "Erro", message: "É necessário adicionar ao menos uma imagem!", preferredStyle: UIAlertController.Style.alert)
+                
+                refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
+                }))
+                
+                self.present(refreshAlert, animated: true, completion: nil)
+                
                 self.timerAdv.invalidate()
                 self.timerAdv = nil
             }
@@ -318,6 +326,27 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         alertController.addAction(UIAlertAction(title: "OK", style: .default))
         
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: - Acessibility-related methods
+    
+    func acessibilitySetup() {
+        // Add image area setup
+        for i in 0...3 {
+            let groupedElement = UIAccessibilityElement(accessibilityContainer: self)
+            groupedElement.accessibilityLabel = "Adicionar imagem"
+            groupedElement.accessibilityHint = "Duplo toque para adicionar imagem"
+            groupedElement.accessibilityFrameInContainerSpace = imagesGalery[i].frame
+            elements.append(groupedElement)
+        }
+        self.areaView.accessibilityElements = elements
+        
+        // Button setup
+        self.submitButton.isAccessibilityElement = true
+        self.submitButton.accessibilityLabel = "Enviar"
+        self.clearAllButton.isAccessibilityElement = true
+        self.clearAllButton.accessibilityLabel = "Apagar tudo"
     }
 }
 

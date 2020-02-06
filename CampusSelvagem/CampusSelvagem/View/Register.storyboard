@@ -94,6 +94,9 @@
                                     </imageView>
                                     <button opaque="NO" alpha="0.45000000000000001" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hs-9y-CDB">
                                         <rect key="frame" x="38.5" y="72.5" width="125" height="124.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6hs-9y-CDB" secondAttribute="height" multiplier="1:1" id="ccW-ns-qIs"/>
                                         </constraints>
@@ -104,6 +107,9 @@
                                     </button>
                                     <button opaque="NO" alpha="0.40000000000000002" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-1R-vJv">
                                         <rect key="frame" x="230.5" y="332" width="125" height="124.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WMh-1R-vJv" secondAttribute="height" multiplier="1:1" id="ro0-yO-Fjz"/>
                                         </constraints>
@@ -114,6 +120,9 @@
                                     </button>
                                     <button opaque="NO" alpha="0.40000000000000002" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-b3-Xoc">
                                         <rect key="frame" x="38.5" y="332" width="125" height="124.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AQZ-b3-Xoc" secondAttribute="height" multiplier="1:1" id="kwF-5u-ccv"/>
                                         </constraints>
@@ -128,6 +137,9 @@
                                     </imageView>
                                     <button opaque="NO" alpha="0.40000000000000002" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH2-3b-Os9">
                                         <rect key="frame" x="230.5" y="72.5" width="125" height="124.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UH2-3b-Os9" secondAttribute="height" multiplier="1:1" id="LKJ-Q9-jjz"/>
                                         </constraints>
@@ -231,12 +243,18 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enviar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aea-ov-SNO">
                                 <rect key="frame" x="217" y="752.5" width="177" height="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apagar tudo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0X5-ST-mNr">
                                 <rect key="frame" x="20" y="752.5" width="177" height="21"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -274,9 +292,11 @@
                     <tabBarItem key="tabBarItem" title="Registrar" image="itemCamera" id="AfZ-uK-qVh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="areaView" destination="P5Q-vv-MVN" id="rbz-fL-2UQ"/>
                         <outlet property="clearAllButton" destination="5vB-af-TD2" id="zB6-vj-wIR"/>
                         <outlet property="constrainTextBox" destination="2UC-qM-aFw" id="Hi1-Kn-SjT"/>
                         <outlet property="locationTextBox" destination="OB0-CD-44h" id="Lwc-Gd-Vka"/>
+                        <outlet property="mainView" destination="bda-jy-9dq" id="fh8-TH-gqw"/>
                         <outlet property="nameTextBox" destination="MCX-wN-tgZ" id="D5k-gY-KUk"/>
                         <outlet property="submitButton" destination="mbB-zD-NbC" id="tc7-NQ-5zc"/>
                         <outletCollection property="imageAddButtons" destination="6hs-9y-CDB" collectionClass="NSMutableArray" id="p7N-ke-ozC"/>

@@ -16,7 +16,6 @@ class LivingBeingViewController: UIViewController {
     var pages: [UIImageView] = []
     
     //MARK: Outlets
-    
     @IBOutlet weak var centeredCollectionView: UICollectionView!
     @IBOutlet weak var textView: UITextView!
 
