@@ -76,7 +76,7 @@ class Animal: LivingBeing {
         guard let locationOnCampus = aDecoder.decodeObject(forKey: PropertyKeyAnimal.locationOnCampus) as? String else { return nil}
         guard let curiosity = aDecoder.decodeObject(forKey: PropertyKeyAnimal.curiosity) as? String else { return nil}
         guard let photos = aDecoder.decodeObject(forKey: PropertyKeyAnimal.photos) as? [UIImage] else { return nil }
-        guard let type =  AnimalType(rawValue: aDecoder.decodeObject(forKey: PropertyKeyAnimal.type) as! String) else { return nil}
+        guard let type =  AnimalType(rawValue: aDecoder.decodeObject(forKey: PropertyKeyAnimal.type) as! String) else { return nil }
         guard let habitat = aDecoder.decodeObject(forKey: PropertyKeyAnimal.habitat) as? String else { return nil}
         let coordinate = (0.0, 0.0)
         self.init(name, scientificName, locationOnCampus, coordinate, curiosity, photos, type, habitat)
