@@ -156,6 +156,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         for n in 0...3 {
             imageDelButtons[n].alpha = 0
         }
+        
+        let font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        
+        self.submitButton.dynamicFont = font
+        self.clearAllButton.dynamicFont = font
     }
     
 //    Galery and camera functions
