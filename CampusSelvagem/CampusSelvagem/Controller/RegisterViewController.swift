@@ -19,35 +19,24 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     var imagePicker: UIImagePickerController!
     var imageViewInUse = 0
     var timerAdv: Timer! = nil
+    
+    var clearAllTitle = ""
+    var clearAllMsg = ""
+    var cancelLabel = ""
+    
     @IBOutlet var imagesGalery: [UIImageView]!
     @IBOutlet var imageAddButtons: [UIButton]!
     @IBOutlet var imageDelButtons: [UIButton]!
     @IBOutlet weak var clearAllButton: UIButton!
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var submitLabel: UILabel!
+    @IBOutlet weak var clearAllLabel: UILabel!
     
     @IBOutlet weak var constrainTextBox: UIView!
     @IBOutlet weak var nameTextBox: UITextField!
     @IBOutlet weak var locationTextBox: UITextField!
     @IBAction func confirmButton(_ sender: Any) {
         
-//        uopdate to dataBase, final project update the dates together pictures
-//        let messagesDB = Database.database().reference().child("Messages")
-//
-//        let messageDictionary : NSDictionary = ["Name" : "\(String(describing: nameTextBox.text!))",
-//                                                "Location" : "\(String(describing: locationTextBox.text!))",
-//                                                "Image" : "testandooo"]
-//        messagesDB.childByAutoId().setValue(messageDictionary) {
-//            (error, ref) in
-//            if error != nil {
-//                print(error!)
-//            }
-//            else {
-//                print("Message saved successfully!")
-//            }
-//        }
-//        else {
-//            advertence()
-//        }
         if(imageViewInUse < 1) {
             if(timerAdv != nil) {
                 timerAdv.invalidate()
@@ -65,7 +54,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                 self.clearAll()
             }))
             
-            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+            refreshAlert.addAction(UIAlertAction(title: cancelLabel, style: .cancel, handler: { (action: UIAlertAction!) in
                 print("Cancel Logic pressed")
             }))
             
@@ -80,7 +69,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             }
             
             imageViewInUse -= 1
-            imageAddButtons[imageViewInUse].alpha = 0.4
+            imageAddButtons[imageViewInUse].alpha = 1
             imageDelButtons[imageViewInUse].alpha = 0
         }
     }
@@ -112,7 +101,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         }
         
         for n in 0...3 {
-            imageAddButtons[n].alpha = 0.4
+            imageAddButtons[n].alpha = 1
         }
         
         for n in 0...3 {
@@ -125,13 +114,13 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     @IBAction func clearInformations(_ sender: Any) {
-        let refreshAlert = UIAlertController(title: "Deseja apagar tudo?", message: "Todos os dados serão perdidos", preferredStyle: UIAlertController.Style.alert)
+        let refreshAlert = UIAlertController(title: clearAllTitle, message: clearAllMsg, preferredStyle: UIAlertController.Style.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
             self.clearAll()
         }))
         
-        refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+        refreshAlert.addAction(UIAlertAction(title: cancelLabel, style: .cancel, handler: { (action: UIAlertAction!) in
             print("Cancel Logic pressed")
         }))
         
@@ -156,6 +145,15 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         for n in 0...3 {
             imageDelButtons[n].alpha = 0
         }
+        
+//        Localizable.strings
+        submitLabel.text = NSLocalizedString("Send", comment: "")
+        clearAllLabel.text = NSLocalizedString("Clear All", comment: "")
+        nameTextBox.placeholder = NSLocalizedString("Animal name", comment: "")
+        locationTextBox.placeholder = NSLocalizedString("Place", comment: "")
+        clearAllTitle = NSLocalizedString("Deseja apagar tudo?", comment: "")
+        clearAllMsg = NSLocalizedString("Todos os dados serão perdidos", comment: "")
+        cancelLabel = NSLocalizedString("Cancel", comment: "")
     }
     
 //    Galery and camera functions
@@ -191,7 +189,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         
         imageAddButtons[imageViewInUse].alpha = 0
-        imageDelButtons[imageViewInUse].alpha = 0.4
+        imageDelButtons[imageViewInUse].alpha = 1
         imageViewInUse += 1
         imagePicker.dismiss(animated: true, completion: nil)
     }

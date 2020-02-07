@@ -5,3 +5,34 @@
   Created by Joao Flores on 06/02/20.
   Copyright © 2020 Felipe Semissatto. All rights reserved.
 */
+
+// INGLES = PORTUGUES
+
+// Register
+"Send" = "Enviar";
+"Clear All"= "Apagar tudo";
+"Animal name" = "Nome do ser vivo";
+"Place"= "Local";
+
+"Deseja apagar tudo?" = "Deseja apagar tudo?"
+"Todos os dados serão perdidos" = "Todos os dados serão perdidos"
+"Cancel" = "Cancel"
+
+// Map
+"Animals" = "Animais";
+"Plants" = "Plantas";
+"OK" = "Pronto";
+
+"Ave" = "Ave";
+"Mamifero" = "Mamifero";
+"Reptil" = "Reptil";
+"Peixe" = "Peixe";
+"Inseto" = "Inseto";
+"Briofitas" = "Briofitas";
+"Pteridofitas" = "Pteridofitas";
+"Angiospermas" = "Angiospermas";
+"Gimnospermas" = "Gimnospermas";
+
+
+
+

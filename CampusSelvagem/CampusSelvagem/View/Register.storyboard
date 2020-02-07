@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yyR-Ls-Iiy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -92,7 +91,7 @@
                                         <rect key="frame" x="202" y="269.5" width="182" height="249.5"/>
                                         <color key="backgroundColor" red="0.79206997160000003" green="0.79220694300000005" blue="0.79206126929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <button opaque="NO" alpha="0.45000000000000001" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hs-9y-CDB">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hs-9y-CDB">
                                         <rect key="frame" x="38.5" y="72.5" width="125" height="124.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="6hs-9y-CDB" secondAttribute="height" multiplier="1:1" id="ccW-ns-qIs"/>
@@ -102,7 +101,7 @@
                                             <action selector="TakePhoto:" destination="yyR-Ls-Iiy" eventType="touchUpInside" id="E2s-Ep-f98"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.40000000000000002" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-1R-vJv">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WMh-1R-vJv">
                                         <rect key="frame" x="230.5" y="332" width="125" height="124.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="WMh-1R-vJv" secondAttribute="height" multiplier="1:1" id="ro0-yO-Fjz"/>
@@ -112,7 +111,7 @@
                                             <action selector="TakePhoto:" destination="yyR-Ls-Iiy" eventType="touchUpInside" id="hS9-T0-MFb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.40000000000000002" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-b3-Xoc">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AQZ-b3-Xoc">
                                         <rect key="frame" x="38.5" y="332" width="125" height="124.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="AQZ-b3-Xoc" secondAttribute="height" multiplier="1:1" id="kwF-5u-ccv"/>
@@ -126,7 +125,7 @@
                                         <rect key="frame" x="202" y="10" width="182" height="249.5"/>
                                         <color key="backgroundColor" red="0.79206997160000003" green="0.79220694300000005" blue="0.79206126929999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </imageView>
-                                    <button opaque="NO" alpha="0.40000000000000002" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH2-3b-Os9">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UH2-3b-Os9">
                                         <rect key="frame" x="230.5" y="72.5" width="125" height="124.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="UH2-3b-Os9" secondAttribute="height" multiplier="1:1" id="LKJ-Q9-jjz"/>
@@ -136,7 +135,7 @@
                                             <action selector="TakePhoto:" destination="yyR-Ls-Iiy" eventType="touchUpInside" id="9rj-zx-XPB"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.40000000000000002" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjf-n3-GYk">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vjf-n3-GYk">
                                         <rect key="frame" x="341.5" y="15" width="37.5" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vjf-n3-GYk" secondAttribute="height" multiplier="1:1" id="heG-hq-fkP"/>
@@ -146,7 +145,7 @@
                                             <action selector="deleteButton:" destination="yyR-Ls-Iiy" eventType="touchUpInside" id="dUl-xH-EOE"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.40000000000000002" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-rl-A29">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaP-rl-A29">
                                         <rect key="frame" x="341.5" y="274.5" width="37.5" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="NaP-rl-A29" secondAttribute="height" multiplier="1:1" id="89I-PW-z7g"/>
@@ -156,7 +155,7 @@
                                             <action selector="deleteButton:" destination="yyR-Ls-Iiy" eventType="touchUpInside" id="Yke-0z-IRV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.40000000000000002" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFw-uM-b1O">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yFw-uM-b1O">
                                         <rect key="frame" x="149.5" y="274.5" width="37.5" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="yFw-uM-b1O" secondAttribute="height" multiplier="1:1" id="Dea-sV-BVz"/>
@@ -166,7 +165,7 @@
                                             <action selector="deleteButton:" destination="yyR-Ls-Iiy" eventType="touchUpInside" id="V0e-a3-zgd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLu-Vt-M8M">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLu-Vt-M8M">
                                         <rect key="frame" x="149.5" y="15" width="37.5" height="37.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="sLu-Vt-M8M" secondAttribute="height" multiplier="1:1" id="DDm-lj-Ia8"/>
@@ -275,10 +274,12 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="clearAllButton" destination="5vB-af-TD2" id="zB6-vj-wIR"/>
+                        <outlet property="clearAllLabel" destination="0X5-ST-mNr" id="NFL-Fh-vwG"/>
                         <outlet property="constrainTextBox" destination="2UC-qM-aFw" id="Hi1-Kn-SjT"/>
                         <outlet property="locationTextBox" destination="OB0-CD-44h" id="Lwc-Gd-Vka"/>
                         <outlet property="nameTextBox" destination="MCX-wN-tgZ" id="D5k-gY-KUk"/>
                         <outlet property="submitButton" destination="mbB-zD-NbC" id="tc7-NQ-5zc"/>
+                        <outlet property="submitLabel" destination="Aea-ov-SNO" id="3At-pY-tIu"/>
                         <outletCollection property="imageAddButtons" destination="6hs-9y-CDB" collectionClass="NSMutableArray" id="p7N-ke-ozC"/>
                         <outletCollection property="imageAddButtons" destination="UH2-3b-Os9" collectionClass="NSMutableArray" id="f5K-cz-uwW"/>
                         <outletCollection property="imageAddButtons" destination="AQZ-b3-Xoc" collectionClass="NSMutableArray" id="Rav-bN-dCg"/>

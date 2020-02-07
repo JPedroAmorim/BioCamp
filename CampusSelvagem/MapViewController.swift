@@ -58,16 +58,17 @@ class MapViewController: UIViewController {
         case animal
     }
     
-    var livingBeingClassData = [LivingBeing.LivingBeingClass.anfibio: LivingBeingClassAttributes(nome: "Anfibio", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.ave: LivingBeingClassAttributes(nome: "Ave", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.mamifero: LivingBeingClassAttributes(nome: "Mamifero", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.reptil: LivingBeingClassAttributes(nome: "Reptil", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.peixe: LivingBeingClassAttributes(nome: "Peixe", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.inseto: LivingBeingClassAttributes(nome: "Inseto", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.briofita: LivingBeingClassAttributes(nome: "Briofitas", isOn: true, beingKingdom: .planta),
-                                LivingBeing.LivingBeingClass.pteridofitas: LivingBeingClassAttributes(nome: "Pteridofitas", isOn: true, beingKingdom: .planta),
-                                LivingBeing.LivingBeingClass.angiospermas: LivingBeingClassAttributes(nome: "Angiospermas", isOn: true, beingKingdom: .planta),
-                                LivingBeing.LivingBeingClass.gimnospermas: LivingBeingClassAttributes(nome: "Gimnospermas", isOn: true, beingKingdom: .planta)]
+//  Localizable.strings
+    var livingBeingClassData = [LivingBeing.LivingBeingClass.anfibio: LivingBeingClassAttributes(nome: NSLocalizedString("Anfibio", comment: ""), isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.ave: LivingBeingClassAttributes(nome: NSLocalizedString("Ave", comment: ""), isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.mamifero: LivingBeingClassAttributes(nome: NSLocalizedString("Mamifero", comment: ""), isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.reptil: LivingBeingClassAttributes(nome: NSLocalizedString("Reptil", comment: ""), isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.peixe: LivingBeingClassAttributes(nome: NSLocalizedString("Peixe", comment: ""), isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.inseto: LivingBeingClassAttributes(nome: NSLocalizedString("Inseto", comment: ""), isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.briofita: LivingBeingClassAttributes(nome: NSLocalizedString("Briofitas", comment: ""), isOn: true, beingKingdom: .planta),
+                                LivingBeing.LivingBeingClass.pteridofitas: LivingBeingClassAttributes(nome: NSLocalizedString("Pteridofitas", comment: ""), isOn: true, beingKingdom: .planta),
+                                LivingBeing.LivingBeingClass.angiospermas: LivingBeingClassAttributes(nome: NSLocalizedString("Angiospermas", comment: ""), isOn: true, beingKingdom: .planta),
+                                LivingBeing.LivingBeingClass.gimnospermas: LivingBeingClassAttributes(nome: NSLocalizedString("Gimnospermas", comment: ""), isOn: true, beingKingdom: .planta)]
     
     var livingBeingData: [LivingBeingAnnotation] = {
         var data: [LivingBeingAnnotation] = []
@@ -131,6 +132,11 @@ class MapViewController: UIViewController {
         
         print("####")
         //print(MVP)
+        
+        popOverSegmentedControl.setTitle(NSLocalizedString("Animals", comment: ""), forSegmentAt: 0)
+        popOverSegmentedControl.setTitle(NSLocalizedString("Plants", comment: ""), forSegmentAt: 1)
+        doneButton.titleLabel?.text = NSLocalizedString("OK", comment: "")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -574,7 +580,6 @@ class LivingBeingView: MKAnnotationView {
             }
         }
     }
-    
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         self.being = annotation as! LivingBeingAnnotation
