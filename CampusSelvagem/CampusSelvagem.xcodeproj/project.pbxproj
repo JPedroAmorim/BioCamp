@@ -259,16 +259,6 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		8B5E4269B7FEFA2573A01DAC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				EF8D71A97DDA39A8E8640ACB /* Pods_CampusSelvagem.framework */,
-				80EB2FF05B7B7C9693DC6AB9 /* Pods_CampusSelvagemTests.framework */,
-				213D4B829433D48E79AD939C /* Pods_CampusSelvagemUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		F034C0A5566D7402B3A93F99 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -734,7 +724,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q3G824S699;
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
 				INFOPLIST_FILE = CampusSelvagem/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -754,7 +744,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = QTB2MSNYGB;
+				DEVELOPMENT_TEAM = 29CGD3CF6U;
 				INFOPLIST_FILE = CampusSelvagem/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

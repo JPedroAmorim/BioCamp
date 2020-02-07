@@ -122,7 +122,8 @@ class MapViewController: UIViewController {
         self.popOverFilter.layer.cornerRadius = popOverCornerRadiusValue
         self.doneButton.layer.cornerRadius = popOverCornerRadiusValue
         self.exitInfo.layer.cornerRadius = self.exitInfo.bounds.width/2
-        
+        self.disableAnimationsView.layer.cornerRadius = popOverCornerRadiusValue
+        self.animationEnabledButton.layer.cornerRadius = popOverCornerRadiusValue
         
         self.filterBtn.layer.cornerRadius = 0.5 * filterBtn.bounds.size.width
         self.centerBtn.layer.cornerRadius = 0.5 * centerBtn.bounds.size.width
