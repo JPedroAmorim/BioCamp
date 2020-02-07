@@ -151,47 +151,47 @@ class MapViewController: UIViewController {
             
         }
     }
+    
+    // MARK: - IBActions
+    
     @IBAction func animationSetupPressed(_ sender: UIButton) {
-        guard sender.tag == 1 else { return }
         self.view.addBlurEffect()
         self.view.addSubview(disableAnimationsView)
         self.disableAnimationsView.center  = self.view.center
-        self.mapView.isUserInteractionEnabled  = false
     }
     
     @IBAction func animationEnabledPressed(_ sender: UIButton) {
-        guard sender.tag == 2 else { return }
         self.view.removeBlurEffect()
         self.disableAnimationsView.removeFromSuperview()
         self.mapView.isUserInteractionEnabled = true
-        if !self.animationSwitch.isOn {
-                   self.shouldDisplayRadiusAnimation = false
+        if self.animationSwitch.isOn {
+                   self.shouldDisplayRadiusAnimation = true
                    addAnnotations()
                } else {
-                   self.shouldDisplayRadiusAnimation = true
+                   self.shouldDisplayRadiusAnimation = false
                }
+        addAnnotations()
     }
     
     
     @IBAction func filterPressed(_ sender: UIButton) {
-        guard sender.tag == 0 else { return }
         self.view.addBlurEffect()
+        self.mapView.isUserInteractionEnabled = false
         self.view.addSubview(popOverFilter)
         self.popOverFilter.center = self.view.center
-        self.mapView.isUserInteractionEnabled = false
     }
     
     
     @IBAction func donePressed(_ sender: UIButton) {
-        guard sender.tag == 3 else { return }
+        self.view.removeBlurEffect()
         self.filterTableView.reloadData()
-        self.mapView.removeBlurEffect()
         self.popOverFilter.removeFromSuperview()
+        self.tabBarController?.tabBar.removeBlurEffect()
         self.mapView.isUserInteractionEnabled = true
-        if !self.animationSwitch.isOn {
-            self.shouldDisplayRadiusAnimation = false
-        } else {
+        if self.animationSwitch.isOn {
             self.shouldDisplayRadiusAnimation = true
+        } else {
+            self.shouldDisplayRadiusAnimation = false
         }
         addAnnotations()
     }
@@ -201,12 +201,10 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func backPressed(_ sender: Any) {
-        
-        self.mapView.removeBlurEffect()
-        self.informationDetailView.removeFromSuperview()
+        self.view.removeBlurEffect()
         self.mapView.isUserInteractionEnabled = true
+        self.informationDetailView.removeFromSuperview()
     }
-    
     
     // Localization logic and setup methods
     private func centerViewOnCB() {
@@ -408,12 +406,11 @@ extension MapViewController: MKMapViewDelegate {
 extension MapViewController: LivingBeingDelegate {
     func tapOn(species: String) {
         
-        self.mapView.addBlurEffect()
+        self.view.addBlurEffect()
         self.mapView.isUserInteractionEnabled = false
         self.view.addSubview(informationDetailView)
         self.informationDetailView.center = self.view.center
         self.informationDetailView.layer.cornerRadius = 20
-        self.mapView.isUserInteractionEnabled = false
         
         if let data = findLivingBeing(species)  {
             im.image = data.photos[0]
@@ -482,19 +479,16 @@ extension MapViewController: UITableViewDataSource {
 extension UIView {
     
     func addBlurEffect(){
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
         self.backgroundColor = .clear
-        self.isUserInteractionEnabled = false
         self.addSubview(blurEffectView)
-        print("oie")
     }
     
     // Remove UIBlurEffect from UIView
     func removeBlurEffect() {
-        self.isUserInteractionEnabled = true
         let blurredEffectViews = self.subviews.filter{$0 is UIVisualEffectView}
         blurredEffectViews.forEach{ blurView in
             blurView.removeFromSuperview()

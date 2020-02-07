@@ -19,7 +19,7 @@ class MVPData {
         /// ### AVES
         photos.append(UIImage(named: "corujas1"))
         photos.append(UIImage(named: "corujas2"))
-        data.append(LivingBeing(name: "Coruja Buraqueira",
+        data.append(LivingBeing(name: NSLocalizedString("Amphibian", comment: ""),
                                 scientificName: "Athene cunicularia",
                                 beingClass: .ave,
                                 locationOnCampus: "Estacionamento da FEAGRI",
@@ -133,7 +133,7 @@ class MVPData {
                                 coordinate: (latitude: -22.823231, longitude: -47.068058),
                                 areaRadius: 30,
                                 habitatOrBiome: "Mata Atlântica",
-                                curiosity: "Na floresta ombrófila densa da Mata Atlântica, a partir do extremo nordeste do Brasil até o Rio de Janeiro, ou seja, nos estados do Rio Grande do Norte, Paraíba, Pernambuco, Alagoas, Sergipe, Bahia, Espírito Santo e Rio de Janeiro.",
+                                curiosity: "Árvore considerada símbolo nacional.",
                                 photos: photos))
         photos.removeAll()
     }
