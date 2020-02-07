@@ -156,6 +156,8 @@ class MapViewController: UIViewController {
     
     @IBAction func animationSetupPressed(_ sender: UIButton) {
         self.view.addBlurEffect()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isTranslucent = true
         self.view.addSubview(disableAnimationsView)
         self.disableAnimationsView.center  = self.view.center
     }
@@ -163,6 +165,8 @@ class MapViewController: UIViewController {
     @IBAction func animationEnabledPressed(_ sender: UIButton) {
         self.view.removeBlurEffect()
         self.disableAnimationsView.removeFromSuperview()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+        self.tabBarController?.tabBar.isTranslucent = false
         self.mapView.isUserInteractionEnabled = true
         if self.animationSwitch.isOn {
                    self.shouldDisplayRadiusAnimation = true
@@ -177,6 +181,8 @@ class MapViewController: UIViewController {
     @IBAction func filterPressed(_ sender: UIButton) {
         self.view.addBlurEffect()
         self.mapView.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isTranslucent = true
         self.view.addSubview(popOverFilter)
         self.popOverFilter.center = self.view.center
     }
@@ -185,8 +191,9 @@ class MapViewController: UIViewController {
     @IBAction func donePressed(_ sender: UIButton) {
         self.view.removeBlurEffect()
         self.filterTableView.reloadData()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+        self.tabBarController?.tabBar.isTranslucent = false
         self.popOverFilter.removeFromSuperview()
-        self.tabBarController?.tabBar.removeBlurEffect()
         self.mapView.isUserInteractionEnabled = true
         if self.animationSwitch.isOn {
             self.shouldDisplayRadiusAnimation = true
@@ -202,6 +209,8 @@ class MapViewController: UIViewController {
     
     @IBAction func backPressed(_ sender: Any) {
         self.view.removeBlurEffect()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+        self.tabBarController?.tabBar.isTranslucent = false
         self.mapView.isUserInteractionEnabled = true
         self.informationDetailView.removeFromSuperview()
     }
@@ -408,6 +417,8 @@ extension MapViewController: LivingBeingDelegate {
         
         self.view.addBlurEffect()
         self.mapView.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isTranslucent = true
         self.view.addSubview(informationDetailView)
         self.informationDetailView.center = self.view.center
         self.informationDetailView.layer.cornerRadius = 20
