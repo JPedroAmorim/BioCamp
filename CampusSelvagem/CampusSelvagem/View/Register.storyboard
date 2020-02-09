@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yyR-Ls-Iiy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yyR-Ls-Iiy">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,9 +46,13 @@
                                     </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="MCX-wN-tgZ" firstAttribute="leading" secondItem="2UC-qM-aFw" secondAttribute="leading" constant="20" id="4wP-OC-H5v"/>
                                     <constraint firstItem="MCX-wN-tgZ" firstAttribute="top" secondItem="2UC-qM-aFw" secondAttribute="top" id="96x-Hp-f3k"/>
                                     <constraint firstItem="OB0-CD-44h" firstAttribute="top" secondItem="MCX-wN-tgZ" secondAttribute="bottom" constant="20" id="BPu-hG-x9h"/>
                                     <constraint firstAttribute="height" constant="120" id="F8u-I2-CsO"/>
+                                    <constraint firstAttribute="trailing" secondItem="MCX-wN-tgZ" secondAttribute="trailing" constant="20" id="J6U-Yg-qNX"/>
+                                    <constraint firstAttribute="trailing" secondItem="OB0-CD-44h" secondAttribute="trailing" constant="20" id="p1S-wm-ZoZ"/>
+                                    <constraint firstItem="OB0-CD-44h" firstAttribute="leading" secondItem="2UC-qM-aFw" secondAttribute="leading" constant="20" id="u1G-KD-iIb"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mbB-zD-NbC">
@@ -263,14 +267,10 @@
                         <constraints>
                             <constraint firstItem="Aea-ov-SNO" firstAttribute="width" secondItem="mbB-zD-NbC" secondAttribute="width" id="0Yv-4T-iIU"/>
                             <constraint firstItem="VWJ-U8-hF4" firstAttribute="trailing" secondItem="2UC-qM-aFw" secondAttribute="trailing" id="0sl-7b-VMs"/>
-                            <constraint firstItem="mbB-zD-NbC" firstAttribute="trailing" secondItem="w6G-q0-DgS" secondAttribute="trailing" id="14e-ff-Kp2"/>
                             <constraint firstItem="ZOm-5S-sxc" firstAttribute="top" secondItem="mbB-zD-NbC" secondAttribute="bottom" constant="20" id="4Aa-Y9-uie"/>
                             <constraint firstItem="P5Q-vv-MVN" firstAttribute="leading" secondItem="VWJ-U8-hF4" secondAttribute="leading" constant="10" id="50p-Q8-ad1"/>
-                            <constraint firstItem="5vB-af-TD2" firstAttribute="leading" secondItem="0HN-bT-wxZ" secondAttribute="leading" id="658-9Y-nNx"/>
-                            <constraint firstItem="OB0-CD-44h" firstAttribute="leading" secondItem="0HN-bT-wxZ" secondAttribute="leading" id="7lE-nf-UOI"/>
+                            <constraint firstItem="VWJ-U8-hF4" firstAttribute="trailing" secondItem="mbB-zD-NbC" secondAttribute="trailing" constant="20" id="5hO-24-g5g"/>
                             <constraint firstItem="mbB-zD-NbC" firstAttribute="leading" secondItem="5vB-af-TD2" secondAttribute="trailing" constant="20" id="Asw-WC-pGt"/>
-                            <constraint firstItem="MCX-wN-tgZ" firstAttribute="leading" secondItem="0HN-bT-wxZ" secondAttribute="leading" id="EQh-7G-iwk"/>
-                            <constraint firstItem="OB0-CD-44h" firstAttribute="trailing" secondItem="w6G-q0-DgS" secondAttribute="trailing" id="FZP-AS-pVX"/>
                             <constraint firstItem="P5Q-vv-MVN" firstAttribute="top" secondItem="wf3-lw-Ajf" secondAttribute="bottom" constant="20" id="I01-gN-7d0"/>
                             <constraint firstItem="Aea-ov-SNO" firstAttribute="centerY" secondItem="mbB-zD-NbC" secondAttribute="centerY" id="Jrh-72-Tzw"/>
                             <constraint firstItem="5vB-af-TD2" firstAttribute="height" secondItem="mbB-zD-NbC" secondAttribute="height" id="LCl-wp-7wR"/>
@@ -282,8 +282,8 @@
                             <constraint firstItem="0X5-ST-mNr" firstAttribute="width" secondItem="5vB-af-TD2" secondAttribute="width" id="czw-8T-8md"/>
                             <constraint firstItem="Aea-ov-SNO" firstAttribute="centerX" secondItem="mbB-zD-NbC" secondAttribute="centerX" id="fPn-0x-ya6"/>
                             <constraint firstItem="2UC-qM-aFw" firstAttribute="top" secondItem="P5Q-vv-MVN" secondAttribute="bottom" constant="20" id="fe4-RE-6ld"/>
+                            <constraint firstItem="5vB-af-TD2" firstAttribute="leading" secondItem="VWJ-U8-hF4" secondAttribute="leading" constant="20" id="gTU-v8-whd"/>
                             <constraint firstItem="0X5-ST-mNr" firstAttribute="centerY" secondItem="5vB-af-TD2" secondAttribute="centerY" id="imD-rp-LU9"/>
-                            <constraint firstItem="MCX-wN-tgZ" firstAttribute="trailing" secondItem="w6G-q0-DgS" secondAttribute="trailing" id="oe3-rD-sfP"/>
                             <constraint firstItem="5vB-af-TD2" firstAttribute="width" secondItem="mbB-zD-NbC" secondAttribute="width" id="pgO-5D-ALe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VWJ-U8-hF4"/>
