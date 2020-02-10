@@ -151,8 +151,10 @@ class MapViewController: UIViewController {
                 self.disableAnimationsView.center = CGPoint(x: self.disableAnimationsView.center.y,
                                                             y: self.disableAnimationsView.center.x)
             } else if self.view.subviews.contains(popOverFilter) {
-                self.popOverFilter.center = CGPoint(x: self.popOverFilter.center.y,
-                                                    y: self.popOverFilter.center.x)
+                self.popOverFilter.frame.size.height = self.view.frame.height / 3.5
+                self.popOverFilter.frame.size.width = self.view.frame.width
+                self.popOverFilter.center = CGPoint(x: self.view.center.y,
+                                                    y: self.view.center.x - (self.tabBarController?.tabBar.frame.height ?? 49)/2)
             }
         } else {
             print("Portrait")
@@ -162,8 +164,10 @@ class MapViewController: UIViewController {
                 self.disableAnimationsView.center = CGPoint(x: self.disableAnimationsView.center.y,
                                                             y: self.disableAnimationsView.center.x)
             } else if self.view.subviews.contains(popOverFilter) {
-                self.popOverFilter.center = CGPoint(x: self.popOverFilter.center.y,
-                                                    y: self.popOverFilter.center.x)
+                self.popOverFilter.frame.size.height = self.view.frame.height
+                self.popOverFilter.frame.size.width = self.view.frame.width / 3.5
+                self.popOverFilter.center = CGPoint(x: self.view.center.y,
+                                                    y: self.view.center.x)
             }
         }
     }
