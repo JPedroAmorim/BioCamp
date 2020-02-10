@@ -28,7 +28,6 @@ class LivingBeing: NSObject, NSCoding {
     }
     
     
-    
     public enum LivingBeingClass: String {
         case anfibio = "Anfibio"
         case ave = "Ave"

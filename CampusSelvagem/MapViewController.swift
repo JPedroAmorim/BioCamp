@@ -122,7 +122,8 @@ class MapViewController: UIViewController {
         self.popOverFilter.layer.cornerRadius = popOverCornerRadiusValue
         self.doneButton.layer.cornerRadius = popOverCornerRadiusValue
         self.exitInfo.layer.cornerRadius = self.exitInfo.bounds.width/2
-        
+        self.disableAnimationsView.layer.cornerRadius = popOverCornerRadiusValue
+        self.animationEnabledButton.layer.cornerRadius = popOverCornerRadiusValue
         
         self.filterBtn.layer.cornerRadius = 0.5 * filterBtn.bounds.size.width
         self.centerBtn.layer.cornerRadius = 0.5 * centerBtn.bounds.size.width
@@ -151,47 +152,54 @@ class MapViewController: UIViewController {
             
         }
     }
+    
+    // MARK: - IBActions
+    
     @IBAction func animationSetupPressed(_ sender: UIButton) {
-        guard sender.tag == 1 else { return }
         self.view.addBlurEffect()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isTranslucent = true
         self.view.addSubview(disableAnimationsView)
         self.disableAnimationsView.center  = self.view.center
-        self.mapView.isUserInteractionEnabled  = false
     }
     
     @IBAction func animationEnabledPressed(_ sender: UIButton) {
-        guard sender.tag == 2 else { return }
         self.view.removeBlurEffect()
         self.disableAnimationsView.removeFromSuperview()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+        self.tabBarController?.tabBar.isTranslucent = false
         self.mapView.isUserInteractionEnabled = true
-        if !self.animationSwitch.isOn {
-                   self.shouldDisplayRadiusAnimation = false
+        if self.animationSwitch.isOn {
+                   self.shouldDisplayRadiusAnimation = true
                    addAnnotations()
                } else {
-                   self.shouldDisplayRadiusAnimation = true
+                   self.shouldDisplayRadiusAnimation = false
                }
+        addAnnotations()
     }
     
     
     @IBAction func filterPressed(_ sender: UIButton) {
-        guard sender.tag == 0 else { return }
         self.view.addBlurEffect()
+        self.mapView.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isTranslucent = true
         self.view.addSubview(popOverFilter)
         self.popOverFilter.center = self.view.center
-        self.mapView.isUserInteractionEnabled = false
     }
     
     
     @IBAction func donePressed(_ sender: UIButton) {
-        guard sender.tag == 3 else { return }
+        self.view.removeBlurEffect()
         self.filterTableView.reloadData()
-        self.mapView.removeBlurEffect()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+        self.tabBarController?.tabBar.isTranslucent = false
         self.popOverFilter.removeFromSuperview()
         self.mapView.isUserInteractionEnabled = true
-        if !self.animationSwitch.isOn {
-            self.shouldDisplayRadiusAnimation = false
-        } else {
+        if self.animationSwitch.isOn {
             self.shouldDisplayRadiusAnimation = true
+        } else {
+            self.shouldDisplayRadiusAnimation = false
         }
         addAnnotations()
     }
@@ -201,12 +209,12 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func backPressed(_ sender: Any) {
-        
-        self.mapView.removeBlurEffect()
-        self.informationDetailView.removeFromSuperview()
+        self.view.removeBlurEffect()
+        self.tabBarController?.tabBar.isUserInteractionEnabled = true
+        self.tabBarController?.tabBar.isTranslucent = false
         self.mapView.isUserInteractionEnabled = true
+        self.informationDetailView.removeFromSuperview()
     }
-    
     
     // Localization logic and setup methods
     private func centerViewOnCB() {
@@ -474,6 +482,14 @@ extension MapViewController: LivingBeingDelegate {
 //        self.informationDetailView.layer.cornerRadius = 20
 //        self.mapView.isUserInteractionEnabled = false
         
+        self.view.addBlurEffect()
+        self.mapView.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+        self.tabBarController?.tabBar.isTranslucent = true
+        self.view.addSubview(informationDetailView)
+        self.informationDetailView.center = self.view.center
+        self.informationDetailView.layer.cornerRadius = 20
+        
         if let data = findLivingBeing(species)  {
             im.image = data.photos[0]
             im.layer.cornerRadius = im.frame.width/2
@@ -541,19 +557,16 @@ extension MapViewController: UITableViewDataSource {
 extension UIView {
     
     func addBlurEffect(){
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
         self.backgroundColor = .clear
-        self.isUserInteractionEnabled = false
         self.addSubview(blurEffectView)
-        print("oie")
     }
     
     // Remove UIBlurEffect from UIView
     func removeBlurEffect() {
-        self.isUserInteractionEnabled = true
         let blurredEffectViews = self.subviews.filter{$0 is UIVisualEffectView}
         blurredEffectViews.forEach{ blurView in
             blurView.removeFromSuperview()

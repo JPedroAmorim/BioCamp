@@ -19,93 +19,93 @@ class MVPData {
         /// ### AVES
         photos.append(UIImage(named: "corujas1"))
         photos.append(UIImage(named: "corujas2"))
-        data.append(LivingBeing(name: "Coruja Buraqueira",
+        data.append(LivingBeing(name: NSLocalizedString("Burrowing owl", comment: ""),
                                 scientificName: "Athene cunicularia",
                                 beingClass: .ave,
-                                locationOnCampus: "Estacionamento da FEAGRI",
+                                locationOnCampus: NSLocalizedString("FEAGRIS's parking lot", comment: ""),
                                 coordinate: (latitude: -22.817016, longitude: -47.060604),
                                 areaRadius: 70,
-                                habitatOrBiome: "Restingas e cerrados.",
-                                curiosity: "Os machos permanecem fora do ninho com a função de vigiar, descansar e observar. A presença da fêmea é mais oculta, devido a sua permanência no interior da toca. Alimenta-se de pequenos roedores, répteis, anfíbios, pequenos insetos, pequenos pássaros como pardais, escorpiões, etc.",
+                                habitatOrBiome: NSLocalizedString("Brazilian restinga and cerrado", comment: ""),
+                                curiosity: NSLocalizedString("Male individuals stay out of the nest with the task of watching, resting and observing. The presence of female individuals is more subtle, due to its permanence inside of the burrow. They feed off small rodents, reptiles, amphibians, birds (such as sparrows), scorpions, etc.", comment: ""),
                                 photos: photos))
         photos.removeAll()
         
         photos.append(UIImage(named: "peregrino00"))
         photos.append(UIImage(named: "peregrino01"))
-        data.append(LivingBeing(name: "Falcão-Peregrino",
+        data.append(LivingBeing(name: NSLocalizedString("Peregrine falcon", comment: ""),
                                 scientificName: "Falco peregrinus",
                                 beingClass: .ave,
-                                locationOnCampus: "Pode ser avistado por todo o campus, sendo a maior parte delas perto do prédio de Artes Cênicas.",
+                                locationOnCampus: NSLocalizedString("It can be seen everyewhere on campus, though it's more frequently seen around the Performing Arts building", comment: ""),
                                 coordinate: (latitude: -22.815381, longitude: -47.070758),
                                 areaRadius: 90,
-                                habitatOrBiome: "Pode ser encontrada em todos os continentes exceto na Antártida.",
-                                curiosity: "Atualmente a ave é considerada o animal mais veloz do mundo, podendo atingir cerca de 320 km/h ou mais.",
+                                habitatOrBiome: NSLocalizedString("It can be seen in all continents, except Antartica", comment: ""),
+                                curiosity: NSLocalizedString("Nowadays this bird is considered the fastest bird on earth, being able to achieve around 199 mph or more", comment: ""),
                                 photos: photos))
         photos.removeAll()
         
         photos.append(UIImage(named: "carcara00"))
         photos.append(UIImage(named: "carcara01"))
-        data.append(LivingBeing(name: "Carcará",
+        data.append(LivingBeing(name: NSLocalizedString("Southern caracara", comment: ""),
                                 scientificName: "Caracara plancus",
                                 beingClass: .ave,
-                                locationOnCampus: "Pode ser avistado por todo o campus, porém aparecem frequentemente próximos ao IA e ao IEL",
+                                locationOnCampus: NSLocalizedString("It can be seen around all campus, most frequently around the buildings of the Institute of Arts and the Institute of linguistics", comment: ""),
                                 coordinate: (latitude: -22.814893, longitude: -47.069642),
                                 areaRadius: 150,
-                                habitatOrBiome: "Habita o centro e o sul de toda a América do Sul.",
-                                curiosity: "Para avisar os outros carcarás de seu território ou comunicação entre o casal, possui um chamado que origina o seu nome comum, “carcará”.",
+                                habitatOrBiome: NSLocalizedString("It inhabits the center and south regions of South America", comment: ""),
+                                curiosity: NSLocalizedString("In order to communicate with other individuals in its territory or to comunnicate with its partner, it shouts a chant from which its name is originated from", comment: ""),
                                 photos: photos))
         photos.removeAll()
         
         photos.append(UIImage(named: "gralha00"))
         photos.append(UIImage(named: "gralha01"))
-        data.append(LivingBeing(name: "Gralha-do-Campo",
+        data.append(LivingBeing(name: NSLocalizedString("Curl-crested jay", comment: ""),
                                 scientificName: "Cyanocorax cristatellus",
                                 beingClass: .ave,
-                                locationOnCampus: "Podem ser vistas principalmente próximas a casa do lago",
+                                locationOnCampus: NSLocalizedString("It can mostly be seen around the lake house" , comment: ""),
                                 coordinate: (latitude: -22.812800, longitude: -47.069803),
                                 areaRadius: 100,
-                                habitatOrBiome: "Nativa dos cerrados e da caatinga.",
-                                curiosity: "Os bandos costumam ter um território e normalmente percorrem um mesmo trajeto todos os dias, tornando previsíveis seus horários de visita a certos locais em alguns casos.",
+                                habitatOrBiome: NSLocalizedString("Native to brazilian cerrado and caatinga", comment: ""),
+                                curiosity: NSLocalizedString("Their flocks usually have a determined region and fly the same course everyday, turning predictable theirs visiting hour to certain spots in some cases.", comment: ""),
                                 photos: photos))
         photos.removeAll()
         
         // ### MAMIFEROS
         photos.append(UIImage(named: "cacheiro00"))
         photos.append(UIImage(named: "cacheiro01"))
-        data.append(LivingBeing(name: "Ouriço-cacheiro",
+        data.append(LivingBeing(name: NSLocalizedString("Hedgehog", comment: ""),
                                 scientificName: "Coendou prehensilis",
                                 beingClass: .mamifero,
-                                locationOnCampus: "Pode ser avistado por todo o campus, porém aparecem frequentemente próximos da FCM",
+                                locationOnCampus: NSLocalizedString("It can be spotted around all campus, though more frequently they appear next to the building of the dep. of Medical Sciences", comment: ""),
                                 coordinate: (latitude: -22.830147, longitude: -47.062524),
                                 areaRadius: 210,
-                                habitatOrBiome: "Ocorre desde o Rio de Janeiro até o Rio Grande do Sul, incluindo Minas Gerais.",
-                                curiosity: "Produzem um unico filhote por ninhada.",
+                                habitatOrBiome: NSLocalizedString("They inhabit in Brazil, occuring from the state of Rio de Janeiro until Rio Grande do Sul, including Minas Gerais", comment: ""),
+                                curiosity: NSLocalizedString("They only conceive one cub per litter", comment: ""),
                                 photos: photos))
         photos.removeAll()
         
         /// ### REPTEIS
         photos.append(UIImage(named: "teiu00"))
-        data.append(LivingBeing(name: "Teiu",
+        data.append(LivingBeing(name: NSLocalizedString("Tegu lizard", comment: ""),
                                 scientificName: "Salvator merianae",
                                 beingClass: .reptil,
-                                locationOnCampus: "Pode ser avistado por todo o campus, porém aparecem frequentemente próximos da FEEC",
+                                locationOnCampus: NSLocalizedString("They can be seen around all campus, but more frequently near the building of the Computer and Eletrical engineering dep.", comment: ""),
                                 coordinate: (latitude: -22.821178, longitude: -47.065785),
                                 areaRadius: 200,
-                                habitatOrBiome: "Habita grande parte do Brasil (com exceção da floresta amazônica) e norte da Argentina e Uruguai",
-                                curiosity: "Possui a capacidade de aumentar a sua taxa metabólica durante o período reprodutivo a níveis próximos ao de mamíferos e aves, gerando calor e mantendo sua temperatura mais elevada do que a do ambiente.",
+                                habitatOrBiome: NSLocalizedString("They inhabit all of Brazil (except for the Amazon rainforest area) and places such as the north of Argentina and Uruguay", comment: ""),
+                                curiosity: NSLocalizedString("They have the capacity to increase their metabolic rate in copulation season to rates similar to those of mammals and birds, generating heat and keeping their body temperature higher than of its environment.", comment: ""),
                                 photos: photos))
         photos.removeAll()
         
         /// ### INSETOS
         photos.append(UIImage(named: "gafanhoto"))
-        data.append(LivingBeing(name: "Mantis Religiosa",
+        data.append(LivingBeing(name: NSLocalizedString("European mantis", comment: ""),
                                 scientificName: "Gryllus religiosa",
                                 beingClass: .inseto,
-                                locationOnCampus: "Pode ser avistado por todo o campus, porém aparecem frequentemente próximos ao DCE",
+                                locationOnCampus: NSLocalizedString("It can be seen around all campus, but they more frequently appear next to the student council building.", comment: ""),
                                 coordinate: (latitude: -22.817901, longitude: -47.071941),
                                 areaRadius: 200,
-                                habitatOrBiome: "Podem ser encontrados no sul da europa, américa, Asia, Africa e Australia",
-                                curiosity: "O cortejo e pareamento são separados em dois passos: cortejo preliminar e copulação. O cortejo preliminar começa com o contato visual dos animais e termina com o primeiro contato físico. Copulação começa com o primeiro contato e termina com o depósito do espermatófago",
+                                habitatOrBiome: NSLocalizedString("They can be found in south Europe, Americas, Asia, Africa and Australia" , comment: ""),
+                                curiosity: NSLocalizedString("Its courting and pairing can be separated in two stages: preliminar courting and copulation itself. Premilinar courting starts with the eye contact of those individuals and it ends at the start of the first physical contact. Copulation starts with the first physical contact and it ends with the deposit of the spermatofagus.", comment: ""),
                                 photos: photos))
         photos.removeAll()
         
@@ -113,27 +113,27 @@ class MVPData {
         
         photos.append(UIImage(named: "flor1"))
         photos.append(UIImage(named: "flor2"))
-        data.append(LivingBeing(name: "Abricó-de-macaco",
+        data.append(LivingBeing(name: NSLocalizedString("Cannon ball tree", comment: ""),
                                 scientificName: "Couroupita guianensis",
                                 beingClass: .angiospermas,
-                                locationOnCampus: "Praça da Paz",
+                                locationOnCampus: NSLocalizedString("Peace square", comment: ""),
                                 coordinate: (latitude: -22.821975, longitude: -47.067189),
                                 areaRadius: 30,
-                                habitatOrBiome: "Mata Atlântica",
-                                curiosity: "Podem ter altura média entre 8 e 15 metros",
+                                habitatOrBiome: NSLocalizedString("Brazil's atlantic forest area", comment: ""),
+                                curiosity: NSLocalizedString("It can reach heights between 19 and 49 ft", comment: ""),
                                 photos: photos))
         photos.removeAll()
         
         photos.append(UIImage(named: "paubrasil"))
         photos.append(UIImage(named: "paubrasil2"))
-        data.append(LivingBeing(name: "Pau Brasil",
+        data.append(LivingBeing(name: NSLocalizedString("Brazilwood", comment: ""),
                                 scientificName: "Paubrasilia echinata",
                                 beingClass: .angiospermas,
-                                locationOnCampus: "Praça da Paz",
+                                locationOnCampus:NSLocalizedString("Peace Square", comment: ""),
                                 coordinate: (latitude: -22.823231, longitude: -47.068058),
                                 areaRadius: 30,
-                                habitatOrBiome: "Mata Atlântica",
-                                curiosity: "Na floresta ombrófila densa da Mata Atlântica, a partir do extremo nordeste do Brasil até o Rio de Janeiro, ou seja, nos estados do Rio Grande do Norte, Paraíba, Pernambuco, Alagoas, Sergipe, Bahia, Espírito Santo e Rio de Janeiro.",
+                                habitatOrBiome: NSLocalizedString("Atlantic florest", comment: ""),
+                                curiosity: NSLocalizedString("It's considered a national symbol", comment: ""),
                                 photos: photos))
         photos.removeAll()
     }
