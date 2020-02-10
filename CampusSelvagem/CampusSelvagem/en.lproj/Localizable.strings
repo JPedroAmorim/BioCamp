@@ -6,6 +6,13 @@
   Copyright © 2020 Felipe Semissatto. All rights reserved.
 */
 
+"Name" = "Name";
+"Scientific name" = "Scientific name";
+"Type" = "Type";
+"Habitat/Biome" = "Habitat/Biome";
+"Location" = "Location";
+"Curiosity" = "Curiosity";
+"Unknown" = "Unknown";
 "Amphibian" = "Amphibian";
 "Birds" = "Birds";
 "Mammals" = "Mammals";
@@ -15,6 +22,7 @@
 "Briophytes" = "Briophytes";
 "Pteridophytes" = "Pteridophytes";
 "Gimnosperms" = "Gimnosperms";
+"Angiosperms" = "Angiosperms";
 "Burrowing owl" = "Burrowing owl";
 "FEAGRIS's parking lot" = "FEAGRIS's parking lot";
 "Brazilian restinga and cerrado" = "Brazilian restinga and cerrado";
@@ -33,16 +41,16 @@
 "Their flocks usually have a determined region and fly the same course everyday, turning predictable theirs visiting hour to certain spots in some cases." = "Their flocks usually have a determined region and fly the same course everyday, turning predictable theirs visiting hour to certain spots in some cases.";
 "Hedgehog"  = "Hedgehog";
 "It can be spotted around all campus, though more frequently they appear next to the building of the dep. of Medical Sciences" =  "It can be spotted around all campus, though more frequently they appear next to the building of the dep. of Medical Sciences";
-"They inhabit in Brazil, occuring from the state of Rio de Janeiro until Rio Grande do Sul, including Minas Gerais"; = "They inhabit in Brazil, occuring from the state of Rio de Janeiro until Rio Grande do Sul, including Minas Gerais";
+"They inhabit in Brazil, occuring from the state of Rio de Janeiro until Rio Grande do Sul, including Minas Gerais" = "They inhabit in Brazil, occuring from the state of Rio de Janeiro until Rio Grande do Sul, including Minas Gerais";
 "They only conceive one cub per litter" = "They only conceive one cub per litter";
 "Tegu lizard" = "Tegu lizard";
 "They can be seen around all campus, but more frequently near the building of the Computer and Eletrical engineering dep." = "They can be seen around all campus, but more frequently near the building of the Computer and Eletrical engineering dep.";
 "They inhabit all of Brazil (except for the Amazon rainforest area) and places such as the north of Argentina and Uruguay" = "They inhabit all of Brazil (except for the Amazon rainforest area) and places such as the north of Argentina and Uruguay";
 "They have the capacity to increase their metabolic rate in copulation season to rates similar to those of mammals and birds, generating heat and keeping their body temperature higher than of its environment." = "They have the capacity to increase their metabolic rate in copulation season to rates similar to those of mammals and birds, generating heat and keeping their body temperature higher than of its environment.";
 "European mantis" = "European mantis";
-"It can be seen around all campus, but they more frequently appear next to the student council building." = "It can be seen around all campus, but they more frequently appear next to the student council building."
+"It can be seen around all campus, but they more frequently appear next to the student council building." = "It can be seen around all campus, but they more frequently appear next to the student council building.";
 "They can be found in south Europe, Americas, Asia, Africa and Australia" = "They can be found in south Europe, Americas, Asia, Africa and Australia";
-"Its courting and pairing can be separated in two stages: preliminar courting and copulation itself. Premilinar courting starts with the eye contact of those individuals and it ends at the start of the first physical contact. Copulation starts with the first physical contact and it ends with the deposit of the spermatofagus." = "Its courting and pairing can be separated in two stages: preliminar courting and copulation itself. Premilinar courting starts with the eye contact of those individuals and it ends at the start of the first physical contact. Copulation starts with the first physical contact and it ends with the deposit of the spermatofagus."
+"Its courting and pairing can be separated in two stages: preliminar courting and copulation itself. Premilinar courting starts with the eye contact of those individuals and it ends at the start of the first physical contact. Copulation starts with the first physical contact and it ends with the deposit of the spermatofagus." = "Its courting and pairing can be separated in two stages: preliminar courting and copulation itself. Premilinar courting starts with the eye contact of those individuals and it ends at the start of the first physical contact. Copulation starts with the first physical contact and it ends with the deposit of the spermatofagus.";
 "Cannon ball tree" = "Cannon ball tree";
 "Peace square" = "Peace square";
 "Brazil's atlantic forest area" = "Brazil's atlantic forest area";

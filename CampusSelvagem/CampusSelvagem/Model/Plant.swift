@@ -74,10 +74,10 @@ class Plant: LivingBeing {
 }
 
 enum PlantType: String {
-    case briofita
-    case pteridofitas
-    case angiospermas
-    case gimnospermas
+    case briofita = "Briophytes"
+    case pteridofitas = "Pteridophytes"
+    case angiospermas = "Angiosperms"
+    case gimnospermas = "Gimnosperms"
     
 //    func returnLocalizedValue() -> String {
 //        var returnValue: String
