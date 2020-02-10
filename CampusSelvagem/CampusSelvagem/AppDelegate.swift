@@ -21,14 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-// -- passo 1
         FirebaseApp.configure()
         
         
         let db = Database.database().reference()
         print(Database.database().reference())
         db.setValue("Começou uso!")
-// -- passo 2
         
         return true
     }
