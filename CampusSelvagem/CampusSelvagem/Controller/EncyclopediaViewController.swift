@@ -34,6 +34,11 @@ class EncyclopediaViewController: UIViewController  {
     
     let searchController = UISearchController(searchResultsController: nil)
     
+    // MapView stuff
+    var searchForPlants: Bool = false
+    var nameToBeSearched: String?
+    var searchForName: Bool = false
+    
     //MARK: Outlets
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
@@ -99,7 +104,29 @@ class EncyclopediaViewController: UIViewController  {
         self.tableView.sectionHeaderHeight =  UITableView.automaticDimension
         self.tableView.estimatedSectionHeaderHeight = 25;
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if (searchForName) {
+            
+            if searchForPlants {
+                self.segmentedControl.selectedSegmentIndex = 1
+            }
+            else {
+                self.segmentedControl.selectedSegmentIndex = 0
+            }
+            self.searchController.isActive = true
+            self.searchController.searchBar.text = nameToBeSearched
+            self.searchController.resignFirstResponder()
+            
+            self.tableView.allowsSelection = true
+            self.tableView.isUserInteractionEnabled = true
+            
+            self.tableView.delegate?.tableView?(self.tableView, didSelectRowAt: IndexPath(row: 0, section: 0))
+            
+            searchForName = false
+        }
+    }
+    
     //MARK: Private Methods
     private func saveLivingBeings() {
         //Attempts to archive the living beings array to a specific location, and returns true if it’s successful.
@@ -418,6 +445,7 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        print("OIE")
         var livingBeing: LivingBeing
         
         // Fetches the appropriate living being for the data source layout.

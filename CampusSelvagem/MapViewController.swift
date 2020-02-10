@@ -405,44 +405,74 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: LivingBeingDelegate {
     func tapOn(species: String) {
-        
-        self.mapView.addBlurEffect()
-        self.mapView.isUserInteractionEnabled = false
-        self.view.addSubview(informationDetailView)
-        let centerXConstrain = NSLayoutConstraint(item: informationDetailView as Any,
-                                                  attribute: .centerX,
-                                                  relatedBy: .equal,
-                                                  toItem: view.safeAreaLayoutGuide,
-                                                  attribute: .centerX,
-                                                  multiplier: 1.0,
-                                                  constant: 0)
-        let centerYConstrain = NSLayoutConstraint(item: informationDetailView as Any,
-                                                  attribute: .centerY,
-                                                  relatedBy: .equal,
-                                                  toItem: view.safeAreaLayoutGuide,
-                                                  attribute: .centerY,
-                                                  multiplier: 1.0,
-                                                  constant: 0)
-        let widthConstrain = NSLayoutConstraint(item: informationDetailView as Any,
-                                                attribute: .width,
-                                                relatedBy: .equal,
-                                                toItem: view.safeAreaLayoutGuide,
-                                                attribute: .width,
-                                                multiplier: 0.8,
-                                                constant: 0)
-        let heightConstrain = NSLayoutConstraint(item: informationDetailView as Any,
-                                                 attribute: .height,
-                                                 relatedBy: .equal,
-                                                 toItem: view.safeAreaLayoutGuide,
-                                                 attribute: .height,
-                                                 multiplier: 0.8,
-                                                 constant: 0)
-        self.view.translatesAutoresizingMaskIntoConstraints = false
-        self.informationDetailView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addConstraints([centerXConstrain, centerYConstrain])
-        //self.informationDetailView.addConstraints([heightConstrain, widthConstrain])
-        self.informationDetailView.layer.cornerRadius = 20
-        self.mapView.isUserInteractionEnabled = false
+        let enciclopediaNavigationController = self.tabBarController?.viewControllers?[2] as? UINavigationController
+        for view in enciclopediaNavigationController?.viewControllers ?? [] {
+            if view is EncyclopediaViewController {
+                let encView = view as! EncyclopediaViewController
+                if let being = findLivingBeing(species) {
+                    encView.nameToBeSearched = being.name
+                    encView.searchForName = true
+                    if being.beingClass == .angiospermas ||
+                        being.beingClass == .gimnospermas ||
+                        being.beingClass == .briofita ||
+                        being.beingClass == .pteridofitas {
+                        encView.searchForPlants = true
+                    }
+                    else {
+                        encView.searchForPlants = false
+                    }
+                }
+            }
+        }
+        self.tabBarController?.selectedIndex = 2
+//        if enciclopediaViewController != nil {
+//            let name = findLivingBeing(species)?.name
+//            enciclopediaViewController?.searchController.isActive = true
+//            enciclopediaViewController?.searchController.searchBar.text = name
+//
+//            enciclopediaViewController?.tableView.delegate?.tableView?(enciclopediaViewController!.tableView,
+//                                                                       didSelectRowAt: IndexPath(row: 0, section: 0))
+//        }
+//        else {
+//            print("enciclopediaViewController is nil")
+//        }
+//        self.mapView.addBlurEffect()
+//        self.mapView.isUserInteractionEnabled = false
+//        self.view.addSubview(informationDetailView)
+//        let centerXConstrain = NSLayoutConstraint(item: informationDetailView as Any,
+//                                                  attribute: .centerX,
+//                                                  relatedBy: .equal,
+//                                                  toItem: view.safeAreaLayoutGuide,
+//                                                  attribute: .centerX,
+//                                                  multiplier: 1.0,
+//                                                  constant: 0)
+//        let centerYConstrain = NSLayoutConstraint(item: informationDetailView as Any,
+//                                                  attribute: .centerY,
+//                                                  relatedBy: .equal,
+//                                                  toItem: view.safeAreaLayoutGuide,
+//                                                  attribute: .centerY,
+//                                                  multiplier: 1.0,
+//                                                  constant: 0)
+//        let widthConstrain = NSLayoutConstraint(item: informationDetailView as Any,
+//                                                attribute: .width,
+//                                                relatedBy: .equal,
+//                                                toItem: view.safeAreaLayoutGuide,
+//                                                attribute: .width,
+//                                                multiplier: 0.8,
+//                                                constant: 0)
+//        let heightConstrain = NSLayoutConstraint(item: informationDetailView as Any,
+//                                                 attribute: .height,
+//                                                 relatedBy: .equal,
+//                                                 toItem: view.safeAreaLayoutGuide,
+//                                                 attribute: .height,
+//                                                 multiplier: 0.8,
+//                                                 constant: 0)
+//        self.view.translatesAutoresizingMaskIntoConstraints = false
+//        self.informationDetailView.translatesAutoresizingMaskIntoConstraints = false
+//        self.view.addConstraints([centerXConstrain, centerYConstrain])
+//        //self.informationDetailView.addConstraints([heightConstrain, widthConstrain])
+//        self.informationDetailView.layer.cornerRadius = 20
+//        self.mapView.isUserInteractionEnabled = false
         
         if let data = findLivingBeing(species)  {
             im.image = data.photos[0]
