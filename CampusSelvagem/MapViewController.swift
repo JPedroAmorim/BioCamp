@@ -140,18 +140,31 @@ class MapViewController: UIViewController {
         addAnnotations()
     }
     
-    // Outlet-related methods
-    @objc func centerBtnAction() {
-        if centerBtnIsCentered {
-            centerBtnIsCentered = false
-//            centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
-        }
-        else {
-            centerBtnIsCentered = true
-            didPressCenterBtn = true
-//            centerBtn.setImage(UIImage(named: "centerOn"), for: .normal)
-            centerViewOnUserLocation()
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+
+            // re-centralize the popover
+            if self.view.subviews.contains(disableAnimationsView) {
+                self.disableAnimationsView.center = CGPoint(x: self.disableAnimationsView.center.y,
+                                                            y: self.disableAnimationsView.center.x)
+            } else if self.view.subviews.contains(popOverFilter) {
+                self.popOverFilter.center = CGPoint(x: self.popOverFilter.center.y,
+                                                    y: self.popOverFilter.center.x)
+            }
+        } else {
+            print("Portrait")
             
+            // re-centralize the popover
+            if self.view.subviews.contains(disableAnimationsView){
+                self.disableAnimationsView.center = CGPoint(x: self.disableAnimationsView.center.y,
+                                                            y: self.disableAnimationsView.center.x)
+            } else if self.view.subviews.contains(popOverFilter) {
+                self.popOverFilter.center = CGPoint(x: self.popOverFilter.center.y,
+                                                    y: self.popOverFilter.center.x)
+            }
         }
     }
     
@@ -217,6 +230,19 @@ class MapViewController: UIViewController {
         self.mapView.isUserInteractionEnabled = true
         self.informationDetailView.removeFromSuperview()
     }
+    
+        // Outlet-related methods
+        @objc func centerBtnAction() {
+            if centerBtnIsCentered {
+                centerBtnIsCentered = false
+            }
+            else {
+                centerBtnIsCentered = true
+                didPressCenterBtn = true
+                centerViewOnUserLocation()
+                
+            }
+        }
     
     // Localization logic and setup methods
     private func centerViewOnCB() {
@@ -314,7 +340,6 @@ extension MapViewController: MKMapViewDelegate {
 
         if didPressCenterBtn == false && c == 1 {
                 centerBtnIsCentered = false
-//                centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
         }
     }
     
