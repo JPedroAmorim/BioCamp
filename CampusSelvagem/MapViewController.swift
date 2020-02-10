@@ -16,6 +16,7 @@ class MapViewController: UIViewController {
     @IBOutlet weak var filterBtn: UIButton!
     @IBOutlet weak var centerBtn: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var settingsBtn: UIButton!
     
     @IBOutlet var informationDetailView: UIView!
     @IBOutlet weak var im: UIImageView!
@@ -125,8 +126,9 @@ class MapViewController: UIViewController {
         self.disableAnimationsView.layer.cornerRadius = popOverCornerRadiusValue
         self.animationEnabledButton.layer.cornerRadius = popOverCornerRadiusValue
         
-        self.filterBtn.layer.cornerRadius = 0.5 * filterBtn.bounds.size.width
-        self.centerBtn.layer.cornerRadius = 0.5 * centerBtn.bounds.size.width
+        self.filterBtn.backgroundColor = .clear
+        self.centerBtn.backgroundColor = .clear
+        self.settingsBtn.backgroundColor = .clear
         
         checkLocationServices()
         addAnnotations()
@@ -142,12 +144,12 @@ class MapViewController: UIViewController {
     @objc func centerBtnAction() {
         if centerBtnIsCentered {
             centerBtnIsCentered = false
-            centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
+//            centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
         }
         else {
             centerBtnIsCentered = true
             didPressCenterBtn = true
-            centerBtn.setImage(UIImage(named: "centerOn"), for: .normal)
+//            centerBtn.setImage(UIImage(named: "centerOn"), for: .normal)
             centerViewOnUserLocation()
             
         }
@@ -297,7 +299,7 @@ extension MapViewController: MKMapViewDelegate {
         else {
             if didPressCenterBtn == false {
                 centerBtnIsCentered = false
-                centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
+//                centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
             }
         }
     }
@@ -312,7 +314,7 @@ extension MapViewController: MKMapViewDelegate {
 
         if didPressCenterBtn == false && c == 1 {
                 centerBtnIsCentered = false
-                centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
+//                centerBtn.setImage(UIImage(named: "centerOff"), for: .normal)
         }
     }
     
