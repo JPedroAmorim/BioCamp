@@ -88,10 +88,35 @@ class Animal: LivingBeing {
 }
 
 enum AnimalType: String, Codable {
-    case amphibian = "Anfíbios"
-    case bird = "Aves"
-    case mammal = "Mamíferos"
-    case reptile = "Répteis"
-    case insect = "Insetos"
-    case fish = "Peixes"
+    case amphibian = "Amphibians"
+    case bird = "Birds"
+    case mammal = "Mammals"
+    case reptile = "Reptiles"
+    case insect = "Insects"
+    case fish = "Fish"
+    
+    func returnLocalizedValue() -> String {
+        var returnValue: String
+        
+        switch self {
+        case .amphibian:
+            returnValue = NSLocalizedString("Amphibians", comment: "")
+            break
+        case .bird:
+            returnValue = NSLocalizedString("Birds", comment: "")
+            break
+        case .mammal:
+            returnValue = NSLocalizedString("Mammals", comment: "")
+            break
+        case .reptile:
+            returnValue = NSLocalizedString("Reptiles", comment: "")
+            break
+        case .insect:
+            returnValue = NSLocalizedString("Insects", comment: "")
+            break
+        case .fish:
+            returnValue = NSLocalizedString("Fish", comment: "")
+    }
+    return returnValue
+    }
 }

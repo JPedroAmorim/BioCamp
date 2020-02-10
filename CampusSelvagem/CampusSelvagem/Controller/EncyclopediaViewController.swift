@@ -410,7 +410,7 @@ extension EncyclopediaViewController: UISearchResultsUpdating, UITableViewDataSo
         var text = ""
         
         if !isFiltering() {
-            text = sectionsList[section]
+            text = NSLocalizedString("\(sectionsList[section])", comment: "")
         }
         
         return text

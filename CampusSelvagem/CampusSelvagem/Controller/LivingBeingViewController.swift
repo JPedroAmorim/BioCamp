@@ -68,11 +68,11 @@ class LivingBeingViewController: UIViewController {
         self.lblNameContent.text = self.livingBeing?.name
         self.lblScientificNameContent.text = self.livingBeing?.scientificName
         if let animal = self.livingBeing as? Animal {
-            self.lblTypeContent.text = animal.type.rawValue
+            self.lblTypeContent.text = animal.type.returnLocalizedValue()
             self.lblHabitatBiomeContent.text = animal.habitat
         }
         else if let plant = self.livingBeing as? Plant {
-            self.lblTypeContent.text = plant.type.rawValue
+            self.lblTypeContent.text = plant.type.returnLocalizedValue()
             self.lblHabitatBiomeContent.text = plant.biome
         }
         else {
@@ -87,6 +87,14 @@ class LivingBeingViewController: UIViewController {
             self.stackView.axis = .vertical
             
         }
+        
+        // Localization setup
+        self.lblName.text = NSLocalizedString("Name", comment: "")
+        self.lblScientificName.text = NSLocalizedString("Scientific name", comment: "")
+        self.lblType.text = NSLocalizedString("Type", comment: "")
+        self.lblHabitatBiome.text = NSLocalizedString("Habitat/Biome", comment: "")
+        self.lblLocation.text = NSLocalizedString("Location", comment: "")
+        self.lblCuriosity.text = NSLocalizedString("Curiosity", comment: "")
         
         setupAccessibility()
     }

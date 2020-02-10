@@ -129,7 +129,7 @@ class MVPData {
         data.append(LivingBeing(name: NSLocalizedString("Brazilwood", comment: ""),
                                 scientificName: "Paubrasilia echinata",
                                 beingClass: .angiospermas,
-                                locationOnCampus:NSLocalizedString("Peace Square", comment: ""),
+                                locationOnCampus:NSLocalizedString("Peace square", comment: ""),
                                 coordinate: (latitude: -22.823231, longitude: -47.068058),
                                 areaRadius: 30,
                                 habitatOrBiome: NSLocalizedString("Atlantic florest", comment: ""),

@@ -6,6 +6,13 @@
   Copyright © 2020 Felipe Semissatto. All rights reserved.
 */
 
+"Name" = "Nome";
+"Scientific name" = "Nome científico";
+"Type" = "Tipo";
+"Habitat/Biome" = "Hábitat/Bioma";
+"Location" = "Localização";
+"Curiosity" = "Curiosidade";
+"Unknown" = "Desconhecido";
 "Amphibian" = "Anfíbio";
 "Birds" = "Aves";
 "Mammals" = "Mamíferos";
@@ -13,6 +20,7 @@
 "Insects" = "Insetos";
 "Fish" = "Peixe";
 "Briophytes" = "Briófitas";
+"Angiosperms" = "Angiospermas";
 "Pteridophytes" = "Pteridófitas";
 "Gimnosperms" = "Gimnospermas";
 "Burrowing owl" = "Coruja Buraqueira";
@@ -33,16 +41,16 @@
 "Their flocks usually have a determined region and fly the same course everyday, turning predictable theirs visiting hour to certain spots in some cases." = "Os bandos costumam ter um território e normalmente percorrem um mesmo trajeto todos os dias, tornando previsíveis seus horários de visita a certos locais em alguns casos.";
 "Hedgehog"  = "Ouriço-cacheiro";
 "It can be spotted around all campus, though more frequently they appear next to the building of the dep. of Medical Sciences" =  "Pode ser avistado por todo o campus, porém aparecem frequentemente próximos da FCM";
-"They inhabit in Brazil, occuring from the state of Rio de Janeiro until Rio Grande do Sul, including Minas Gerais"; = "Ocorre desde o Rio de Janeiro até o Rio Grande do Sul, incluindo Minas Gerais.";
+"They inhabit in Brazil, occuring from the state of Rio de Janeiro until Rio Grande do Sul, including Minas Gerais" = "Ocorre desde o Rio de Janeiro até o Rio Grande do Sul, incluindo Minas Gerais.";
 "They only conceive one cub per litter" = "Produzem um unico filhote por ninhada.";
 "Tegu lizard" = "Teiu";
 "They can be seen around all campus, but more frequently near the building of the Computer and Eletrical engineering dep." = "Pode ser avistado por todo o campus, porém aparecem frequentemente próximos da FEEC.";
 "They inhabit all of Brazil (except for the Amazon rainforest area) and places such as the north of Argentina and Uruguay" = "Habita grande parte do Brasil (com exceção da floresta amazônica) e norte da Argentina e Uruguai";
 "They have the capacity to increase their metabolic rate in copulation season to rates similar to those of mammals and birds, generating heat and keeping their body temperature higher than of its environment." = "Possui a capacidade de aumentar a sua taxa metabólica durante o período reprodutivo a níveis próximos ao de mamíferos e aves, gerando calor e mantendo sua temperatura mais elevada do que a do ambiente.";
 "European mantis" = "Mantis religiosa";
-"It can be seen around all campus, but they more frequently appear next to the student council building." = "Pode ser avistado por todo o campus, porém aparecem frequentemente próximos ao DCE"
+"It can be seen around all campus, but they more frequently appear next to the student council building." = "Pode ser avistado por todo o campus, porém aparecem frequentemente próximos ao DCE";
 "They can be found in south Europe, Americas, Asia, Africa and Australia" = "Podem ser encontrados no sul da europa, américa, Asia, Africa e Australia";
-"Its courting and pairing can be separated in two stages: preliminar courting and copulation itself. Premilinar courting starts with the eye contact of those individuals and it ends at the start of the first physical contact. Copulation starts with the first physical contact and it ends with the deposit of the spermatofagus." = "O cortejo e pareamento são separados em dois passos: cortejo preliminar e copulação. O cortejo preliminar começa com o contato visual dos animais e termina com o primeiro contato físico. Copulação começa com o primeiro contato e termina com o depósito do espermatófago"
+"Its courting and pairing can be separated in two stages: preliminar courting and copulation itself. Premilinar courting starts with the eye contact of those individuals and it ends at the start of the first physical contact. Copulation starts with the first physical contact and it ends with the deposit of the spermatofagus." = "O cortejo e pareamento são separados em dois passos: cortejo preliminar e copulação. O cortejo preliminar começa com o contato visual dos animais e termina com o primeiro contato físico. Copulação começa com o primeiro contato e termina com o depósito do espermatófago";
 "Cannon ball tree" = "Abricó-de-macaco";
 "Peace square" = "Praça da Paz";
 "Brazil's atlantic forest area" = "Mata Atlântica";
