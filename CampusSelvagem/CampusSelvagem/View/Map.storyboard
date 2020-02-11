@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xgg-vH-pjd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xgg-vH-pjd">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,6 +81,7 @@
                         <outlet property="centerBtn" destination="ca7-fF-Zyc" id="Zmg-P1-PWL"/>
                         <outlet property="disableAnimationsView" destination="tE1-9G-fw0" id="Cri-kE-Qzn"/>
                         <outlet property="doneButton" destination="CHj-Ii-BaL" id="eRo-Tt-vvD"/>
+                        <outlet property="enableAnimationLabel" destination="d1A-Hh-oaT" id="niQ-R5-R96"/>
                         <outlet property="exitInfo" destination="C4L-l5-oO4" id="azi-ck-IcC"/>
                         <outlet property="filterBtn" destination="5Vo-ic-n6S" id="EUM-zv-cYo"/>
                         <outlet property="filterTableView" destination="gRf-JA-KKc" id="BbJ-YH-qUb"/>

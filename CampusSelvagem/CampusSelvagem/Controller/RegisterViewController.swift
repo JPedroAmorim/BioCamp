@@ -134,7 +134,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
            
         sendLabel.text = NSLocalizedString("Send", comment: "")
         eraseLabel.text = NSLocalizedString("Cancel", comment: "")
-        nameTextBox.placeholder = NSLocalizedString("Living Being Name", comment: "")
+        nameTextBox.placeholder = NSLocalizedString("Living being name", comment: "")
         locationTextBox.placeholder = NSLocalizedString("Place where it was spotted", comment: "")
        }
     
