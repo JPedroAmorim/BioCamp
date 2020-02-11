@@ -32,8 +32,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var constrainTextBox: UIView!
     @IBOutlet weak var nameTextBox: UITextField!
     @IBOutlet weak var locationTextBox: UITextField!
-    @IBOutlet weak var sendLabel: UILabel!
-    @IBOutlet weak var eraseLabel: UILabel!
+//    @IBOutlet weak var sendLabel: UILabel!
+//    @IBOutlet weak var eraseLabel: UILabel!
     
     // MARK: - IBActions
     @IBAction func confirmButton(_ sender: Any) {
@@ -132,8 +132,12 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                imageDelButtons[n].isAccessibilityElement = true
            }
            
-        sendLabel.text = NSLocalizedString("Send", comment: "")
-        eraseLabel.text = NSLocalizedString("Cancel", comment: "")
+        submitButton.titleLabel?.text = NSLocalizedString("Send", comment: "")
+        clearAllButton.titleLabel?.text = NSLocalizedString("Send", comment: "")
+//        eraseLabel.setTitle(NSLocalizedString("Cancel", comment: ""))
+        
+//        sendLabel.text = NSLocalizedString("Send", comment: "")
+//        eraseLabel.text = NSLocalizedString("Cancel", comment: "")
         nameTextBox.placeholder = NSLocalizedString("Living Being Name", comment: "")
         locationTextBox.placeholder = NSLocalizedString("Place where it was spotted", comment: "")
        }
