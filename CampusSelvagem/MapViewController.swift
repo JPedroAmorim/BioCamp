@@ -42,7 +42,7 @@ class MapViewController: UIViewController {
     
     
     // Control variables
-    var shouldDisplayRadiusAnimation = false
+    var shouldDisplayRadiusAnimation = true
     
     // AnnotationViews
     var annotationViews: [MKAnnotationView] = []
@@ -88,7 +88,7 @@ class MapViewController: UIViewController {
     var animalClasses: [LivingBeingClassAttributes] = []
     var plantClasses: [LivingBeingClassAttributes] = []
     
-    // Lifecycle methods
+    // MARK: - Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -142,7 +142,13 @@ class MapViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         addAnnotations()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
