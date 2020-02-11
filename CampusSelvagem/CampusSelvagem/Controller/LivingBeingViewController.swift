@@ -101,7 +101,7 @@ class LivingBeingViewController: UIViewController {
     
     func setupAccessibility() {
         picturesView.isAccessibilityElement = true
-        picturesView.accessibilityLabel = "Pictures of \(lblName.text!)"
+        picturesView.accessibilityLabel = NSLocalizedString("Pictures of", comment: "") + "\(lblName.text!)"
         
         nameView.isAccessibilityElement = true
         nameView.accessibilityLabel = "\(lblName.text!), \(lblNameContent.text!)"
