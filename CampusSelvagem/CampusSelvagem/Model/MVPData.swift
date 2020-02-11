@@ -21,7 +21,7 @@ class MVPData {
         photos.append(UIImage(named: "corujas2"))
         data.append(LivingBeing(name: NSLocalizedString("Burrowing owl", comment: ""),
                                 scientificName: "Athene cunicularia",
-                                beingClass: .ave,
+                                beingClass: .bird,
                                 locationOnCampus: NSLocalizedString("FEAGRIS's parking lot", comment: ""),
                                 coordinate: (latitude: -22.817016, longitude: -47.060604),
                                 areaRadius: 70,
@@ -34,7 +34,7 @@ class MVPData {
         photos.append(UIImage(named: "peregrino01"))
         data.append(LivingBeing(name: NSLocalizedString("Peregrine falcon", comment: ""),
                                 scientificName: "Falco peregrinus",
-                                beingClass: .ave,
+                                beingClass: .bird,
                                 locationOnCampus: NSLocalizedString("It can be seen everyewhere on campus, though it's more frequently seen around the Performing Arts building", comment: ""),
                                 coordinate: (latitude: -22.815381, longitude: -47.070758),
                                 areaRadius: 90,
@@ -47,7 +47,7 @@ class MVPData {
         photos.append(UIImage(named: "carcara01"))
         data.append(LivingBeing(name: NSLocalizedString("Southern caracara", comment: ""),
                                 scientificName: "Caracara plancus",
-                                beingClass: .ave,
+                                beingClass: .bird,
                                 locationOnCampus: NSLocalizedString("It can be seen around all campus, most frequently around the buildings of the Institute of Arts and the Institute of linguistics", comment: ""),
                                 coordinate: (latitude: -22.814893, longitude: -47.069642),
                                 areaRadius: 150,
@@ -60,7 +60,7 @@ class MVPData {
         photos.append(UIImage(named: "gralha01"))
         data.append(LivingBeing(name: NSLocalizedString("Curl-crested jay", comment: ""),
                                 scientificName: "Cyanocorax cristatellus",
-                                beingClass: .ave,
+                                beingClass: .bird,
                                 locationOnCampus: NSLocalizedString("It can mostly be seen around the lake house" , comment: ""),
                                 coordinate: (latitude: -22.812800, longitude: -47.069803),
                                 areaRadius: 100,
@@ -74,7 +74,7 @@ class MVPData {
         photos.append(UIImage(named: "cacheiro01"))
         data.append(LivingBeing(name: NSLocalizedString("Hedgehog", comment: ""),
                                 scientificName: "Coendou prehensilis",
-                                beingClass: .mamifero,
+                                beingClass: .mammmal,
                                 locationOnCampus: NSLocalizedString("It can be spotted around all campus, though more frequently they appear next to the building of the dep. of Medical Sciences", comment: ""),
                                 coordinate: (latitude: -22.830147, longitude: -47.062524),
                                 areaRadius: 210,
@@ -87,7 +87,7 @@ class MVPData {
         photos.append(UIImage(named: "teiu00"))
         data.append(LivingBeing(name: NSLocalizedString("Tegu lizard", comment: ""),
                                 scientificName: "Salvator merianae",
-                                beingClass: .reptil,
+                                beingClass: .reptile,
                                 locationOnCampus: NSLocalizedString("They can be seen around all campus, but more frequently near the building of the Computer and Eletrical engineering dep.", comment: ""),
                                 coordinate: (latitude: -22.821178, longitude: -47.065785),
                                 areaRadius: 200,
@@ -100,7 +100,7 @@ class MVPData {
         photos.append(UIImage(named: "gafanhoto"))
         data.append(LivingBeing(name: NSLocalizedString("European mantis", comment: ""),
                                 scientificName: "Gryllus religiosa",
-                                beingClass: .inseto,
+                                beingClass: .insect,
                                 locationOnCampus: NSLocalizedString("It can be seen around all campus, but they more frequently appear next to the student council building.", comment: ""),
                                 coordinate: (latitude: -22.817901, longitude: -47.071941),
                                 areaRadius: 200,
@@ -115,7 +115,7 @@ class MVPData {
         photos.append(UIImage(named: "flor2"))
         data.append(LivingBeing(name: NSLocalizedString("Cannon ball tree", comment: ""),
                                 scientificName: "Couroupita guianensis",
-                                beingClass: .angiospermas,
+                                beingClass: .angiosperms,
                                 locationOnCampus: NSLocalizedString("Peace square", comment: ""),
                                 coordinate: (latitude: -22.821975, longitude: -47.067189),
                                 areaRadius: 30,
@@ -128,7 +128,7 @@ class MVPData {
         photos.append(UIImage(named: "paubrasil2"))
         data.append(LivingBeing(name: NSLocalizedString("Brazilwood", comment: ""),
                                 scientificName: "Paubrasilia echinata",
-                                beingClass: .angiospermas,
+                                beingClass: .angiosperms,
                                 locationOnCampus:NSLocalizedString("Peace square", comment: ""),
                                 coordinate: (latitude: -22.823231, longitude: -47.068058),
                                 areaRadius: 30,

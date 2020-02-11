@@ -63,16 +63,16 @@ class MapViewController: UIViewController {
         case animal
     }
     
-    var livingBeingClassData = [LivingBeing.LivingBeingClass.anfibio: LivingBeingClassAttributes(nome: "Anfibio", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.ave: LivingBeingClassAttributes(nome: "Ave", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.mamifero: LivingBeingClassAttributes(nome: "Mamifero", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.reptil: LivingBeingClassAttributes(nome: "Reptil", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.peixe: LivingBeingClassAttributes(nome: "Peixe", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.inseto: LivingBeingClassAttributes(nome: "Inseto", isOn: true, beingKingdom: .animal),
-                                LivingBeing.LivingBeingClass.briofita: LivingBeingClassAttributes(nome: "Briofitas", isOn: true, beingKingdom: .planta),
-                                LivingBeing.LivingBeingClass.pteridofitas: LivingBeingClassAttributes(nome: "Pteridofitas", isOn: true, beingKingdom: .planta),
-                                LivingBeing.LivingBeingClass.angiospermas: LivingBeingClassAttributes(nome: "Angiospermas", isOn: true, beingKingdom: .planta),
-                                LivingBeing.LivingBeingClass.gimnospermas: LivingBeingClassAttributes(nome: "Gimnospermas", isOn: true, beingKingdom: .planta)]
+    var livingBeingClassData = [LivingBeing.LivingBeingClass.amphibian: LivingBeingClassAttributes(nome: "Amphibian", isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.bird: LivingBeingClassAttributes(nome: "Bird", isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.mammmal: LivingBeingClassAttributes(nome: "Mammal", isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.reptile: LivingBeingClassAttributes(nome: "Reptile", isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.fish: LivingBeingClassAttributes(nome: "Fish", isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.insect: LivingBeingClassAttributes(nome: "Insect", isOn: true, beingKingdom: .animal),
+                                LivingBeing.LivingBeingClass.briophyte: LivingBeingClassAttributes(nome: "Briophytes", isOn: true, beingKingdom: .planta),
+                                LivingBeing.LivingBeingClass.pteridophytes: LivingBeingClassAttributes(nome: "Pteridophytes", isOn: true, beingKingdom: .planta),
+                                LivingBeing.LivingBeingClass.angiosperms: LivingBeingClassAttributes(nome: "Angiosperms", isOn: true, beingKingdom: .planta),
+                                LivingBeing.LivingBeingClass.gimnosperms: LivingBeingClassAttributes(nome: "Gimnosperms", isOn: true, beingKingdom: .planta)]
     
     var livingBeingData: [LivingBeingAnnotation] = {
         var data: [LivingBeingAnnotation] = []
@@ -133,6 +133,11 @@ class MapViewController: UIViewController {
         checkLocationServices()
         addAnnotations()
         centerBtn.addTarget(self, action: #selector(centerBtnAction), for: .touchUpInside)
+        
+        popOverSegmentedControl.setTitle("Animals", forSegmentAt: 0)
+        popOverSegmentedControl.setTitle("Plants", forSegmentAt: 1)
+        
+        doneButton.titleLabel?.text = NSLocalizedString("Done", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -451,10 +456,10 @@ extension MapViewController: LivingBeingDelegate {
                 if let being = findLivingBeing(species) {
                     encView.nameToBeSearched = being.name
                     encView.searchForName = true
-                    if being.beingClass == .angiospermas ||
-                        being.beingClass == .gimnospermas ||
-                        being.beingClass == .briofita ||
-                        being.beingClass == .pteridofitas {
+                    if being.beingClass == .angiosperms ||
+                        being.beingClass == .gimnosperms ||
+                        being.beingClass == .briophyte ||
+                        being.beingClass == .pteridophytes {
                         encView.searchForPlants = true
                     }
                     else {
@@ -513,13 +518,13 @@ extension MapViewController: LivingBeingDelegate {
 //        self.informationDetailView.layer.cornerRadius = 20
 //        self.mapView.isUserInteractionEnabled = false
         
-        self.view.addBlurEffect()
-        self.mapView.isUserInteractionEnabled = false
-        self.tabBarController?.tabBar.isUserInteractionEnabled = false
-        self.tabBarController?.tabBar.isTranslucent = true
-        self.view.addSubview(informationDetailView)
-        self.informationDetailView.center = self.view.center
-        self.informationDetailView.layer.cornerRadius = 20
+//        self.view.addBlurEffect()
+//        self.mapView.isUserInteractionEnabled = false
+//        self.tabBarController?.tabBar.isUserInteractionEnabled = false
+//        self.tabBarController?.tabBar.isTranslucent = true
+//        self.view.addSubview(informationDetailView)
+//        self.informationDetailView.center = self.view.center
+//        self.informationDetailView.layer.cornerRadius = 20
         
         if let data = findLivingBeing(species)  {
             im.image = data.photos[0]
@@ -573,10 +578,10 @@ extension MapViewController: UITableViewDataSource {
         
         switch popOverSegmentedControl.selectedSegmentIndex {
         case 0:
-            myCell.filterCellLabel.text = self.animalClasses[indexPath.row].nome
+            myCell.filterCellLabel.text = NSLocalizedString(self.animalClasses[indexPath.row].nome, comment: "")
             myCell.filterCellSwitch.isOn = self.animalClasses[indexPath.row].isOn
         case 1:
-            myCell.filterCellLabel.text = self.plantClasses[indexPath.row].nome
+            myCell.filterCellLabel.text = NSLocalizedString(self.plantClasses[indexPath.row].nome, comment: "")
             myCell.filterCellSwitch.isOn = self.plantClasses[indexPath.row].isOn
         default:
             print("Unkown index")
@@ -639,25 +644,25 @@ class LivingBeingAnnotation: NSObject, MKAnnotation {
     var areaRadius: CGFloat
     var imageName: String? {
         switch beingClass {
-        case .anfibio:
+        case .amphibian:
             return "iconAnfibio"
-        case .angiospermas:
+        case .angiosperms:
             return "iconAngiosperma"
-        case .ave:
+        case .bird:
             return "iconAve"
-        case .briofita:
+        case .briophyte:
             return "iconBriofita"
-        case .gimnospermas:
+        case .gimnosperms:
             return "iconGimnosperma"
-        case .inseto:
+        case .insect:
             return "iconInseto"
-        case .mamifero:
+        case .mammmal:
             return "iconMamifero"
-        case .peixe:
+        case .fish:
             return "iconPeixe"
-        case .pteridofitas:
+        case .pteridophytes:
             return "iconPteridofitas"
-        case .reptil:
+        case .reptile:
             return "iconReptil"
         }
     }

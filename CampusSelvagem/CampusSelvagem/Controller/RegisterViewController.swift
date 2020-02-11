@@ -32,6 +32,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBOutlet weak var constrainTextBox: UIView!
     @IBOutlet weak var nameTextBox: UITextField!
     @IBOutlet weak var locationTextBox: UITextField!
+    @IBOutlet weak var sendLabel: UILabel!
+    @IBOutlet weak var eraseLabel: UILabel!
     
     // MARK: - IBActions
     @IBAction func confirmButton(_ sender: Any) {
@@ -45,14 +47,14 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         }
             
         else {
-            let refreshAlert = UIAlertController(title: "Deseja enviar os dados?", message: nil, preferredStyle: UIAlertController.Style.alert)
+            let refreshAlert = UIAlertController(title: NSLocalizedString("Do you want to send the data?", comment: ""), message: nil, preferredStyle: UIAlertController.Style.alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                 self.updateImg()
                 self.clearAll()
             }))
             
-            refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+            refreshAlert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: { (action: UIAlertAction!) in
                 print("Cancel Logic pressed")
             }))
             
@@ -79,14 +81,14 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @IBAction func TakePhoto(_ sender: Any) {
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-        let deleteAction = UIAlertAction(title: "Abrir Câmera", style: .default, handler: { (action) -> Void in
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Open camera", comment: ""), style: .default, handler: { (action) -> Void in
             self.openCamera()
         })
-        let saveAction = UIAlertAction(title: "Abrir Galeria", style: .default, handler: { (action) -> Void in
+        let saveAction = UIAlertAction(title: NSLocalizedString("Open gallery", comment: ""), style: .default, handler: { (action) -> Void in
             self.openGalery()
         })
 
-        let cancelAction = UIAlertAction(title: "Cancelar", style: .cancel)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel)
 
         optionMenu.addAction(deleteAction)
         optionMenu.addAction(saveAction)
@@ -96,13 +98,13 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     }
     
     @IBAction func clearInformations(_ sender: Any) {
-           let refreshAlert = UIAlertController(title: "Deseja apagar tudo?", message: "Todos os dados serão perdidos", preferredStyle: UIAlertController.Style.alert)
+           let refreshAlert = UIAlertController(title: NSLocalizedString("Wish to erase all data?", comment: ""), message: NSLocalizedString("All data will be lost", comment: ""), preferredStyle: UIAlertController.Style.alert)
            
            refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                self.clearAll()
            }))
            
-           refreshAlert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: { (action: UIAlertAction!) in
+           refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
                print("Cancel Logic pressed")
            }))
            
@@ -129,9 +131,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                imageDelButtons[n].alpha = 0
                imageDelButtons[n].isAccessibilityElement = true
            }
-        
            
-          
+        sendLabel.text = NSLocalizedString("Send", comment: "")
+        eraseLabel.text = NSLocalizedString("Cancel", comment: "")
+        nameTextBox.placeholder = NSLocalizedString("Living Being Name", comment: "")
+        locationTextBox.placeholder = NSLocalizedString("Place where it was spotted", comment: "")
        }
     
     
@@ -196,7 +200,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         imageAddButtons[imageViewInUse].alpha = 0
         imageDelButtons[imageViewInUse].alpha = 0.4
         imageDelButtons[imageViewInUse].isAccessibilityElement = true
-        imageDelButtons[imageViewInUse].accessibilityLabel = "Deletar imagem"
+        imageDelButtons[imageViewInUse].accessibilityLabel = NSLocalizedString("Delete image", comment: "")
         imageViewInUse += 1
         imagePicker.dismiss(animated: true, completion: nil)
     }
@@ -288,9 +292,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             }
             
             if(AnimalSaved) {
-                showAlert(title: "Dados salvos", message: "Dados em fase de analise")
+                showAlert(title: NSLocalizedString("Data was saved", comment: ""), message: "Your sent data is being analyzed")
             } else {
-                showAlert(title: "Erro", message: "Verifique sua conexão")
+                showAlert(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Your sent data is being analyzed", comment: ""))
             }
     }
     
@@ -310,7 +314,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             contTimer += 1
             
             if(contTimer == 4) {
-                let refreshAlert = UIAlertController(title: "Erro", message: "É necessário adicionar ao menos uma imagem!", preferredStyle: UIAlertController.Style.alert)
+                let refreshAlert = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("It's necessary to add at least an image!", comment: ""), preferredStyle: UIAlertController.Style.alert)
                 
                 refreshAlert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { (action: UIAlertAction!) in
                 }))
@@ -338,8 +342,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         // Add image area setup
         for i in 0...3 {
             let groupedElement = UIAccessibilityElement(accessibilityContainer: self)
-            groupedElement.accessibilityLabel = "Adicionar imagem"
-            groupedElement.accessibilityHint = "Duplo toque para adicionar imagem"
+            groupedElement.accessibilityLabel = NSLocalizedString("Add image", comment: "")
+            groupedElement.accessibilityHint = NSLocalizedString("Double tap to add image", comment: "")
             groupedElement.accessibilityFrameInContainerSpace = imagesGalery[i].frame
             elements.append(groupedElement)
         }
@@ -347,9 +351,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         // Button setup
         self.submitButton.isAccessibilityElement = true
-        self.submitButton.accessibilityLabel = "Enviar"
+        self.submitButton.accessibilityLabel = NSLocalizedString("Send", comment: "")
         self.clearAllButton.isAccessibilityElement = true
-        self.clearAllButton.accessibilityLabel = "Apagar tudo"
+        self.clearAllButton.accessibilityLabel = NSLocalizedString("Clear all", comment: "")
     }
 }
 

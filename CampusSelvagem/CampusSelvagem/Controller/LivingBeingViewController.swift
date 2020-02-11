@@ -173,6 +173,8 @@ extension LivingBeingViewController : UICollectionViewDataSource {
        
         if let myCell = self.centeredCollectionView.dequeueReusableCell(withReuseIdentifier: "centeredCollectionCell", for: indexPath) as? CenteredCollectionViewCell {
             
+            myCell.cellImageView.contentMode = .scaleAspectFit
+            
             if let animal = self.livingBeing as? Animal {
                 myCell.cellImageView.image = animal.photos[indexPath.row]
             } else if let plant = self.livingBeing as? Plant {
