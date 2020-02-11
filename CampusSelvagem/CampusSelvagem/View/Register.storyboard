@@ -346,9 +346,11 @@
                         <outlet property="areaView" destination="P5Q-vv-MVN" id="rbz-fL-2UQ"/>
                         <outlet property="clearAllButton" destination="5vB-af-TD2" id="zB6-vj-wIR"/>
                         <outlet property="constrainTextBox" destination="2UC-qM-aFw" id="Hi1-Kn-SjT"/>
+                        <outlet property="eraseLabel" destination="0X5-ST-mNr" id="Rkr-GK-nav"/>
                         <outlet property="locationTextBox" destination="OB0-CD-44h" id="Lwc-Gd-Vka"/>
                         <outlet property="mainView" destination="bda-jy-9dq" id="fh8-TH-gqw"/>
                         <outlet property="nameTextBox" destination="MCX-wN-tgZ" id="D5k-gY-KUk"/>
+                        <outlet property="sendLabel" destination="Aea-ov-SNO" id="owo-rA-jcJ"/>
                         <outlet property="submitButton" destination="mbB-zD-NbC" id="tc7-NQ-5zc"/>
                         <outletCollection property="imageAddButtons" destination="6hs-9y-CDB" collectionClass="NSMutableArray" id="p7N-ke-ozC"/>
                         <outletCollection property="imageAddButtons" destination="UH2-3b-Os9" collectionClass="NSMutableArray" id="f5K-cz-uwW"/>

@@ -31,17 +31,17 @@ class Animal: LivingBeing {
         let beingClass: LivingBeingClass = {
             switch type {
             case .amphibian:
-                return LivingBeingClass.anfibio
+                return LivingBeingClass.amphibian
             case .bird:
-                return LivingBeingClass.ave
+                return LivingBeingClass.bird
             case .mammal:
-                return LivingBeingClass.mamifero
+                return LivingBeingClass.mammmal
             case .reptile:
-                return LivingBeingClass.reptil
+                return LivingBeingClass.reptile
             case .fish:
-                return LivingBeingClass.peixe
+                return LivingBeingClass.fish
             case .insect:
-                return LivingBeingClass.inseto
+                return LivingBeingClass.insect
             }
         }()
         

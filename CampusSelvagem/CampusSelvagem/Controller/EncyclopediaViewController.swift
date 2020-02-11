@@ -21,10 +21,10 @@ class EncyclopediaViewController: UIViewController  {
                            AnimalType.reptile.rawValue,
                             AnimalType.insect.rawValue,
                             AnimalType.fish.rawValue]
-    let sectionsPlants = [PlantType.angiospermas.rawValue,
-                          PlantType.gimnospermas.rawValue,
-                          PlantType.briofita.rawValue,
-                          PlantType.pteridofitas.rawValue]
+    let sectionsPlants = [PlantType.angiosperms.rawValue,
+                          PlantType.gimnosperms.rawValue,
+                          PlantType.briophyte.rawValue,
+                          PlantType.pteridophytes.rawValue]
     
     var dictAnimal: [String: [LivingBeing]] = [:]
     var dictPlant: [String: [LivingBeing]] = [:]
@@ -94,7 +94,7 @@ class EncyclopediaViewController: UIViewController  {
         //Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Procure o Nome do Animal"
+        searchController.searchBar.placeholder = NSLocalizedString("Search for the animal name", comment: "")
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
@@ -148,29 +148,29 @@ class EncyclopediaViewController: UIViewController  {
         
         
         for being in MVPData.sharedInstance.data {
-            if (being.beingClass == .anfibio ||  being.beingClass == .peixe || being.beingClass == .ave || being.beingClass == .mamifero ||  being.beingClass == .inseto || being.beingClass == .reptil) {
+            if (being.beingClass == .amphibian ||  being.beingClass == .fish || being.beingClass == .bird || being.beingClass == .mammmal ||  being.beingClass == .insect || being.beingClass == .reptile) {
                 
                 let animalType: AnimalType = {
                     switch being.beingClass {
-                        case .anfibio:
+                        case .amphibian:
                             return .amphibian
-                        case .ave:
+                    case .bird:
                             return .bird
-                        case .mamifero:
+                    case .mammmal:
                             return .mammal
-                        case .reptil:
+                        case .reptile:
                             return .reptile
-                        case .peixe:
+                    case .fish:
                             return .fish
-                        case .inseto:
+                    case .insect:
                             return .insect
-                        case .briofita:
+                        case .briophyte:
                             return .amphibian
-                        case .pteridofitas:
+                        case .pteridophytes:
                             return .amphibian
-                        case .angiospermas:
+                        case .angiosperms:
                             return .amphibian
-                        case .gimnospermas:
+                        case .gimnosperms:
                             return .amphibian
                     }
                 }()
@@ -239,30 +239,30 @@ class EncyclopediaViewController: UIViewController  {
 //        plants += [plant]
         
         for being in MVPData.sharedInstance.data {
-            if (being.beingClass == .briofita ||  being.beingClass == .pteridofitas || being.beingClass == .gimnospermas || being.beingClass == .angiospermas) {
+            if (being.beingClass == .briophyte ||  being.beingClass == .pteridophytes || being.beingClass == .gimnosperms || being.beingClass == .angiosperms) {
                 
                 let plantType: PlantType = {
                     switch being.beingClass {
-                    case .anfibio:
-                        return .angiospermas
-                    case .ave:
-                        return .angiospermas
-                    case .mamifero:
-                        return .angiospermas
-                    case .reptil:
-                        return .angiospermas
-                    case .peixe:
-                        return .angiospermas
-                    case .inseto:
-                        return .angiospermas
-                    case .briofita:
-                        return .briofita
-                    case .pteridofitas:
-                        return .pteridofitas
-                    case .angiospermas:
-                        return .angiospermas
-                    case .gimnospermas:
-                        return .gimnospermas
+                    case .amphibian:
+                        return .angiosperms
+                    case .bird:
+                        return .angiosperms
+                    case .mammmal:
+                        return .angiosperms
+                    case .reptile:
+                        return .angiosperms
+                    case .fish:
+                        return .angiosperms
+                    case .insect:
+                        return .angiosperms
+                    case .briophyte:
+                        return .briophyte
+                    case .pteridophytes:
+                        return .pteridophytes
+                    case .angiosperms:
+                        return .angiosperms
+                    case .gimnosperms:
+                        return .gimnosperms
                     }
                 }()
                 let plant = Plant(being.name, being.scientificName, being.locationOnCampus, being.coordinate, areaRadius: being.areaRadius, being.curiosity, being.photos, plantType, being.habitatOrBiome)
@@ -311,14 +311,14 @@ class EncyclopediaViewController: UIViewController  {
             filterSpecies(sectionList: sectionsAnimals, speciesCatalog: dictAnimal)
 
             tableView.reloadData()
-            searchController.searchBar.placeholder = "Procure o Nome do Animal"
+            searchController.searchBar.placeholder = NSLocalizedString("Search for the name of the animal", comment: "")
             break
             
         case 1:
             filterSpecies(sectionList: sectionsPlants, speciesCatalog: dictPlant)
             
             tableView.reloadData()
-            searchController.searchBar.placeholder = "Procure o Nome da Planta"
+            searchController.searchBar.placeholder = NSLocalizedString("Search for the name of the plant", comment: "")
             break
         default:
             break

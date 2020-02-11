@@ -6,7 +6,37 @@
   Copyright © 2020 Felipe Semissatto. All rights reserved.
 */
 
+"Animals" = "Animais";
+"Plants" = "Plantas";
+"Amphibian" = "Anfíbio";
+"Bird" = "Aves";
+"Mammal" = "Mamífero";
+"Reptile" = "Réptil";
+"Fish" = "Peixes";
+"Insect" = "Insetos";
+"Pteridophytes" = "Pteridófitas";
+"Angiosperms" = "Angiospermas";
+"Briophytes" = "Briófitas";
+"Gimnosperms" = "Gimnospermas";
+"Search for the name of the animal" = "Procure o nome do animal";
+"Search for the name of the plant" = "Procure o nome da planta";
 "Name" = "Nome";
+"Send" = "Enviar";
+"Clear all" =  "Apagar tudo";
+"Do you want to send the data?" = "Quer enviar os dados?";
+"Cancel" = "Cancelar";
+"Open camera" = "Abrir câmera";
+"Open gallery" = "Abrir galeria";
+"Wish to erase all data?" = "Wish to erase all data?";
+"All data will be lost" = "All data will be lost";
+"Delete image" = "Delete image";
+"Data was saved" = "Data was saved";
+"Your sent data is being analyzed" = "Your sent data is being analyzed";
+"Error" = "Error";
+"Verify your connection" = "Verify your connection";
+"It's necessary to add at least an image!" = "It's necessary to add at least an image!";
+"Add image" = "Add image";
+"Double tap to add image" = "Double tap to add image";
 "Scientific name" = "Nome científico";
 "Type" = "Tipo";
 "Habitat/Biome" = "Hábitat/Bioma";

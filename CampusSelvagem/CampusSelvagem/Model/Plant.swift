@@ -21,14 +21,14 @@ class Plant: LivingBeing {
         
         let beingClass: LivingBeingClass = {
             switch type {
-            case .angiospermas:
-                return LivingBeingClass.angiospermas
-            case .gimnospermas:
-                return LivingBeingClass.gimnospermas
-            case .briofita:
-                return LivingBeingClass.briofita
-            case .pteridofitas:
-                return LivingBeingClass.pteridofitas
+            case .angiosperms:
+                return LivingBeingClass.angiosperms
+            case .gimnosperms:
+                return LivingBeingClass.gimnosperms
+            case .briophyte:
+                return LivingBeingClass.briophyte
+            case .pteridophytes:
+                return LivingBeingClass.pteridophytes
             }
         }()
         super.init(name: name, scientificName: scientificName, beingClass: beingClass, locationOnCampus: locationOnCampus, coordinate: coordinate, areaRadius: areaRadius, habitatOrBiome: biome, curiosity: curiosity, photos: photos)
@@ -74,29 +74,30 @@ class Plant: LivingBeing {
 }
 
 enum PlantType: String {
-    case briofita = "Briophytes"
-    case pteridofitas = "Pteridophytes"
-    case angiospermas = "Angiosperms"
-    case gimnospermas = "Gimnosperms"
+    case briophyte = "Briophytes"
+    case pteridophytes = "Pteridophytes"
+    case angiosperms = "Angiosperms"
+    case gimnosperms = "Gimnosperms"
     
-//    func returnLocalizedValue() -> String {
-//        var returnValue: String
-//        
-//        switch self {
-//        case .briofita:
-//            returnValue = NSLocalizedString("Briophytes", comment: "")
-//            break
-//        case .pteridofitas:
-//            returnValue = NSLocalizedString("Briophytes", comment: "")
-//            break
-//        case .angiospermas:
-//            returnValue = NSLocalizedString("Briophytes", comment: "")
-//            break
-//        case .gimnospermas:
-//            returnValue = NSLocalizedString("Briophytes", comment: "")
-//            break
-//        default:
-//            returnValue = NSLocalizedString("Unknown", comment: "")
-//        }
-//    }
+    func returnLocalizedValue() -> String {
+         var returnValue: String
+      
+         switch self {
+         case .briophyte:
+           returnValue = NSLocalizedString("Briophytes", comment: "")
+            break
+        case .pteridophytes:
+            returnValue = NSLocalizedString("Briophytes", comment: "")
+             break
+         case .angiosperms:
+           returnValue = NSLocalizedString("Briophytes", comment: "")
+             break
+         case .gimnosperms:
+             returnValue = NSLocalizedString("Briophytes", comment: "")
+             break
+          default:
+             returnValue = NSLocalizedString("Unknown", comment: "")
+          }
+        return returnValue
+     }
 }

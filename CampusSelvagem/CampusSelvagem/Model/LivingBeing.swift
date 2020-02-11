@@ -17,7 +17,7 @@ class LivingBeing: NSObject, NSCoding {
     required init?(coder: NSCoder) {
         name = ""
         scientificName = ""
-        beingClass = .anfibio
+        beingClass = .amphibian
         locationOnCampus  = ""
         coordinate = (0.0, 0.0)
         areaRadius = 0.0
@@ -29,16 +29,16 @@ class LivingBeing: NSObject, NSCoding {
     
     
     public enum LivingBeingClass: String {
-        case anfibio
-        case ave
-        case mamifero
-        case reptil
-        case peixe
-        case inseto
-        case briofita
-        case pteridofitas
-        case angiospermas
-        case gimnospermas
+        case amphibian
+        case bird
+        case mammmal
+        case reptile
+        case fish
+        case insect
+        case briophyte
+        case pteridophytes
+        case angiosperms
+        case gimnosperms
     }
 
     var name: String
