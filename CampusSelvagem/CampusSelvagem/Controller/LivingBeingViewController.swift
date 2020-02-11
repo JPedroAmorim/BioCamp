@@ -100,26 +100,34 @@ class LivingBeingViewController: UIViewController {
     }
     
     func setupAccessibility() {
-        picturesView.isAccessibilityElement = true
-        picturesView.accessibilityLabel = NSLocalizedString("Pictures of", comment: "") + "\(lblName.text!)"
         
-        nameView.isAccessibilityElement = true
-        nameView.accessibilityLabel = "\(lblName.text!), \(lblNameContent.text!)"
-        
-        scientificNameView.isAccessibilityElement = true
-        scientificNameView.accessibilityLabel = "\(lblScientificName.text!), \(lblScientificNameContent.text!)"
-        
-        typeView.isAccessibilityElement = true
-        typeView.accessibilityLabel = "\(lblType.text!), \(lblTypeContent.text!)"
-        
-        habitatBiomeView.isAccessibilityElement = true
-        habitatBiomeView.accessibilityLabel = "\(lblHabitatBiome.text!), \(lblHabitatBiomeContent.text!)"
-        
-        locationView.isAccessibilityElement = true
-        locationView.accessibilityLabel = "\(lblLocation.text!), \(lblLocationContent.text!)"
-        
-        curiosityView.isAccessibilityElement = true
-        curiosityView.accessibilityLabel = "\(lblCuriosity.text!), \(lblCuriosityContent.text!)"
+        if let name = lblName.text, let nameContent = lblNameContent.text,
+            let scientificName = lblScientificName.text, let scientificNameContent = lblCuriosityContent,
+            let type = lblType.text, let typeContent = lblTypeContent.text,
+            let habitatBiome = lblHabitatBiome.text, let habitatBiomeContent = lblHabitatBiomeContent,
+            let location = lblLocation, let locationContent = lblLocationContent,
+            let curiosity = lblCuriosity, let curiosityContent = lblCuriosityContent {
+            picturesView.isAccessibilityElement = true
+            picturesView.accessibilityLabel = NSLocalizedString("Pictures of", comment: "") + "\(name)"
+            
+            nameView.isAccessibilityElement = true
+            nameView.accessibilityLabel = "\(name), \(nameContent)"
+            
+            scientificNameView.isAccessibilityElement = true
+            scientificNameView.accessibilityLabel = "\(scientificName), \(scientificNameContent)"
+            
+            typeView.isAccessibilityElement = true
+            typeView.accessibilityLabel = "\(type), \(typeContent)"
+            
+            habitatBiomeView.isAccessibilityElement = true
+            habitatBiomeView.accessibilityLabel = "\(habitatBiome), \(habitatBiomeContent)"
+            
+            locationView.isAccessibilityElement = true
+            locationView.accessibilityLabel = "\(location), \(locationContent)"
+            
+            curiosityView.isAccessibilityElement = true
+            curiosityView.accessibilityLabel = "\(curiosity), \(curiosityContent)"
+        }
     }
     
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
