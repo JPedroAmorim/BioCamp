@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xgg-vH-pjd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="duQ-DH-vwh">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mapa-->
+        <!--Map View Controller-->
         <scene sceneID="nTv-Zp-fvH">
             <objects>
                 <viewController id="Xgg-vH-pjd" customClass="MapViewController" customModule="CampusSelvagem" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Vo-ic-n6S">
-                                <rect key="frame" x="24" y="60" width="44" height="44"/>
+                                <rect key="frame" x="24" y="104" width="44" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="2sd-o7-QCY"/>
@@ -45,7 +45,7 @@
                                 <state key="normal" title="Centralizar" image="next-2"/>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4M-FT-m1u">
-                                <rect key="frame" x="307" y="60" width="44" height="44"/>
+                                <rect key="frame" x="307" y="104" width="44" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="D4M-FT-m1u" secondAttribute="height" multiplier="1:1" id="JEL-VP-2nK"/>
@@ -73,7 +73,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rxC-HM-Gnt"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Mapa" image="itemMap" selectedImage="itemMapSelected" id="0XX-XX-PZ8"/>
+                    <navigationItem key="navigationItem" id="rwZ-7D-9MV"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <outlet property="animationEnabledButton" destination="bCF-ku-hmw" id="Fsw-OS-dbo"/>
@@ -92,6 +92,7 @@
                         <outlet property="popOverFilter" destination="1Rr-oK-4jv" id="xVD-ux-puR"/>
                         <outlet property="popOverSegmentedControl" destination="ZQ3-E1-aP1" id="sIq-iC-q8q"/>
                         <outlet property="settingsBtn" destination="D4M-FT-m1u" id="VZc-bC-GPG"/>
+                        <segue destination="xDH-6Q-DUM" kind="show" identifier="showDetails" id="jsf-Pw-Gb6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="moY-Zt-qV1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,7 +277,36 @@
                     <viewLayoutGuide key="safeArea" id="cIQ-9e-weF"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="127.53623188405798" y="67.633928571428569"/>
+            <point key="canvasLocation" x="1069.5999999999999" y="67.241379310344826"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="gIk-ZT-twx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Details" id="xDH-6Q-DUM" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="zRv-UK-dev"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="btO-Kn-MQW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1886" y="67"/>
+        </scene>
+        <!--Mapa-->
+        <scene sceneID="ZX8-eE-v2C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="duQ-DH-vwh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Mapa" image="itemMap" selectedImage="itemMapSelected" id="0XX-XX-PZ8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6qs-DS-Ctm">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Xgg-vH-pjd" kind="relationship" relationship="rootViewController" id="vHF-me-PfC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kQt-af-SNb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="127.2" y="67.241379310344826"/>
         </scene>
     </scenes>
     <resources>
