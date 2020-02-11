@@ -133,8 +133,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                imageDelButtons[n].isAccessibilityElement = true
            }
            
-        sendLabel.text = NSLocalizedString("Send", comment: "")
-        eraseLabel.text = NSLocalizedString("Cancel", comment: "")
+        clearAllButton.titleLabel?.text = NSLocalizedString("Clear all", comment: "")
+        submitButton.titleLabel?.text = NSLocalizedString("Send", comment: "")
         nameTextBox.placeholder = NSLocalizedString("Living being name", comment: "")
         locationTextBox.placeholder = NSLocalizedString("Place where it was spotted", comment: "")
        }
