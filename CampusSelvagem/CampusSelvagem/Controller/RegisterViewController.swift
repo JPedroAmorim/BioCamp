@@ -60,6 +60,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
             
             present(refreshAlert, animated: true, completion: nil)
         }
+        
+        acessibilitySetup()
     }
     
     @IBAction func deleteButton(_ sender: UIButton) {
@@ -76,6 +78,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
                 button.isAccessibilityElement = false
             }
         }
+        
+        acessibilitySetup()
     }
     
     @IBAction func TakePhoto(_ sender: Any) {
@@ -95,6 +99,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         optionMenu.addAction(cancelAction)
 
         self.present(optionMenu, animated: true, completion: nil)
+        
+        // acessibilitySetup()
     }
     
     @IBAction func clearInformations(_ sender: Any) {
@@ -109,6 +115,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
            }))
            
            present(refreshAlert, animated: true, completion: nil)
+        
+        //acessibilitySetup()
        }
        
     // MARK: - Lifecycle methods
@@ -163,6 +171,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         
         nameTextBox.text = ""
         locationTextBox.text = ""
+        
+        //acessibilitySetup()
     }
     
     
@@ -174,6 +184,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         imagePicker.sourceType = .camera
         
         present(imagePicker, animated: true, completion: nil)
+        
+        //acessibilitySetup()
     }
     
     func openGalery() {
@@ -182,6 +194,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         imagePicker.sourceType = .photoLibrary
         
         present(imagePicker, animated: true, completion: nil)
+        
+        //acessibilitySetup()
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -201,9 +215,11 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         imageAddButtons[imageViewInUse].alpha = 0
         imageDelButtons[imageViewInUse].alpha = 0.4
         imageDelButtons[imageViewInUse].isAccessibilityElement = true
+        imagesGalery[imageViewInUse].isAccessibilityElement = false
         imageDelButtons[imageViewInUse].accessibilityLabel = NSLocalizedString("Delete image", comment: "")
         imageViewInUse += 1
         imagePicker.dismiss(animated: true, completion: nil)
+        //acessibilitySetup()
     }
     
     func cropToBounds(image: UIImage, portraitOrientation: Bool) -> UIImage {
@@ -347,12 +363,31 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     
     func acessibilitySetup() {
         // Add image area setup
+        
+        elements.removeAll()
+        
         for i in 0...3 {
-            let groupedElement = UIAccessibilityElement(accessibilityContainer: self)
-            groupedElement.accessibilityLabel = NSLocalizedString("Add image", comment: "")
-            groupedElement.accessibilityHint = NSLocalizedString("Double tap to add image", comment: "")
-            groupedElement.accessibilityFrameInContainerSpace = imagesGalery[i].frame
-            elements.append(groupedElement)
+            var groupedElement: UIAccessibilityElement?
+            if imagesGalery[i].image == nil {
+                groupedElement = UIAccessibilityElement(accessibilityContainer: self)
+                groupedElement?.accessibilityLabel = NSLocalizedString("Add image", comment: "")
+                groupedElement?.accessibilityHint = NSLocalizedString("Double tap to add image", comment: "")
+            }
+            else {
+                groupedElement = UIAccessibilityElementCustom(accessibilityContainer: self)
+                let element = groupedElement as! UIAccessibilityElementCustom
+                element.delButton = imageDelButtons[i]
+                groupedElement?.accessibilityLabel = NSLocalizedString("Delete image", comment: "")
+                groupedElement?.accessibilityHint = NSLocalizedString("Double tap to remove image", comment: "")
+                //groupedElement.accessibilityActivate()
+            }
+            
+            
+            imagesGalery[i].isAccessibilityElement = false
+            groupedElement?.accessibilityFrameInContainerSpace = imagesGalery[i].frame
+            if let a = groupedElement {
+                elements.append(a)
+            }
         }
         self.areaView.accessibilityElements = elements
         
@@ -385,6 +420,15 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
+    }
+}
+
+class UIAccessibilityElementCustom: UIAccessibilityElement {
+    var   delButton: UIButton?
+    
+    override  func accessibilityActivate() -> Bool {
+        self.delButton?.sendActions(for: .touchUpInside)
+        return true
     }
 }
 
