@@ -66,10 +66,10 @@
                                         <rect key="frame" x="0.0" y="300" width="414" height="425"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4mo-le-cJF" userLabel="ContentView">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="418.5"/>
+                                                <rect key="frame" x="16" y="0.0" width="382" height="418.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3f-HV-dpa" userLabel="NameView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="69"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="69"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgl-z7-bYv">
                                                                 <rect key="frame" x="0.0" y="5" width="120.5" height="41"/>
@@ -95,7 +95,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2z-Aa-t61" userLabel="ScientificNameView">
-                                                        <rect key="frame" x="0.0" y="69" width="414" height="65.5"/>
+                                                        <rect key="frame" x="0.0" y="69" width="382" height="65.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblScientificName" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01a-RK-nYr">
                                                                 <rect key="frame" x="0.0" y="5" width="255.5" height="41"/>
@@ -121,7 +121,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8fS-xd-z4k" userLabel="TypeView">
-                                                        <rect key="frame" x="0.0" y="134.5" width="414" height="69"/>
+                                                        <rect key="frame" x="0.0" y="134.5" width="382" height="69"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblType" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-TO-FhT">
                                                                 <rect key="frame" x="0.0" y="5" width="104" height="41"/>
@@ -147,7 +147,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yka-df-02f" userLabel="HabitatBiomeView">
-                                                        <rect key="frame" x="0.0" y="203.5" width="414" height="69"/>
+                                                        <rect key="frame" x="0.0" y="203.5" width="382" height="69"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblHabitatBiome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SlG-Rp-yMz">
                                                                 <rect key="frame" x="0.0" y="5" width="232.5" height="41"/>
@@ -173,7 +173,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kY-ZT-QE5" userLabel="LocationView">
-                                                        <rect key="frame" x="0.0" y="272.5" width="414" height="69"/>
+                                                        <rect key="frame" x="0.0" y="272.5" width="382" height="69"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblLocation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wog-sK-Kff">
                                                                 <rect key="frame" x="0.0" y="5" width="160" height="41"/>
@@ -199,7 +199,7 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zl9-E1-8iM" userLabel="CuriosityView">
-                                                        <rect key="frame" x="0.0" y="341.5" width="414" height="69"/>
+                                                        <rect key="frame" x="0.0" y="341.5" width="382" height="69"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblCuriosity" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDo-75-QJs">
                                                                 <rect key="frame" x="0.0" y="5" width="164" height="41"/>
@@ -251,9 +251,9 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="4mo-le-cJF" firstAttribute="top" secondItem="6mb-lL-R1h" secondAttribute="top" id="5ic-BX-kn1"/>
-                                            <constraint firstItem="4mo-le-cJF" firstAttribute="trailing" secondItem="xfU-U0-fuJ" secondAttribute="trailing" constant="344" id="LyZ-DI-2XR"/>
-                                            <constraint firstItem="4mo-le-cJF" firstAttribute="width" secondItem="6mb-lL-R1h" secondAttribute="width" id="Wqr-mV-xNd"/>
-                                            <constraint firstItem="4mo-le-cJF" firstAttribute="leading" secondItem="xfU-U0-fuJ" secondAttribute="leading" id="dGo-Pj-u4C"/>
+                                            <constraint firstItem="4mo-le-cJF" firstAttribute="trailing" secondItem="xfU-U0-fuJ" secondAttribute="trailing" id="LyZ-DI-2XR"/>
+                                            <constraint firstItem="4mo-le-cJF" firstAttribute="width" secondItem="6mb-lL-R1h" secondAttribute="width" constant="-32" id="Wqr-mV-xNd"/>
+                                            <constraint firstItem="4mo-le-cJF" firstAttribute="leading" secondItem="xfU-U0-fuJ" secondAttribute="leading" constant="16" id="dGo-Pj-u4C"/>
                                             <constraint firstItem="4mo-le-cJF" firstAttribute="centerX" secondItem="6mb-lL-R1h" secondAttribute="centerX" id="dYa-Qf-7qe"/>
                                             <constraint firstItem="4mo-le-cJF" firstAttribute="bottom" secondItem="xfU-U0-fuJ" secondAttribute="bottom" id="hbf-EK-0lE"/>
                                             <constraint firstItem="4mo-le-cJF" firstAttribute="top" secondItem="xfU-U0-fuJ" secondAttribute="top" id="lfw-kR-I3r"/>
