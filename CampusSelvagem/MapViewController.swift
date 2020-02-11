@@ -449,106 +449,95 @@ extension MapViewController: MKMapViewDelegate {
 
 extension MapViewController: LivingBeingDelegate {
     func tapOn(species: String) {
-        let enciclopediaNavigationController = self.tabBarController?.viewControllers?[2] as? UINavigationController
-        for view in enciclopediaNavigationController?.viewControllers ?? [] {
-            if view is EncyclopediaViewController {
-                let encView = view as! EncyclopediaViewController
-                if let being = findLivingBeing(species) {
-                    encView.nameToBeSearched = being.name
-                    encView.searchForName = true
-                    if being.beingClass == .angiosperms ||
-                        being.beingClass == .gimnosperms ||
-                        being.beingClass == .briophyte ||
-                        being.beingClass == .pteridophytes {
-                        encView.searchForPlants = true
-                    }
-                    else {
-                        encView.searchForPlants = false
-                    }
-                }
-            }
-        }
-        self.tabBarController?.selectedIndex = 2
-//        if enciclopediaViewController != nil {
-//            let name = findLivingBeing(species)?.name
-//            enciclopediaViewController?.searchController.isActive = true
-//            enciclopediaViewController?.searchController.searchBar.text = name
-//
-//            enciclopediaViewController?.tableView.delegate?.tableView?(enciclopediaViewController!.tableView,
-//                                                                       didSelectRowAt: IndexPath(row: 0, section: 0))
-//        }
-//        else {
-//            print("enciclopediaViewController is nil")
-//        }
-//        self.mapView.addBlurEffect()
-//        self.mapView.isUserInteractionEnabled = false
-//        self.view.addSubview(informationDetailView)
-//        let centerXConstrain = NSLayoutConstraint(item: informationDetailView as Any,
-//                                                  attribute: .centerX,
-//                                                  relatedBy: .equal,
-//                                                  toItem: view.safeAreaLayoutGuide,
-//                                                  attribute: .centerX,
-//                                                  multiplier: 1.0,
-//                                                  constant: 0)
-//        let centerYConstrain = NSLayoutConstraint(item: informationDetailView as Any,
-//                                                  attribute: .centerY,
-//                                                  relatedBy: .equal,
-//                                                  toItem: view.safeAreaLayoutGuide,
-//                                                  attribute: .centerY,
-//                                                  multiplier: 1.0,
-//                                                  constant: 0)
-//        let widthConstrain = NSLayoutConstraint(item: informationDetailView as Any,
-//                                                attribute: .width,
-//                                                relatedBy: .equal,
-//                                                toItem: view.safeAreaLayoutGuide,
-//                                                attribute: .width,
-//                                                multiplier: 0.8,
-//                                                constant: 0)
-//        let heightConstrain = NSLayoutConstraint(item: informationDetailView as Any,
-//                                                 attribute: .height,
-//                                                 relatedBy: .equal,
-//                                                 toItem: view.safeAreaLayoutGuide,
-//                                                 attribute: .height,
-//                                                 multiplier: 0.8,
-//                                                 constant: 0)
-//        self.view.translatesAutoresizingMaskIntoConstraints = false
-//        self.informationDetailView.translatesAutoresizingMaskIntoConstraints = false
-//        self.view.addConstraints([centerXConstrain, centerYConstrain])
-//        //self.informationDetailView.addConstraints([heightConstrain, widthConstrain])
-//        self.informationDetailView.layer.cornerRadius = 20
-//        self.mapView.isUserInteractionEnabled = false
-        
-//        self.view.addBlurEffect()
-//        self.mapView.isUserInteractionEnabled = false
-//        self.tabBarController?.tabBar.isUserInteractionEnabled = false
-//        self.tabBarController?.tabBar.isTranslucent = true
-//        self.view.addSubview(informationDetailView)
-//        self.informationDetailView.center = self.view.center
-//        self.informationDetailView.layer.cornerRadius = 20
-        
-        if let data = findLivingBeing(species)  {
-            im.image = data.photos[0]
-            im.layer.cornerRadius = im.frame.width/2
-            
-            var text = "<font face = \"sans-serif\" size=\"14\"><b> \(data.name) </b></font> <br>" +
-                "<font face = \"sans-serif\" size=\"5\"> <i>\(data.scientificName)</i> </font> <hr>"
-            text +=
-                    "<font face = \"sans-serif\" size=\"6\"> <b>Localização no campus</b> </font> <br>" +
-                    "<font face = \"sans-serif\" size=\"5\"> \(data.locationOnCampus) </font> <br><br>"
-            informationTextView.attributedText = text.htmlToAttributedString
-            informationTextView.isEditable = false
-        }
+        performSegue(withIdentifier: "showDetails",
+                     sender: findLivingBeing(species))
     }
     
     func findLivingBeing(_ scientificName: String) -> LivingBeing?{
         for livingBeing in MVPData.sharedInstance.data {
             if livingBeing.scientificName == scientificName{
-                return livingBeing
+                print("Found \(livingBeing.name)")
+                
+                // Desculpa a gambiarra
+                
+                if livingBeing.beingClass == .angiosperms ||
+                    livingBeing.beingClass == .angiosperms ||
+                    livingBeing.beingClass == .angiosperms ||
+                    livingBeing.beingClass == .angiosperms { // É planta
+                    let plantType: PlantType? = {
+                        switch livingBeing.beingClass {
+                            case .angiosperms:
+                                return PlantType.angiosperms
+                            case .gimnosperms:
+                                return PlantType.gimnosperms
+                            case .briophyte:
+                                return PlantType.briophyte
+                            case .pteridophytes:
+                                return PlantType.pteridophytes
+                            default:
+                                return nil
+                        }
+                    }()
+                    if let type = plantType {
+                        let plant = Plant(livingBeing.name,
+                                          livingBeing.scientificName,
+                                          livingBeing.locationOnCampus,
+                                          livingBeing.coordinate,
+                                          areaRadius: livingBeing.areaRadius,
+                                          livingBeing.curiosity,
+                                          livingBeing.photos,
+                                          type,
+                                          livingBeing.habitatOrBiome)
+                        return plant
+                    }
+                    
+                }
+                else { // É animal
+                    let animalType: AnimalType? = {
+                        switch livingBeing.beingClass {
+                            case .amphibian:
+                                return AnimalType.amphibian
+                            case .bird:
+                                return AnimalType.fish
+                            case .fish:
+                                return AnimalType.fish
+                            case .insect:
+                                return AnimalType.insect
+                            case .mammmal:
+                                return AnimalType.mammal
+                            default:
+                                return nil
+                        }
+                    }()
+                    if let type = animalType {
+                        let animal = Animal(livingBeing.name,
+                                            livingBeing.scientificName,
+                                            livingBeing.locationOnCampus,
+                                            livingBeing.coordinate,
+                                            areaRadius: livingBeing.areaRadius,
+                                            livingBeing.curiosity,
+                                            livingBeing.photos,
+                                            type,
+                                            livingBeing.habitatOrBiome)
+                        return animal
+                    }
+                }
+                print("## ERRO findLivingBeing")
+                return nil
             }
         }
+        print("Didnt find living being")
         return nil
     }
-    
+ 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let selected = sender as! LivingBeing? else { print("akii"); return }
+        guard let livingBeingDetailViewController = segue.destination as? LivingBeingViewController else {
+            fatalError("Unexpected destination: \(segue.destination)")
+        }
+        livingBeingDetailViewController.livingBeing = selected
+        print("Segue ok")
+    }
 }
 
 extension MapViewController: UITableViewDelegate {
