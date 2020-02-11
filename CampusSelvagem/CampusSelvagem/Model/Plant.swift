@@ -79,24 +79,25 @@ enum PlantType: String {
     case angiospermas = "Angiosperms"
     case gimnospermas = "Gimnosperms"
     
-//    func returnLocalizedValue() -> String {
-//        var returnValue: String
-//        
-//        switch self {
-//        case .briofita:
-//            returnValue = NSLocalizedString("Briophytes", comment: "")
-//            break
-//        case .pteridofitas:
-//            returnValue = NSLocalizedString("Briophytes", comment: "")
-//            break
-//        case .angiospermas:
-//            returnValue = NSLocalizedString("Briophytes", comment: "")
-//            break
-//        case .gimnospermas:
-//            returnValue = NSLocalizedString("Briophytes", comment: "")
-//            break
-//        default:
-//            returnValue = NSLocalizedString("Unknown", comment: "")
-//        }
-//    }
+    func returnLocalizedValue() -> String {
+        var returnValue: String
+        
+        switch self {
+        case .briofita:
+            returnValue = NSLocalizedString("Briophytes", comment: "")
+            break
+        case .pteridofitas:
+            returnValue = NSLocalizedString("Briophytes", comment: "")
+            break
+        case .angiospermas:
+            returnValue = NSLocalizedString("Briophytes", comment: "")
+            break
+        case .gimnospermas:
+            returnValue = NSLocalizedString("Briophytes", comment: "")
+            break
+        default:
+            returnValue = NSLocalizedString("Unknown", comment: "")
+        }
+        return returnValue
+    }
 }
