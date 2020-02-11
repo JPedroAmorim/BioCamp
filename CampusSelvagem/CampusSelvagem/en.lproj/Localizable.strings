@@ -8,6 +8,9 @@
 
 "Place where it was spotted" = "Place where it was spotted";
 "Animals" = "Animals";
+"Map" = "Map";
+"Clear all" = "Clear all";
+"Send" = "Send";
 "Living being name" = "Living being name";
 "Enable animations" = "Enable animations";
 "Plants" = "Plants";
@@ -24,8 +27,6 @@
 "Gimnosperms" = "Gimnosperms";
 "Search for the name of the animal" = "Search for the name of the animal";
 "Search for the name of the plant" = "Search for the name of the plant";
-"Send" = "Send";
-"Clear all" =  "Clear all";
 "Do you want to send the data?" = "Do you want to send the data?";
 "Cancel" = "Cancel";
 "Open camera" = "Open camera";
