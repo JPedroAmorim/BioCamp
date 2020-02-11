@@ -22,7 +22,6 @@
 		2F35156923EAF0F400AD0F2B /* UIFontDynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35156823EAF0F400AD0F2B /* UIFontDynamicFont.swift */; };
 		2F35156B23EB2AF400AD0F2B /* UILabelDynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35156A23EB2AF400AD0F2B /* UILabelDynamicFont.swift */; };
 		2F35156E23EB367100AD0F2B /* UIButtonDynamicFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F35156D23EB367100AD0F2B /* UIButtonDynamicFont.swift */; };
-		2F486E8623E309C80073F8E0 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F486E8523E309C80073F8E0 /* Details.storyboard */; };
 		2FB4C8B8230D8DD70085BAD0 /* LivingBeingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4C8B7230D8DD70085BAD0 /* LivingBeingTableViewCell.swift */; };
 		2FB4C8BA230DA52D0085BAD0 /* LivingBeingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */; };
 		2FE648F2230C1BFE000ED0D4 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE648F1230C1BFE000ED0D4 /* Animal.swift */; };
@@ -41,6 +40,7 @@
 		D552992A23142DDE00BC456E /* CenteredCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D552992923142DDE00BC456E /* CenteredCollectionViewCell.swift */; };
 		D5BB433323EC49D700DC5C8C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5BB433523EC49D700DC5C8C /* Localizable.strings */; };
 		D5D88C4B2316D83F0086085F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D88C4A2316D83F0086085F /* MapViewController.swift */; };
+		D5FDAD3023F3238400F115E5 /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5FDAD3223F3238400F115E5 /* Details.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,6 @@
 		2F35156823EAF0F400AD0F2B /* UIFontDynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontDynamicFont.swift; sourceTree = "<group>"; };
 		2F35156A23EB2AF400AD0F2B /* UILabelDynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelDynamicFont.swift; sourceTree = "<group>"; };
 		2F35156D23EB367100AD0F2B /* UIButtonDynamicFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonDynamicFont.swift; sourceTree = "<group>"; };
-		2F486E8523E309C80073F8E0 /* Details.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
 		2FB4C8B7230D8DD70085BAD0 /* LivingBeingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingBeingTableViewCell.swift; sourceTree = "<group>"; };
 		2FB4C8B9230DA52D0085BAD0 /* LivingBeingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingBeingViewController.swift; sourceTree = "<group>"; };
 		2FE648F1230C1BFE000ED0D4 /* Animal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
@@ -113,6 +112,9 @@
 		D5DCB79023F315D500F6326B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Map.storyboard; sourceTree = "<group>"; };
 		D5DCB79123F31CE300F6326B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Map.strings; sourceTree = "<group>"; };
 		D5FDAD2C23F3205E00F115E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Register.strings; sourceTree = "<group>"; };
+		D5FDAD3323F3239100F115E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Details.storyboard; sourceTree = "<group>"; };
+		D5FDAD3523F3239800F115E5 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Details.strings"; sourceTree = "<group>"; };
+		D5FDAD3623F3240600F115E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Details.strings; sourceTree = "<group>"; };
 		EACA1E3926E553BAD10A7993 /* Pods-CampusSelvagem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusSelvagem.release.xcconfig"; path = "Target Support Files/Pods-CampusSelvagem/Pods-CampusSelvagem.release.xcconfig"; sourceTree = "<group>"; };
 		F619B0ADC2D3A36205F85EFB /* Pods-CampusSelvagemUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CampusSelvagemUITests.release.xcconfig"; path = "Target Support Files/Pods-CampusSelvagemUITests/Pods-CampusSelvagemUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,7 +234,7 @@
 				2F0F5997230AE587005C0F7F /* Settings.storyboard */,
 				2F0F5964230ADC9F005C0F7F /* Main.storyboard */,
 				D50345A723F30F5E009CA1B7 /* Encyclopedia.storyboard */,
-				2F486E8523E309C80073F8E0 /* Details.storyboard */,
+				D5FDAD3223F3238400F115E5 /* Details.storyboard */,
 				D503459D23F30EC7009CA1B7 /* Map.storyboard */,
 				D50345A223F30F18009CA1B7 /* Register.storyboard */,
 				2F0F596C230ADCA0005C0F7F /* LaunchScreen.storyboard */,
@@ -394,7 +396,7 @@
 				D5BB433323EC49D700DC5C8C /* Localizable.strings in Resources */,
 				2F0F5966230ADC9F005C0F7F /* Main.storyboard in Resources */,
 				D50345A023F30F18009CA1B7 /* Register.storyboard in Resources */,
-				2F486E8623E309C80073F8E0 /* Details.storyboard in Resources */,
+				D5FDAD3023F3238400F115E5 /* Details.storyboard in Resources */,
 				2F0F5998230AE587005C0F7F /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -629,6 +631,16 @@
 				D5BB433623EC49EA00DC5C8C /* pt-BR */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		D5FDAD3223F3238400F115E5 /* Details.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5FDAD3323F3239100F115E5 /* Base */,
+				D5FDAD3523F3239800F115E5 /* pt-BR */,
+				D5FDAD3623F3240600F115E5 /* en */,
+			);
+			name = Details.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

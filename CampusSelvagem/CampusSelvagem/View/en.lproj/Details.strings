@@ -27,7 +27,7 @@
 "Xei-Uu-rXY.text" = "lblHabitatBiomeContent";
 
 /* Class = "UINavigationItem"; title = "Informações"; ObjectID = "i4a-K0-scC"; */
-"i4a-K0-scC.title" = "Informações";
+"i4a-K0-scC.title" = "Info";
 
 /* Class = "UILabel"; text = "lblType"; ObjectID = "kdV-TO-FhT"; */
 "kdV-TO-FhT.text" = "lblType";
