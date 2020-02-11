@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Registrar-->
+        <!--Register-->
         <scene sceneID="rEM-sJ-UFV">
             <objects>
-                <viewController id="yyR-Ls-Iiy" customClass="RegisterViewController" customModule="CampusSelvagem" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Register" id="yyR-Ls-Iiy" customClass="RegisterViewController" customModule="CampusSelvagem" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wf3-lw-Ajf"/>
                         <viewControllerLayoutGuide type="bottom" id="ZOm-5S-sxc"/>
@@ -299,7 +299,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Registrar" image="itemCamera" selectedImage="itemCameraSelected" id="AfZ-uK-qVh"/>
+                    <tabBarItem key="tabBarItem" title="Register" image="itemCamera" selectedImage="itemCameraSelected" id="AfZ-uK-qVh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="areaView" destination="P5Q-vv-MVN" id="rbz-fL-2UQ"/>

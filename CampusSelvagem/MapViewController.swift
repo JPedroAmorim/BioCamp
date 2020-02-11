@@ -141,6 +141,8 @@ class MapViewController: UIViewController {
         doneButton.titleLabel?.text = NSLocalizedString("Done", comment: "")
         
         enableAnimationLabel.text = NSLocalizedString("Enable animations", comment: "")
+        
+        self.tabBarController?.tabBarItem.title = NSLocalizedString("Map", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
