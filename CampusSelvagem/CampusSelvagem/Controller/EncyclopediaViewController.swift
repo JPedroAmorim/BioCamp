@@ -94,7 +94,7 @@ class EncyclopediaViewController: UIViewController  {
         //Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = NSLocalizedString("Search for the animal name", comment: "")
+        searchController.searchBar.placeholder = NSLocalizedString("Search for the name of the animal", comment: "")
         navigationItem.searchController = searchController
         definesPresentationContext = true
         

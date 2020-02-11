@@ -31,7 +31,8 @@ class MapViewController: UIViewController {
     @IBOutlet weak var isAnimationEnabledSwitch: UISwitch!
     @IBOutlet weak var animationSwitch: UISwitch!
     @IBOutlet weak var animationEnabledButton: UIButton!
-
+    @IBOutlet weak var enableAnimationLabel: UILabel!
+    
     // Variables and constants
     var centerBtnIsCentered: Bool = false
     var didPressCenterBtn = false
@@ -134,10 +135,12 @@ class MapViewController: UIViewController {
         addAnnotations()
         centerBtn.addTarget(self, action: #selector(centerBtnAction), for: .touchUpInside)
         
-        popOverSegmentedControl.setTitle("Animals", forSegmentAt: 0)
-        popOverSegmentedControl.setTitle("Plants", forSegmentAt: 1)
+        popOverSegmentedControl.setTitle(NSLocalizedString("Animals", comment: ""), forSegmentAt: 0)
+        popOverSegmentedControl.setTitle(NSLocalizedString("Plants", comment: ""), forSegmentAt: 1)
         
         doneButton.titleLabel?.text = NSLocalizedString("Done", comment: "")
+        
+        enableAnimationLabel.text = NSLocalizedString("Enable animations", comment: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {

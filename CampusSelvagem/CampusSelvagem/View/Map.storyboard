@@ -81,6 +81,7 @@
                         <outlet property="centerBtn" destination="ca7-fF-Zyc" id="Zmg-P1-PWL"/>
                         <outlet property="disableAnimationsView" destination="tE1-9G-fw0" id="Cri-kE-Qzn"/>
                         <outlet property="doneButton" destination="CHj-Ii-BaL" id="eRo-Tt-vvD"/>
+                        <outlet property="enableAnimationLabel" destination="d1A-Hh-oaT" id="niQ-R5-R96"/>
                         <outlet property="exitInfo" destination="C4L-l5-oO4" id="azi-ck-IcC"/>
                         <outlet property="filterBtn" destination="5Vo-ic-n6S" id="EUM-zv-cYo"/>
                         <outlet property="filterTableView" destination="gRf-JA-KKc" id="BbJ-YH-qUb"/>

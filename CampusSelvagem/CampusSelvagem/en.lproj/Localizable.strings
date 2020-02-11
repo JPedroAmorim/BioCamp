@@ -6,7 +6,10 @@
   Copyright © 2020 Felipe Semissatto. All rights reserved.
 */
 
+"Place where it was spotted" = "Place where it was spotted";
 "Animals" = "Animals";
+"Living being name" = "Living being name";
+"Enable animations" = "Enable animations";
 "Plants" = "Plants";
 "Amphibian" = "Amphibian";
 "Bird" = "Bird";

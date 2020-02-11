@@ -6,8 +6,11 @@
   Copyright © 2020 Felipe Semissatto. All rights reserved.
 */
 
+"Place where it was spotted" = "Local em que foi avistado";
 "Animals" = "Animais";
 "Plants" = "Plantas";
+"Living being name" = "Nome do ser vivo";
+"Enable animations" = "Habilitar animações";
 "Amphibian" = "Anfíbio";
 "Bird" = "Aves";
 "Mammal" = "Mamífero";
