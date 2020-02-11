@@ -262,12 +262,6 @@
                                         <viewLayoutGuide key="frameLayoutGuide" id="6mb-lL-R1h"/>
                                     </scrollView>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="91u-xM-EPF" firstAttribute="leading" secondItem="JD6-2i-IFx" secondAttribute="leading" id="EWS-w2-Jzn"/>
-                                    <constraint firstAttribute="bottom" secondItem="91u-xM-EPF" secondAttribute="bottom" id="RSO-pu-EB5"/>
-                                    <constraint firstAttribute="trailing" secondItem="91u-xM-EPF" secondAttribute="trailing" id="VYo-z2-9fx"/>
-                                    <constraint firstItem="91u-xM-EPF" firstAttribute="top" secondItem="y0d-uc-814" secondAttribute="bottom" id="jAR-TP-qBG"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
