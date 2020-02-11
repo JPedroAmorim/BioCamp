@@ -145,6 +145,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         submitButton.titleLabel?.text = NSLocalizedString("Send", comment: "")
         nameTextBox.placeholder = NSLocalizedString("Living being name", comment: "")
         locationTextBox.placeholder = NSLocalizedString("Place where it was spotted", comment: "")
+        
+        submitButton.setDynamicFontSize()
+        clearAllButton.setDynamicFontSize()
        }
     
     
@@ -444,6 +447,39 @@ extension RegisterViewController {
     self.imageDelButtons[2].imageView!.accessibilityTraits = UIAccessibilityTraits.image
     self.imageDelButtons[3].imageView!.accessibilityTraits = UIAccessibilityTraits.image
   }
+}
+
+extension UIButton {
+    
+    func setDynamicFontSize() {
+        NotificationCenter.default.addObserver(self, selector: #selector(setButtonDynamicFontSize),
+                                               name: UIContentSizeCategory.didChangeNotification,
+                                               object: nil)
+    }
+    
+    @objc func setButtonDynamicFontSize() {
+        Common.setButtonTextSizeDynamic(button: self, textStyle: .callout)
+    }
+    
+}
+
+class Common {
+    
+    class func setButtonTextSizeDynamic(button: UIButton, textStyle: UIFont.TextStyle) {
+        
+        if(UIFont.preferredFont(forTextStyle: textStyle).pointSize <= 32) {
+            button.titleLabel?.font = UIFont.preferredFont(forTextStyle: textStyle)
+            button.titleLabel?.adjustsFontForContentSizeCategory = true
+            print("aaaa1111")
+        }
+        else {
+            print("aaaa")
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 32)
+//            button.titleLabel?.font.withSize(10)
+            button.titleLabel?.adjustsFontForContentSizeCategory = true
+        }
+    }
+    
 }
 
 
