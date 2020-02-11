@@ -252,7 +252,7 @@
                             <constraint firstItem="P5Q-vv-MVN" firstAttribute="leading" secondItem="VWJ-U8-hF4" secondAttribute="leading" constant="5" id="50p-Q8-ad1"/>
                             <constraint firstItem="P5Q-vv-MVN" firstAttribute="top" secondItem="wf3-lw-Ajf" secondAttribute="bottom" constant="10" id="I01-gN-7d0"/>
                             <constraint firstItem="2UC-qM-aFw" firstAttribute="leading" secondItem="P5Q-vv-MVN" secondAttribute="trailing" constant="10" id="LKB-r9-iq2"/>
-                            <constraint firstItem="2UC-qM-aFw" firstAttribute="leading" secondItem="VWJ-U8-hF4" secondAttribute="leading" constant="10" id="MbW-vf-ib7"/>
+                            <constraint firstItem="2UC-qM-aFw" firstAttribute="leading" secondItem="VWJ-U8-hF4" secondAttribute="leading" constant="20" id="MbW-vf-ib7"/>
                             <constraint firstItem="VWJ-U8-hF4" firstAttribute="bottom" secondItem="2UC-qM-aFw" secondAttribute="bottom" id="QwO-6j-StL"/>
                             <constraint firstItem="VWJ-U8-hF4" firstAttribute="bottom" secondItem="P5Q-vv-MVN" secondAttribute="bottom" constant="10" id="Z4F-vn-Cjv"/>
                             <constraint firstItem="2UC-qM-aFw" firstAttribute="top" secondItem="wf3-lw-Ajf" secondAttribute="bottom" constant="20" id="eqA-H9-024"/>
@@ -260,6 +260,7 @@
                             <constraint firstItem="2UC-qM-aFw" firstAttribute="top" secondItem="P5Q-vv-MVN" secondAttribute="bottom" constant="20" id="fe4-RE-6ld"/>
                             <constraint firstItem="VWJ-U8-hF4" firstAttribute="trailing" secondItem="P5Q-vv-MVN" secondAttribute="trailing" constant="5" id="nBe-rL-1Qh"/>
                             <constraint firstItem="VWJ-U8-hF4" firstAttribute="bottom" secondItem="2UC-qM-aFw" secondAttribute="bottom" id="wLB-dy-izb"/>
+                            <constraint firstAttribute="trailing" secondItem="2UC-qM-aFw" secondAttribute="trailing" constant="20" id="wmF-IH-wn2"/>
                             <constraint firstItem="VWJ-U8-hF4" firstAttribute="trailing" secondItem="P5Q-vv-MVN" secondAttribute="trailing" constant="600" id="zgj-Oo-Goh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VWJ-U8-hF4"/>
@@ -280,6 +281,7 @@
                                 <exclude reference="MbW-vf-ib7"/>
                                 <include reference="eqA-H9-024"/>
                                 <exclude reference="fe4-RE-6ld"/>
+                                <exclude reference="wmF-IH-wn2"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -291,8 +293,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="0sl-7b-VMs"/>
+                                <exclude reference="0sl-7b-VMs"/>
                                 <exclude reference="zgj-Oo-Goh"/>
+                                <include reference="wmF-IH-wn2"/>
                             </mask>
                         </variation>
                     </view>

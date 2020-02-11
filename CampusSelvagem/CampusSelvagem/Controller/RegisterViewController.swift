@@ -122,7 +122,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
            submitButton.titleLabel?.adjustsFontForContentSizeCategory = true
            
            KeyboardAvoiding.avoidingView = self.constrainTextBox
-           
+           KeyboardAvoiding.avoidingView = self.areaView
+        
            for n in 0...3 {
                imagesGalery[n].image = nil
            }
@@ -246,9 +247,15 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
     public func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         if textField == self.nameTextBox {
             KeyboardAvoiding.avoidingView = self.constrainTextBox
+//            if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+//                KeyboardAvoiding.avoidingView = self.areaView
+//            }
         }
         else if textField == self.locationTextBox {
             KeyboardAvoiding.avoidingView = self.constrainTextBox
+//            if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight {
+//                KeyboardAvoiding.avoidingView = self.areaView
+//            }
         }
         return true
     }
@@ -358,6 +365,30 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate, 
         self.submitButton.accessibilityLabel = NSLocalizedString("Send", comment: "")
         self.clearAllButton.isAccessibilityElement = true
         self.clearAllButton.accessibilityLabel = NSLocalizedString("Clear all", comment: "")
+    }
+    
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        var text=""
+        switch UIDevice.current.orientation{
+        case .portrait:
+            text="Portrait"
+        case .portraitUpsideDown:
+            text="PortraitUpsideDown"
+        case .landscapeLeft:
+            text="LandscapeLeft"
+        case .landscapeRight:
+            text="LandscapeRight"
+        default:
+            text="Another"
+        }
+        NSLog("You have moved: \(text)")
+        
+        dismissKeyboard()
+    }
+    
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 }
 
